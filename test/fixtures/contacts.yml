@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  og_id: 1
+  salutation: MyString
+  first_name: MyString
+  last_name: MyString
+  level: MyString
+  email: MyString
+  frequency: MyString
+  cell_phone: MyString
+  office_phone: MyString
+  fax: MyString
+  date_of_contact: MyString
+  cpa_contact: MyString
+
+two:
+  og_id: 1
+  salutation: MyString
+  first_name: MyString
+  last_name: MyString
+  level: MyString
+  email: MyString
+  frequency: MyString
+  cell_phone: MyString
+  office_phone: MyString
+  fax: MyString
+  date_of_contact: MyString
+  cpa_contact: MyString

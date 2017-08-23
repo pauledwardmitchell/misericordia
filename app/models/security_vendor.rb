@@ -1,0 +1,2 @@
+class SecurityVendor < ApplicationRecord
+end

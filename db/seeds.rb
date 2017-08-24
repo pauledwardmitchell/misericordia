@@ -13,8 +13,7 @@
 
 
 
-
-# LOAD CONTACTS (STEP #1)
+# # LOAD CONTACTS (STEP #1)
 # contacts_records = File.read('db/data/Contact.json')
 # puts "File read"
 
@@ -50,7 +49,7 @@
 #   end
 # end
 
-# LOAD (STEP #2)
+# # LOAD (STEP #2)
 
 # security_vendors_records = File.read('db/data/SecurityVendor.json')
 # puts "File read"
@@ -62,4 +61,32 @@
 
 #   new_security_vendor = SecurityVendor.create(name: vendor["VendorName"])
 
+# end
+
+# # LOAD ORGANIZATIONS (STEP 3)
+
+# organizations_records = File.read('db/data/Organization.json')
+# puts "File read"
+
+# organizations_hash = JSON.parse(organizations_records)
+# puts "Hash made"
+# binding.pry
+# organizations_hash.each do |organization|
+#   loop do
+#     new_organization = Organization.create(
+#                                           og_id: organization["id"],
+#                                           legal_name: organization["LegalName"],
+#                                           common_name: organization["CommonName"]
+#                                           )
+
+#     if new_organization.id == organization["id"]
+#       puts "Organization made! " + organization["LegalName"] + ": " + organization["id"].to_s
+#       # if contact["Notes"] && contact["Notes"].length > 0
+#       #   Note.create(contact_id: contact["id"], text: contact["Notes"])
+#       # end
+#       break
+#     else
+#       new_organization.delete
+#     end
+#   end
 # end

@@ -10,10 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824144258) do
+ActiveRecord::Schema.define(version: 20170824182126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "buildings", force: :cascade do |t|
+    t.integer  "og_id"
+    t.string   "primary_building"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.integer  "square_footage"
+    t.integer  "organization_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "communicators", force: :cascade do |t|
+    t.integer  "og_id"
+    t.integer  "organization_id"
+    t.integer  "contact_id"
+    t.string   "type"
+    t.string   "role"
+    t.string   "committee_name"
+    t.string   "date_noted"
+    t.string   "date_term_ends"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "contacts", force: :cascade do |t|
     t.integer  "og_id"
@@ -45,6 +71,19 @@ ActiveRecord::Schema.define(version: 20170824144258) do
     t.string   "common_name"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.integer  "og_id"
+    t.integer  "organization_id"
+    t.integer  "contact_id"
+    t.string   "type"
+    t.string   "role"
+    t.string   "committee_name"
+    t.string   "date_noted"
+    t.string   "date_term_ends"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "security_vendors", force: :cascade do |t|

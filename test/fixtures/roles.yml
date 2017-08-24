@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  og_id: 1
+  organization_id: 1
+  contact_id: 1
+  type: 
+  role: MyString
+  committee_name: MyString
+  date_noted: MyString
+  date_term_ends: MyString
+
+two:
+  og_id: 1
+  organization_id: 1
+  contact_id: 1
+  type: 
+  role: MyString
+  committee_name: MyString
+  date_noted: MyString
+  date_term_ends: MyString

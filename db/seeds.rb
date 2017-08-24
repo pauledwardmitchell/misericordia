@@ -10,10 +10,7 @@
 
 
 
-
-
-
-# # LOAD CONTACTS (STEP #1)
+# # # LOAD CONTACTS (STEP #1)
 # contacts_records = File.read('db/data/Contact.json')
 # puts "File read"
 
@@ -49,7 +46,7 @@
 #   end
 # end
 
-# # LOAD (STEP #2)
+# # # LOAD (STEP #2)
 
 # security_vendors_records = File.read('db/data/SecurityVendor.json')
 # puts "File read"
@@ -63,7 +60,7 @@
 
 # end
 
-# # LOAD ORGANIZATIONS (STEP 3)
+# # # LOAD ORGANIZATIONS (STEP 3)
 
 # organizations_records = File.read('db/data/Organization.json')
 # puts "File read"
@@ -87,6 +84,63 @@
 #       break
 #     else
 #       new_organization.delete
+#     end
+#   end
+# end
+
+# # #LOAD BUILDINGS (STEP 4)
+
+# buildings_records = File.read('db/data/Building.json')
+# puts "File read"
+
+# buildings_hash = JSON.parse(buildings_records)
+# puts "Hash made"
+
+# buildings_hash.each do |building|
+#   loop do
+#     new_building = Building.create(og_id: building["id"],
+#                                    primary_building: building["PrimaryBuilding"],
+#                                    street_address: building["Address"],
+#                                    city: building["City"],
+#                                    state: building["State"],
+#                                    zip: building["Zip"],
+#                                    square_footage: building["SqFootage"],
+#                                    organization_id: building["Organization_id"]
+#                                   )
+#     if new_building.id == building["id"]
+#       puts "Building made! " + building["Address"] + ": " + building["id"].to_s
+
+#       break
+#     else
+#       new_building.delete
+#     end
+#   end
+# end
+
+# # LOAD ROLES (STEP #5)
+# roles_records = File.read('db/data/OrganizationContact.json')
+# puts "File read"
+
+# roles_hash = JSON.parse(roles_records)
+# puts "Hash made"
+
+# roles_hash.each do |role|
+#   loop do
+#     new_role = Role.create(og_id: role["id"],
+#                            organization_id: role["Organization_id"],
+#                            contact_id: role["Contact_id"],
+#                            role: role["Role"],
+#                            committee_name: role["CommitteeName"],
+#                            date_noted: role["DateNoted"],
+#                            date_term_ends: role["DateTermEnds"]
+#                            )
+
+#     if new_role.id == role["id"]
+#       puts "Role made! " + role["Role"] + ": " + role["id"].to_s
+
+#       break
+#     else
+#       new_role.delete
 #     end
 #   end
 # end

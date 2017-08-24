@@ -144,3 +144,33 @@
 #     end
 #   end
 # end
+
+# LOAD SECURITY CONTRACTS (STEP#6)
+
+security_contracts_records = File.read('db/data/SecurityContract.json')
+puts "File read"
+
+security_contracts_hash = JSON.parse(security_contracts_records)
+puts "Hash made"
+
+security_contracts_hash.each do |contract|
+  loop do
+    new_contract = SecurityContract.create(og_id: contract["id"],
+                                           security_vendor_id: contract["SecurityVendor_id"],
+                                           building_id: contract["Building_id"],
+                                           current_month_pay: contract["CurrentMonthPay"],
+                                           new_month_pay: contract["NewMonthPay"],
+                                           new_start_date: contract["NewStartDate"],
+                                           new_end_date: contract["NewEndDate"],
+                                           notes: contract["Notes"]
+                                           )
+
+    if new_contract.id == contract["id"]
+      puts "Contract made! " + contract["id"].to_s
+
+      break
+    else
+      new_contract.delete
+    end
+  end
+end

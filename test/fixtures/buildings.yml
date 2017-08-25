@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  og_id: 1
+  primary_building: MyString
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  square_footage: 1
+  organization_id: 1
+
+two:
+  og_id: 1
+  primary_building: MyString
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  square_footage: 1
+  organization_id: 1

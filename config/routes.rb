@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'invoices#index'
 
   get '/oauth2', to: 'invoices#oauth2'

@@ -1,0 +1,26 @@
+<h1>Invoices</h1>
+
+<!-- somewhere in your document include the Javascript -->
+<script type="text/javascript" src="<%= QboApi::APP_CENTER_BASE %>/Content/IA/intuit.ipp.anywhere-1.3.1.js"></script>
+
+<!-- configure the Intuit object: 'grantUrl' is a URL in your application which kicks off the flow, see below -->
+<script>
+  intuit.ipp.anywhere.setup({
+    grantUrl: "<%= @client.authorization_uri(scope: 'com.intuit.quickbooks.accounting', state: session[:state]) %>",
+    datasources: {
+      quickbooks : true,
+      accounting : true
+    }
+  });
+</script>
+
+<a href="<%= @client.authorization_uri(scope: 'com.intuit.quickbooks.accounting', state: session[:state]) %>" target="_blank">CLICK HERE</a>
+
+<!-- this will display a button that the user clicks to start the flow -->
+<%# unless session[:token] %>
+  <ipp:connectToIntuit></ipp:connectToIntuit>
+<%# end %>
+
+<%# if notice %>
+  <%# notice %>
+<%# end %>

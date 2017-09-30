@@ -5,10 +5,55 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <section>
+      <div class="nav">
+        <div class="left">
+          <a href="/">
+            <div class="brand">
+              <%# owl icon %>
+              <h2>CPA PORTAL</h2> <%# linkify this %>
+            </div>
+          </a>
+        </div> <%# /left %>
+
+        <div class="right">
+          <div class="session">
+              <a href="">LINK</a>
+          </div>
+        </div> <%# /right %>
+
+        <div class="stripe">
+          <div class="stripe-inner">
+            <span class="goto">
+              goto:
+            </span>
+
+            <a href="">LINK</a>
+            <span class="separator"></span>
+            <a href="">LINK</a>
+            <span class="separator"></span>
+            <a href="">LINK</a>
+            <span class="separator"></span>
+            <a href="">LINK</a>
+            <span class="separator"></span>
+            <a rel="nofollow" data-method="delete" href="/users/sign_out">log out</a>
+
+
+            <%# if user_signed_in? %>
+              <%# link_to "document uploader" , new_document_path(session[:user_id]) %>
+            <%# end %>
+          </div>
+        </div> <%# /stripe %>
+      </div> <%# /nav %>
+    </section>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

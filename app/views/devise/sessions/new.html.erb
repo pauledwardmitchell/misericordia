@@ -1,3 +1,5 @@
+<section class='form-group'>
+
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -8,7 +10,7 @@
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: 'password' %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -24,3 +26,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</section>

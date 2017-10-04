@@ -30,13 +30,13 @@ class InvoicesController < ApplicationController
                                        authorization_endpoint: "https://appcenter.intuit.com/connect/oauth2",
                                        token_endpoint: "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer"
                                      )
+        # binding.pry
       client.authorization_code = code
       if resp = client.access_token!
         session[:refresh_token] = resp.refresh_token
         session[:access_token] = resp.access_token
         session[:realm_id] = params[:realmId]
-        binding.pry
-        render 'index'
+        render 'index' #what do I want to render next?
       else
         "Something went wrong. Try the process again"
       end

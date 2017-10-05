@@ -37,9 +37,10 @@ class InvoicesController < ApplicationController
         session[:access_token] = resp.access_token
         session[:realm_id] = params[:realmId]
 
-        Qbo.first.access_token = resp.access_token
-        Qbo.first.realm_id = params[:realmId]
-        Qbo.first.save
+        qbo_credentials = Qbo.first
+        qbo_credentials.access_token = resp.access_token
+        qbo_credentials.realm_id = params[:realmId]
+        qbo_credentials.save
 
         render 'index' #what do I want to render next?
       else

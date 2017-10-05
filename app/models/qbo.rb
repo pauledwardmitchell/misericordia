@@ -1,0 +1,2 @@
+class Qbo < ApplicationRecord
+end

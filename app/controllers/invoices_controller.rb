@@ -26,7 +26,7 @@ class InvoicesController < ApplicationController
     if state == session[:state]
       client = Rack::OAuth2::Client.new(identifier: QBO_CLIENT_ID,
                                        secret: QBO_CLIENT_SECRET,
-                                       redirect_uri: "http://localhost:3000/oauth2_redirect",
+                                       redirect_uri: ENV["QBO_REDIRECT_URI"],
                                        authorization_endpoint: "https://appcenter.intuit.com/connect/oauth2",
                                        token_endpoint: "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer"
                                      )

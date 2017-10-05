@@ -36,6 +36,11 @@ class InvoicesController < ApplicationController
         session[:refresh_token] = resp.refresh_token
         session[:access_token] = resp.access_token
         session[:realm_id] = params[:realmId]
+
+        Qbo.first.access_token = resp.access_token
+        Qbo.first.realm_id = params[:realmId]
+        Qbo.first.save
+
         render 'index' #what do I want to render next?
       else
         "Something went wrong. Try the process again"

@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.all.order(:first_name)
 
     @contacts_hashes = []
 
@@ -16,6 +16,7 @@ class ContactsController < ApplicationController
           cell_phone: contact.cell_phone,
           office_phone: contact.office_phone,
           email: contact.email,
+          organization_name: contact.organization.legal_name,
           physical_address: contact.organization.primary_building_address
         }
 
@@ -28,6 +29,7 @@ class ContactsController < ApplicationController
           cell_phone: contact.cell_phone,
           office_phone: contact.office_phone,
           email: contact.email,
+          organization_name: "No Organization Information",
           physical_address: {
             street_address: "No Address Information",
             city: "",

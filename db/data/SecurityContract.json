@@ -1,0 +1,136 @@
+[{
+  "id": 1,
+  "Building_id": 506,
+  "CurrentMonthPay": 28000,
+  "NewMonthPay": 26000,
+  "NewStartDate": "2016-04-25",
+  "NewEndDate": "2017-06-13",
+  "SecurityVendor_id": 1,
+  "Notes": "14 month contract; doubled the payment and savings on 9/28/16"
+}, {
+  "id": 2,
+  "Building_id": 500,
+  "CurrentMonthPay": 9400,
+  "NewMonthPay": 8926.51,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": "2018-07-01",
+  "SecurityVendor_id": 4,
+  "Notes": "In reality, monthly amount varies as needed and there was no end date for the contract.  Switched from Security Assoc 6/30/17"
+}, {
+  "id": 3,
+  "Building_id": 358,
+  "CurrentMonthPay": 23900,
+  "NewMonthPay": 20000,
+  "NewStartDate": "2017-08-01",
+  "NewEndDate": "2018-07-31",
+  "SecurityVendor_id": 1,
+  "Notes": "no real end date"
+}, {
+  "id": 5,
+  "Building_id": 273,
+  "CurrentMonthPay": 11500,
+  "NewMonthPay": 10159,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": "2018-07-01",
+  "SecurityVendor_id": 1,
+  "Notes": "no real end date. july 2017 switch from ussa"
+}, {
+  "id": 6,
+  "Building_id": 566,
+  "CurrentMonthPay": 4500,
+  "NewMonthPay": 4088.5,
+  "NewStartDate": "2016-06-01",
+  "NewEndDate": "2018-06-01",
+  "SecurityVendor_id": 1,
+  "Notes": "end date not known"
+}, {
+  "id": 8,
+  "Building_id": 468,
+  "CurrentMonthPay": 2000,
+  "NewMonthPay": 1776,
+  "NewStartDate": "2016-11-01",
+  "NewEndDate": "2018-11-01",
+  "SecurityVendor_id": 1,
+  "Notes": "Not necessarily consistent"
+}, {
+  "id": 9,
+  "Building_id": 548,
+  "CurrentMonthPay": 1750,
+  "NewMonthPay": 1628,
+  "NewStartDate": "2016-11-01",
+  "NewEndDate": "2017-11-01",
+  "SecurityVendor_id": 1,
+  "Notes": "not necessarily consistent"
+}, {
+  "id": 10,
+  "Building_id": 509,
+  "CurrentMonthPay": 7650,
+  "NewMonthPay": 7612,
+  "NewStartDate": "2017-04-10",
+  "NewEndDate": "0000-00-00",
+  "SecurityVendor_id": 3,
+  "Notes": "This is a very temporary contract that ends 6-16-17.  I don't know the real previous price."
+}, {
+  "id": 11,
+  "Building_id": 210,
+  "CurrentMonthPay": 1350,
+  "NewMonthPay": 1200,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": "2018-06-30",
+  "SecurityVendor_id": 4,
+  "Notes": "amount estimated because laura guessed the monthly rebate will be 600"
+}, {
+  "id": 12,
+  "Building_id": 154,
+  "CurrentMonthPay": 8900,
+  "NewMonthPay": 7916.5,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": "2018-07-01",
+  "SecurityVendor_id": 4,
+  "Notes": ""
+}, {
+  "id": 13,
+  "Building_id": 155,
+  "CurrentMonthPay": 8900,
+  "NewMonthPay": 7916.5,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": "2018-07-01",
+  "SecurityVendor_id": 4,
+  "Notes": ""
+}, {
+  "id": 21,
+  "Building_id": 271,
+  "CurrentMonthPay": 7500,
+  "NewMonthPay": 7117,
+  "NewStartDate": "2017-07-17",
+  "NewEndDate": null,
+  "SecurityVendor_id": 1,
+  "Notes": ""
+}, {
+  "id": 22,
+  "Building_id": 344,
+  "CurrentMonthPay": 5238.1,
+  "NewMonthPay": 4761.91,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": null,
+  "SecurityVendor_id": 1,
+  "Notes": ""
+}, {
+  "id": 23,
+  "Building_id": 624,
+  "CurrentMonthPay": 5238.1,
+  "NewMonthPay": 4761.91,
+  "NewStartDate": "2017-07-01",
+  "NewEndDate": null,
+  "SecurityVendor_id": 1,
+  "Notes": ""
+}, {
+  "id": 24,
+  "Building_id": 519,
+  "CurrentMonthPay": 0,
+  "NewMonthPay": 0,
+  "NewStartDate": "2017-08-16",
+  "NewEndDate": null,
+  "SecurityVendor_id": 4,
+  "Notes": ""
+}]

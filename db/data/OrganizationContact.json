@@ -6460,13 +6460,4 @@
   "CommitteeName": "",
   "DateNoted": null,
   "DateTermEnds": null
-}, {
-  "id": 858,
-  "Organization_id": 551,
-  "Contact_id": 847,
-  "Type": "Staff",
-  "Role": "Tech Admin",
-  "CommitteeName": "",
-  "DateNoted": "2017-08-22",
-  "DateTermEnds": "0000-00-00"
 }]

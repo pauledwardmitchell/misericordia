@@ -2,7 +2,7 @@ desc "This task updates people in PW"
 
 task :update_orgs => :environment do
 
-  orgs = Organization.take(2)
+  orgs = Organization.all
 
   orgs.each do |org|
 
@@ -19,21 +19,25 @@ task :update_orgs => :environment do
     request.body = "{\n  \"name\":\"" + org.legal_name + "\"\n}"
 
     response_from_legal_name = http.request(request)
-    puts "Response from legal name:"
+    puts "Response from legal name: " + org.legal_name
     puts response_from_legal_name.read_body
 
     request.body = "{\n  \"name\":\"" + org.common_name + "\"\n}"
     response_from_common_name = http.request(request)
-    puts "Response from common name:"
+    puts "Response from common name: " + org.common_name
     puts response_from_common_name.read_body
-binding.pry
 
-    if response_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
+    if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
 
-      if (response_from_legal_name["address"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0) || (response_from_legal_name["address"]["street"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0)
+# binding.pry
+      if org.legal_name.length < 1
+
+        puts "Legal name is blank."
+
+      elsif (response_as_json_from_legal_name["address"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0) || ((response_as_json_from_legal_name["address"]["street"] == nil || response_as_json_from_legal_name["address"]["street"] == "") && org.primary_building_address && org.primary_building_address[:street_address].length > 0)
         #add primary building address to PW
 
-        url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + response_from_legal_name['id'].to_s)
+        url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + response_as_json_from_legal_name['id'].to_s)
 
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl= true
@@ -50,15 +54,19 @@ binding.pry
 
         response = http.request(request)
         puts response.read_body
-binding.pry
+
       end
 
-    elsif response_from_common_name = JSON.parse(response_from_common_name.body)[0]
+    elsif response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
 
-      if (response_from_common_name["address"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0) || (response_from_common_name["address"]["street"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0)
+      if org.common_name.length < 1
+
+        puts "Common name is blank."
+
+      elsif (response_as_json_from_common_name["address"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0) || ((response_as_json_from_common_name["address"]["street"] == nil || response_as_json_from_common_name["address"]["street"] == "") && org.primary_building_address && org.primary_building_address[:street_address].length > 0)
         #add primary building address to PW
 
-        url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + response_from_common_name['id'].to_s)
+        url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + response_as_json_from_common_name['id'].to_s)
 
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl= true
@@ -75,11 +83,11 @@ binding.pry
 
         response = http.request(request)
         puts response.read_body
-binding.pry
+
       end
 
     else
-      puts "No match found in PW for this organization."
+      puts "No need to update address at this time."
     end
 
   end

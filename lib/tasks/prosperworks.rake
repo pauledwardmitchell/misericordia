@@ -1,5 +1,142 @@
 desc "This task updates people in PW"
 
+task :update_orgs => :environment do
+
+  orgs = Organization.all
+
+  orgs.each do |org|
+
+    url = URI("https://api.prosperworks.com/developer_api/v1/companies/search")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl= true
+
+    request = Net::HTTP::Post.new(url)
+    request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+    request["x-pw-application"] = 'developer_api'
+    request["x-pw-useremail"] = 'felipe@cpa.coop'
+    request["content-type"] = 'application/json'
+    request.body = "{\n  \"name\":\"" + org.legal_name + "\"\n}"
+
+    response_from_legal_name = http.request(request)
+    puts "Response from legal name: " + org.legal_name
+    puts response_from_legal_name.read_body
+
+    request.body = "{\n  \"name\":\"" + org.common_name + "\"\n}"
+    response_from_common_name = http.request(request)
+    puts "Response from common name: " + org.common_name
+    puts response_from_common_name.read_body
+
+    if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
+
+# binding.pry
+      if org.legal_name.length < 1
+
+        puts "Legal name is blank."
+
+      elsif (response_as_json_from_legal_name["address"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0) || ((response_as_json_from_legal_name["address"]["street"] == nil || response_as_json_from_legal_name["address"]["street"] == "") && org.primary_building_address && org.primary_building_address[:street_address].length > 0)
+        #add primary building address to PW
+
+        url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + response_as_json_from_legal_name['id'].to_s)
+
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl= true
+
+        request = Net::HTTP::Put.new(url)
+        request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+        request["x-pw-application"] = 'developer_api'
+        request["x-pw-useremail"] = 'felipe@cpa.coop'
+        request["content-type"] = 'application/json'
+        request.body = "{\n \"address\": {\"street\": \"" + org.primary_building_address[:street_address] +
+                               "\", \"city\": \"" + org.primary_building_address[:city] +
+                               "\", \"state\": \"" + org.primary_building_address[:state] +
+                               "\", \"postal_code\": \"" + org.primary_building_address[:zip].to_s + "\"}\n}"
+
+        response = http.request(request)
+        puts response.read_body
+
+      end
+
+    elsif response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
+
+      if org.common_name.length < 1
+
+        puts "Common name is blank."
+
+      elsif (response_as_json_from_common_name["address"] == nil && org.primary_building_address && org.primary_building_address[:street_address].length > 0) || ((response_as_json_from_common_name["address"]["street"] == nil || response_as_json_from_common_name["address"]["street"] == "") && org.primary_building_address && org.primary_building_address[:street_address].length > 0)
+        #add primary building address to PW
+
+        url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + response_as_json_from_common_name['id'].to_s)
+
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl= true
+
+        request = Net::HTTP::Put.new(url)
+        request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+        request["x-pw-application"] = 'developer_api'
+        request["x-pw-useremail"] = 'felipe@cpa.coop'
+        request["content-type"] = 'application/json'
+        request.body = "{\n \"address\": {\"street\": \"" + org.primary_building_address[:street_address] +
+                               "\", \"city\": \"" + org.primary_building_address[:city] +
+                               "\", \"state\": \"" + org.primary_building_address[:state] +
+                               "\", \"postal_code\": \"" + org.primary_building_address[:zip].to_s + "\"}\n}"
+
+        response = http.request(request)
+        puts response.read_body
+
+      end
+
+    else
+      puts "No need to update address at this time."
+    end
+
+  end
+
+end
+
+task :create_people => :environment do
+
+  people = Contact.all
+
+  people.each do |person|
+
+    url = URI("https://api.prosperworks.com/developer_api/v1/people/search")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl= true
+
+    request = Net::HTTP::Post.new(url)
+    request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+    request["x-pw-application"] = 'developer_api'
+    request["x-pw-useremail"] = 'felipe@cpa.coop'
+    request["content-type"] = 'application/json'
+    request.body = "{\n  \"name\":\"" + person.first_name + " " + person.last_name + "\"\n}"
+    response = http.request(request)
+    puts response.body
+
+    if response_as_json = JSON.parse(response.body)[0] == nil
+
+      url = URI("https://api.prosperworks.com/developer_api/v1/people")
+
+      http = Net::HTTP.new(url.host, url.port)
+      http.use_ssl= true
+
+      request = Net::HTTP::Post.new(url)
+      request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+      request["x-pw-application"] = 'developer_api'
+      request["x-pw-useremail"] = 'felipe@cpa.coop'
+      request["content-type"] = 'application/json'
+      request.body = "{\n  \"name\":\"" + person.first_name + " " + person.last_name + "\"\n}"
+
+      response = http.request(request)
+      puts response.read_body
+    # binding.pry
+    end
+
+  end
+
+end
+
 task :update_people => :environment do
 
   people = Contact.all

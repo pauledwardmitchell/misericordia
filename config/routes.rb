@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'invoices#index'
 
   resources :contacts, only: [:index]
+  resources :organizations, only: [:index]
 
   get '/oauth2', to: 'invoices#oauth2'
   get '/oauth2_redirect', to: 'invoices#oauth2_redirect'

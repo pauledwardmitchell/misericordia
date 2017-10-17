@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :contacts, only: [:index]
   resources :organizations, only: [:index]
+  resources :customers, only: [:show]
 
   get '/oauth2', to: 'invoices#oauth2'
   get '/oauth2_redirect', to: 'invoices#oauth2_redirect'

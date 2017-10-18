@@ -2,6 +2,7 @@ class CustomersController < ApplicationController
 
   def show
     qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
+    qbo_api.class.production = true
 
     @customer = Customer.find(params[:id])
     @customer_object = qbo_api.get :customers, @customer.qbo_id

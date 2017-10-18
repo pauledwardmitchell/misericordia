@@ -1,6 +1,8 @@
 class CustomersController < ApplicationController
 
   def show
+    qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
+
     @customer = Customer.find(params[:id])
     @customer_object = qbo_api.get :customers, @customer.qbo_id
     #find all invoices for a certain vendor

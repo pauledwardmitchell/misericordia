@@ -8,7 +8,7 @@ class VendorsController < ApplicationController
     # @customer_invoices = @all_invoices.reject { |i| i["CustomerRef"]["value"] != @customer.qbo_id.to_s}
 
 
-    # #allc = c.reject {|c| c["DisplayName"][/^(Member -)/]}
+
   end
 
 end

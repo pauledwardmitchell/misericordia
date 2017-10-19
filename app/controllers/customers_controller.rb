@@ -2,6 +2,19 @@ class CustomersController < ApplicationController
 
   before_action :authenticate_user!
 
+  def index
+    @customer = {qbo_id: "27", display_name: "Test Vendor"}
+
+    @data = {
+      total_thirty: 1234,
+      balance_thirty: 2134,
+      total_last_quarter: 432,
+      balance_last_quarter: 1234,
+      total_year_to_date: 43213,
+      balance_year_to_date: 43212
+    }
+  end
+
   def show
     @super_admin_emails = ['felipe@cpa.coop', 'jessica@cpa.coop', 'joe.naroditsky@cpa.coop', 'pauledwardmitchell@gmail.com']
     if @super_admin_emails.include? current_user.email

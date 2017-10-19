@@ -4,7 +4,7 @@ const CustomerHeader = React.createClass({
 
     return (
       <section>
-        <h2>{this.props.customer.display_name}</h2>
+        <h1 style={{textAlign: 'center', marginBottom: 40, fontSize: 40}}>{this.props.customer.display_name}</h1>
       </section>
     )
 

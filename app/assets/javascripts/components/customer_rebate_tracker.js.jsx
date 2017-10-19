@@ -66,7 +66,8 @@ const CustomerRebateTracker = React.createClass({
 
     return (
       <section>
-        <table>
+        <h2 style={{marginLeft: '15%'}}>Rebate Tracker:</h2>
+        <table style={{ width: '70%', marginLeft: '15%', marginRight: '15%', fontSize: 24 }}>
           <thead>
             <tr>
               <th>Time Period</th>

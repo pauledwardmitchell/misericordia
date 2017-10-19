@@ -62,8 +62,8 @@ const CustomerRebateTracker = React.createClass({
           <thead>
             <tr>
               <th>Time Period</th>
-              <th>Amount Owed</th>
-              <th>Amount Paid</th>
+              <th>Total Owed</th>
+              <th>Balance Remaining</th>
             </tr>
           </thead>
           <tbody>

@@ -2,6 +2,21 @@ class CustomersController < ApplicationController
 
   before_action :authenticate_user!
 
+  def dashboard
+    @super_admin_emails = ['felipe@cpa.coop', 'jessica@cpa.coop', 'joe.naroditsky@cpa.coop', 'pauledwardmitchell@gmail.com']
+    if @super_admin_emails.include? current_user.email
+      qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
+      qbo_api.class.production = true
+
+      @all_invoices = qbo_api.all :invoices
+      @last_quarter_invoices = @all_invoices.reject { |i| Time.parse(i['DueDate']).to_i < Time.parse(begin_day_of_last_quarter).to_i || Time.parse(i['DueDate']).to_i > Time.parse(end_day_of_last_quarter).to_i}
+      @last_quarter_total = @last_quarter_invoices.map { |i| i['TotalAmt'] }.reduce(:+)
+      @last_quarter_balance = @last_quarter_invoices.map { |i| i['Balance'] }.reduce(:+)
+      @last_quarter_collected = @last_quarter_total - @last_quarter_balance
+
+    end
+  end
+
   def index
     @customer = {qbo_id: "27", display_name: "Test Vendor"}
 

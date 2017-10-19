@@ -13,7 +13,7 @@ class CustomersController < ApplicationController
       #find all invoices for a certain vendor
       @all_invoices = qbo_api.all :invoices
       @customer_invoices = @all_invoices.reject { |i| i["CustomerRef"]["value"] != @customer.qbo_id.to_s}
-      @customer_invoices_last_thirty_days = @customer_invoices.reject { |i| Time.parse(i['DueDate']).to_i < (Date.today - 30)}
+      @customer_invoices_last_thirty_days = @customer_invoices.reject { |i| Time.parse(i['DueDate']).to_i < ((Date.today-30).to_time.to_i)}
       @total_thirty = @customer_invoices_last_thirty_days.map { |i| i['TotalAmt'] }.reduce(:+)
       @balance_thirty = @customer_invoices_last_thirty_days.map { |i| i['Balance'] }.reduce(:+)
 

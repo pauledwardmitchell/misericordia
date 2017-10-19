@@ -4,7 +4,7 @@ const CustomerHeader = React.createClass({
 
     return (
       <section>
-        <h2>{this.props.customer.displayname}</h2>
+        <h2>{this.props.customer.display_name}</h2>
       </section>
     )
 

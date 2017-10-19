@@ -24,11 +24,18 @@ class CustomersController < ApplicationController
       @total_last_quarter = @customer_invoices_last_quarter.map { |i| i['TotalAmt'] }.reduce(:+)
       @balance_last_quarter = @customer_invoices_last_quarter.map { |i| i['Balance'] }.reduce(:+)
 
+      #Year to date
+      @customer_invoices_year_to_date = @customer_invoices.reject { |i| Time.parse(i['DueDate']).to_i < Time.parse(Date.today.year + "-01-01").to_i || Time.parse(i['DueDate']).to_i > Date.today.to_time.to_i}
+      @total_year_to_date = @customer_invoices_year_to_date.map { |i| i['TotalAmt'] }.reduce(:+)
+      @balance_year_to_date = @customer_invoices_year_to_date.map { |i| i['Balance'] }.reduce(:+)
+
       @data = {
         total_thirty: @total_thirty,
         balance_thirty: @balance_thirty,
         total_last_quarter: @total_last_quarter,
-        balance_last_quarter: @balance_last_quarter
+        balance_last_quarter: @balance_last_quarter,
+        total_year_to_date: @total_year_to_date,
+        balance_year_to_date: @balance_year_to_date
       }
 
     else

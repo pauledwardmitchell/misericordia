@@ -69,13 +69,13 @@ const CustomerRebateTracker = React.createClass({
           <tbody>
             <tr>
               <td>Last 30 days: </td>
-              <td>{this.props.total_thirty}</td>
-              <td>{this.props.balance_thirty}</td>
+              <td>{this.props.data.total_thirty}</td>
+              <td>{this.props.data.balance_thirty}</td>
             </tr>
             <tr>
               <td>Last Quarter ({this.lastQuarter()}):</td>
-              <td></td>
-              <td></td>
+              <td>{this.props.data.total_last_quarter}</td>
+              <td>{this.props.data.balance_last_quarter}</td>
             </tr>
             <tr>
               <td>Year to Date ({this.currentYear()}):</td>

@@ -79,8 +79,8 @@ const CustomerRebateTracker = React.createClass({
             </tr>
             <tr>
               <td>Year to Date ({this.currentYear()}):</td>
-              <td></td>
-              <td></td>
+              <td>{this.props.data.total_year_to_date}</td>
+              <td>{this.props.data.balance_year_to_date}</td>
             </tr>
           </tbody>
         </table>

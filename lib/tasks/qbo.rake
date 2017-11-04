@@ -2,18 +2,21 @@ desc "This task sends invoice emails"
 
 task :send_invoice_emails => :environment do
 
-  qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
-  qbo_api.class.production = true
+  # qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
+  # qbo_api.class.production = true
 
-  @all_invoices = qbo_api.all :invoices
-  @first_invoice = @all_invoices.first
+  # @all_invoices = qbo_api.all :invoices
+  # @first_invoice = @all_invoices.first
 
-  url = URI("https://quickbooks.api.intuit.com/v3/company/" + qbo_api.realm_id + "/invoice/" + @first_invoice["Id"] + "/send")
+  # url = URI("https://quickbooks.api.intuit.com/v3/company/" + qbo_api.realm_id + "/invoice/" + @first_invoice["Id"] + "/send")
 
-  request = Net::HTTP::Post.new(url)
+  # http = Net::HTTP.new(url.host, url.port)
+  # http.use_ssl= true
 
-  response = http.request(request)
+  # request = Net::HTTP::Post.new(url)
 
-  puts response.read_body
+  # response = http.request(request)
+
+  # puts response.read_body
 
 end

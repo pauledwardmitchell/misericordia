@@ -55,17 +55,13 @@ class InvoicesController < ApplicationController
   end
 
   def webhook
-    puts "Response:"
-    puts response
-    puts "Response.body"
-    puts response.body
     puts "Params:"
     puts params
     puts " - - - - "
     puts params['updated_attributes']['status'][1]
-    # if response.body['updated_attributes']['status'][1] = "Won"
-    #   puts "We won!!"
-    # end
+    if params['updated_attributes']['status'][1] == "Won"
+      puts "We won!!"
+    end
 
   end
 

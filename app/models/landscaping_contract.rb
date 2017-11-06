@@ -1,0 +1,5 @@
+class LandscapingContract < ApplicationRecord
+
+
+
+end

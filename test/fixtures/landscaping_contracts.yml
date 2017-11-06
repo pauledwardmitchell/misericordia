@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pw_organization_id: 1
+  building_id: 1
+  old_annual_payment: 1
+  cpa_annual_payment: 1
+  contract_start_date: 2017-11-06 09:00:34
+  contract_end_date: 2017-11-06 09:00:34
+  pw_vendor_id: 1
+  rebate_percentage: 1.5
+  billing_start_date: 2017-11-06 09:00:34
+  billing_end_date: 2017-11-06 09:00:34
+  cover_sheet_entered: false
+  invoices_generated: false
+
+two:
+  pw_organization_id: 1
+  building_id: 1
+  old_annual_payment: 1
+  cpa_annual_payment: 1
+  contract_start_date: 2017-11-06 09:00:34
+  contract_end_date: 2017-11-06 09:00:34
+  pw_vendor_id: 1
+  rebate_percentage: 1.5
+  billing_start_date: 2017-11-06 09:00:34
+  billing_end_date: 2017-11-06 09:00:34
+  cover_sheet_entered: false
+  invoices_generated: false

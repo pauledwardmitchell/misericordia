@@ -51,4 +51,8 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def webhook
+    puts response.read_body
+  end
+
 end

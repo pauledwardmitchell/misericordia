@@ -64,11 +64,12 @@ class InvoicesController < ApplicationController
       #get params['id'] which is the opportunity id
         opportunity_id = params['ids'][0]
       #look up opportunity by its id
-        won_opportunity = find_opportunity(opportunity_id)
-      #get data from opportunity
-        puts won_opportunity.to_json
-        #tags to figure out what type of contract it is
-        #other data
+        response = find_opportunity(opportunity_id)
+      #format object as json
+        won_opportunity = JSON.parse(response.body)
+
+        create_contact(won_opportunity)
+
     end
 
   end
@@ -87,6 +88,13 @@ class InvoicesController < ApplicationController
 
     response = http.request(request)
     response
+  end
+
+  def create_contract(won_opportunity)
+    if won_opportunity['tags'].include?("landscaping")
+      LandscapingContract.create(name: won_opportunity['name'],
+                                 pw_organization_id: won_opportunity['company_id'])
+    end
   end
 
 end

@@ -55,7 +55,7 @@ class InvoicesController < ApplicationController
   end
 
   def webhook
-    puts response.read_body
+    puts response["id"]
 
     if response.body['updated_attributes']['status'][1] = "Won"
       puts "We won!!"

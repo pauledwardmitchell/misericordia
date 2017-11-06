@@ -68,7 +68,7 @@ class InvoicesController < ApplicationController
       #format object as json
         won_opportunity = JSON.parse(response.body)
 
-        create_contact(won_opportunity)
+        create_contract(won_opportunity)
 
     end
 

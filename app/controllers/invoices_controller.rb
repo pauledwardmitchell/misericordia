@@ -1,4 +1,7 @@
 class InvoicesController < ApplicationController
+
+  skip_before_action :verify_authenticity_token, only: [:webhook]
+
   def index
   end
 
@@ -53,6 +56,11 @@ class InvoicesController < ApplicationController
 
   def webhook
     puts response.read_body
+
+    if response.body['updated_attributes']['status'][1] = "Won"
+      puts "We won!!"
+    end
+
   end
 
 end

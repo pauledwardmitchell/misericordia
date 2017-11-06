@@ -61,6 +61,8 @@ class InvoicesController < ApplicationController
     puts response.body
     puts "Params:"
     puts params
+    puts " - - - - "
+    puts params['updated_attributes']['status'][1]
     # if response.body['updated_attributes']['status'][1] = "Won"
     #   puts "We won!!"
     # end

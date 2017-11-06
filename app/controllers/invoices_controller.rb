@@ -83,7 +83,7 @@ class InvoicesController < ApplicationController
 
     request = Net::HTTP::Get.new(url)
     pw_api = PwApi.new
-    request = pw_api.set_headers
+    request = pw_api.set_headers(request)
 
     response = http.request(request)
     response

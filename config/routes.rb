@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:index]
   resources :organizations, only: [:index]
   resources :customers, only: [:index, :show]
-  resources :landscaping_contracts, only: [:show, :edit]
+  resources :landscaping_contracts
 
   get '/dashboard', to: 'customers#dashboard'
   get '/pipeline', to: 'invoices#pipeline'

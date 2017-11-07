@@ -54,6 +54,10 @@ class InvoicesController < ApplicationController
     end
   end
 
+  def pipeline
+    @landscaping_contracts = LandscapingContract.where(cover_sheet_entered: false, active: true)
+  end
+
   def webhook
     puts "Params:"
     puts params

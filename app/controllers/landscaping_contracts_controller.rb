@@ -21,7 +21,7 @@ class LandscapingContractsController < ApplicationController
       @customer_hash = {name: c["DisplayName"],
                         id: c["Id"]}
       @customer_hashes << @customer_hash
-    # end
+    end
     @customer_hashes
     # @customer_hashes = [
     #   {name: "Name 1", id: 1},

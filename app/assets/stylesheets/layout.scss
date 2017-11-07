@@ -168,7 +168,8 @@ main {
 
     }
 
-    input[type="text"], input[type="user_password"] {
+    input[type="text"], input[type="user_password"], input[type="number"],
+input[type="date"] {
 
       width: 65%;
       margin: 10px 10px 20px 0px;
@@ -227,6 +228,8 @@ p {
 }
 
 .form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"],
 .form-group input[type="email"],
 .form-group textarea,
 .form-group select {

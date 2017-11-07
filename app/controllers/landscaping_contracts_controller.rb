@@ -10,22 +10,23 @@ class LandscapingContractsController < ApplicationController
     #qbo customer hashes
     # @super_admin_emails = ['felipe@cpa.coop', 'jessica@cpa.coop', 'joe.naroditsky@cpa.coop', 'pauledwardmitchell@gmail.com']
     # if @super_admin_emails.include? current_user.email
-    #   qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
-    #   qbo_api.class.production = true
+      qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
+      qbo_api.class.production = true
 
-    #   @all_customers = qbo_api.all :customers
-    #   @all_non_member_customers =  @all_customers.reject {|c| c["DisplayName"][/^(Member -)/]}
-    # # end
-    # @customer_hashes = []
-    # @all_non_member_customers.each do |c|
-    #   @customer_hash = {name: c["DisplayName"],
-    #                     id: c["Id"]}
-    #   @customer_hashes << @customer_hash
+      @all_customers = qbo_api.all :customers
+      @all_non_member_customers =  @all_customers.reject {|c| c["DisplayName"][/^(Member -)/]}
     # end
-    @customer_hashes = [
-      {name: "Name 1", id: 1},
-      {name: "Name 2", id: 2}
-    ]
+    @customer_hashes = []
+    @all_non_member_customers.each do |c|
+      @customer_hash = {name: c["DisplayName"],
+                        id: c["Id"]}
+      @customer_hashes << @customer_hash
+    # end
+    @customer_hashes
+    # @customer_hashes = [
+    #   {name: "Name 1", id: 1},
+    #   {name: "Name 2", id: 2}
+    # ]
   end
 
   def update

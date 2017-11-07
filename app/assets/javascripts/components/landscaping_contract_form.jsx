@@ -16,6 +16,13 @@ const LandscapingContractForm = React.createClass({
           <label>CPA Annual Payment</label>
           <input type="number" name="landscaping_contract[cpa_annual_payment]"></input>
 
+          <label>QBO Customer</label>
+          <select name="landscaping_contract[qbo_customer_id]">
+            {this.props.customer_hashes.map((customer) =>
+              <option value={customer.id}>{customer.name}</option>
+            )}
+          </select>
+
           <label>Rebate Percentage</label>
           <input type="number" name="landscaping_contract[rebate_percentage]" step="0.01" defaultValue=".05"/>
 

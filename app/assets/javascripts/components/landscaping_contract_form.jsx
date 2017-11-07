@@ -17,7 +17,7 @@ const LandscapingContractForm = React.createClass({
           <input type="number" name="landscaping_contract[cpa_annual_payment]"></input>
 
           <label>Rebate Percentage</label>
-          <input type="number" name="landscaping_contract[rebate_percentage]" step="0.01"/>
+          <input type="number" name="landscaping_contract[rebate_percentage]" step="0.01" defaultValue=".05"/>
 
           <label>Contract Start Date</label>
           <input type="date" name="landscaping_contract[contract_start_date]"></input>

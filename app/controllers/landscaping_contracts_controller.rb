@@ -2,12 +2,17 @@ class LandscapingContractsController < ApplicationController
 
   def show
     @landscaping_contract = LandscapingContract.find(params[:id])
+
+    @contract_data = {name: @landscaping_contract.name,
+                      id: @landscaping_contract.id,
+                      contract_start_date: @landscaping_contract.contract_start_date.strftime("%B %Y"),
+                      contract_end_date: @landscaping_contract.contract_end_date.strftime("%B %Y")
+                    }
   end
 
   def edit
     @landscaping_contract = LandscapingContract.find(params[:id])
-
-    #qbo customer hashes
+    #qbo customer arrays
     # @super_admin_emails = ['felipe@cpa.coop', 'jessica@cpa.coop', 'joe.naroditsky@cpa.coop', 'pauledwardmitchell@gmail.com']
     # if @super_admin_emails.include? current_user.email
       qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)
@@ -16,22 +21,20 @@ class LandscapingContractsController < ApplicationController
       @all_customers = qbo_api.all :customers
       @all_non_member_customers =  @all_customers.reject {|c| c["DisplayName"][/^(Member -)/]}
     # end
-    @customer_hashes = []
+    @customer_arrays = []
     @all_non_member_customers.each do |c|
-      @customer_hash = {name: c["DisplayName"],
-                        id: c["Id"]}
-      @customer_hashes << @customer_hash
+      @customer_array = [ c["DisplayName"], c["Id"]]
+      @customer_arrays << @customer_array
     end
-    @customer_hashes
-    # @customer_hashes = [
-    #   {name: "Name 1", id: 1},
-    #   {name: "Name 2", id: 2}
+    @customer_arrays
+    # @customer_arrays = [
+    #   ["Name 1", 1],
+    #   ["Name 2", 2]
     # ]
   end
 
   def update
     @landscaping_contract = LandscapingContract.find(params[:id])
-
     if @landscaping_contract.update(landscaping_contract_params)
       redirect_to @landscaping_contract
     else

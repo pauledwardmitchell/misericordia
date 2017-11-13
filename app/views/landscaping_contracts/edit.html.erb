@@ -1,2 +1,26 @@
-<%= react_component 'LandscapingContractForm', {contract: @landscaping_contract, customer_hashes: @customer_hashes, authenticity_token: form_authenticity_token} %>
+<%= form_for @landscaping_contract, :html => {:class => "form-group"}, url: {action: "update", :id => @landscaping_contract.id} do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :old_annual_payment %>
+  <%= f.number_field :old_annual_payment %>
+  <%= f.label :cpa_annual_payment %>
+  <%= f.number_field :cpa_annual_payment %>
+  <%= f.label :qbo_customer_id %>
+  <%= f.select :qbo_customer_id, options_for_select(@customer_arrays, @landscaping_contract.qbo_customer_id) %>
+  <%= f.label :rebate_percentage %>
+  <%= f.number_field :rebate_percentage, :step => 0.0001 %>
+  <%= f.label :contract_start_date %>
+  <%= f.date_field :contract_start_date %>
+  <%= f.label :contract_end_date %>
+  <%= f.date_field :contract_end_date %>
+  <%= f.label :billing_start_date %>
+  <%= f.date_field :billing_start_date %>
+  <%= f.label :billing_end_date %>
+  <%= f.date_field :billing_end_date %>
+
+  <%= f.submit "Update Contract" %>
+<% end %>
+
+<%# react_component 'LandscapingContractForm', {contract: @landscaping_contract, customer_hashes: @customer_hashes, authenticity_token: form_authenticity_token} %>
 

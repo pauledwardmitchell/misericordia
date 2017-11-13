@@ -9,7 +9,8 @@ const LandscapingPipeline = React.createClass({
           {this.props.landscaping_contracts.map((contract) => {
               return <SingleContract
                        key={contract.id}
-                       contract={contract}/>
+                       contract={contract}
+                       contract_type="landscaping"/>
               }
           )}
         </section>

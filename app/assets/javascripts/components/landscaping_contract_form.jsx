@@ -12,9 +12,9 @@ const LandscapingContractForm = React.createClass({
           <label>Name</label>
           <input type="text" name="landscaping_contract[name]" defaultValue={this.props.contract.name}></input>
           <label>Old Annual Payment</label>
-          <input type="number" name="landscaping_contract[old_annual_payment]"></input>
+          <input type="number" name="landscaping_contract[old_annual_payment]"defaultValue={this.props.contract.old_annual_payment}></input>
           <label>CPA Annual Payment</label>
-          <input type="number" name="landscaping_contract[cpa_annual_payment]"></input>
+          <input type="number" name="landscaping_contract[cpa_annual_payment]" defaultValue={this.props.contract.cpa_annual_payment}></input>
 
           <label>QBO Customer</label>
           <select name="landscaping_contract[qbo_customer_id]">
@@ -24,17 +24,17 @@ const LandscapingContractForm = React.createClass({
           </select>
 
           <label>Rebate Percentage</label>
-          <input type="number" name="landscaping_contract[rebate_percentage]" step="0.01" defaultValue=".05"/>
+          <input type="number" name="landscaping_contract[rebate_percentage]" step="0.01" defaultValue={this.props.contract.rebate_percentage}/>
 
           <label>Contract Start Date</label>
-          <input type="date" name="landscaping_contract[contract_start_date]"></input>
+          <input type="date" name="landscaping_contract[contract_start_date]" defaultValue={this.props.contract.contract_start_date}></input>
           <label>Contract End Date</label>
-          <input type="date" name="landscaping_contract[contract_end_date]"></input>
+          <input type="date" name="landscaping_contract[contract_end_date]" defaultValue={this.props.contract.contract_end_date}></input>
 
           <label>BILLING Start Date</label>
-          <input type="date" name="landscaping_contract[billing_start_date]"></input>
+          <input type="date" name="landscaping_contract[billing_start_date]" defaultValue={this.props.contract.billing_start_date}></input>
           <label>BILLING End Date</label>
-          <input type="date" name="landscaping_contract[billing_end_date]"></input>
+          <input type="date" name="landscaping_contract[billing_end_date]" defaultValue={this.props.contract.billing_end_date}></input>
 
           <input type="submit" value="Add Cover Sheet" />
           </form>

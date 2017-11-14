@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107190026) do
+ActiveRecord::Schema.define(version: 20171114161121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -153,6 +153,23 @@ ActiveRecord::Schema.define(version: 20171107190026) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "waste_contracts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "pw_organization_id"
+    t.integer  "building_id"
+    t.integer  "old_monthly_payment"
+    t.integer  "cpa_monthly_payment"
+    t.datetime "contract_start_date"
+    t.datetime "contract_end_date"
+    t.integer  "qbo_customer_id"
+    t.float    "rebate_percentage"
+    t.boolean  "cover_sheet_entered", default: false
+    t.boolean  "invoices_generated",  default: false
+    t.boolean  "active",              default: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
 end

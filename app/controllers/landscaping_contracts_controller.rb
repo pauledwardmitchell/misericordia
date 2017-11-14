@@ -5,8 +5,8 @@ class LandscapingContractsController < ApplicationController
 
     @contract_data = {name: @landscaping_contract.name,
                       id: @landscaping_contract.id,
-                      contract_start_date: @landscaping_contract.contract_start_date.strftime("%B %Y"),
-                      contract_end_date: @landscaping_contract.contract_end_date.strftime("%B %Y")
+                      contract_start_date: @landscaping_contract.contract_start_date,
+                      contract_end_date: @landscaping_contract.contract_end_date
                     }
   end
 

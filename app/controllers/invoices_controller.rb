@@ -78,6 +78,10 @@ class InvoicesController < ApplicationController
 
   end
 
+  def all_contracts
+    @landscaping_contracts = LandscapingContract.all
+  end
+
   private
 
   def find_opportunity(id)

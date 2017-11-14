@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'customers#dashboard'
   get '/pipeline', to: 'invoices#pipeline'
+  get '/active_contracts', to: 'invoices#active_contracts'
 
   get '/oauth2', to: 'invoices#oauth2'
   get '/oauth2_redirect', to: 'invoices#oauth2_redirect'

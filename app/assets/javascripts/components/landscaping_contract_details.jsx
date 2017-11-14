@@ -1,5 +1,16 @@
 const LandscapingContractDetails = React.createClass({
 
+  formattedDate: function(utc_date) {
+    var date = new Date(utc_date)
+    var day = date.getUTCDate()
+    var monthNumber = date.getMonth()
+    var monthNames =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    var month = monthNames[monthNumber]
+    var year = date.getFullYear()
+
+    return day + " " + month + " " + year
+  },
+
   render: function() {
 
     return (
@@ -17,8 +28,8 @@ const LandscapingContractDetails = React.createClass({
             <tr>
               <td>{this.props.contract.id}</td>
               <td>{this.props.contract.name}</td>
-              <td>{this.props.contract.contract_start_date}</td>
-              <td>{this.props.contract.contract_end_date}</td>
+              <td>{this.formattedDate(this.props.contract.contract_start_date)}</td>
+              <td>{this.formattedDate(this.props.contract.contract_end_date)}</td>
             </tr>
           </tbody>
         </table>

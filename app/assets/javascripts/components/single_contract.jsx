@@ -1,27 +1,44 @@
 const SingleContract = React.createClass({
 
+  formattedDate: function(utc_date) {
+    var date = new Date(utc_date)
+    var day = date.getUTCDate()
+    var monthNumber = date.getMonth()
+    var monthNames =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    var month = monthNames[monthNumber]
+    var year = date.getFullYear()
+
+    return day + " " + month + " " + year
+  },
+
   linkFromContractType: function() {
     switch (this.props.contract_type) {
+    case "cleaning":
+        return "/cleaning_contracts";
+        break;
+    case "copier":
+        return "/copier_contracts";
+        break;
+    case "electricity":
+        return "/electricity_contracts";
+        break;
+    case "general":
+        return "/general_contracts";
+        break;
     case "landscaping":
         return "/landscaping_contracts/";
         break;
-    case "trash":
-        return ;
+    case "waste":
+        return "/waste_contracts";
         break;
-    case 2:
-        day = "Tuesday";
+    case "solar":
+        return "/solar_contracts";
         break;
-    case 3:
-        day = "Wednesday";
+    case "gas":
+        return "/gas_contracts";
         break;
-    case 4:
-        day = "Thursday";
-        break;
-    case 5:
-        day = "Friday";
-        break;
-    default:
-        return "";
+    case "security":
+        return "/security_contracts";
         break;
     }
   },
@@ -29,11 +46,16 @@ const SingleContract = React.createClass({
   render: function() {
 
     return (
-      <section>
-        <section>{this.props.contract.name}</section>
-        <section>{this.props.contract.created_at}</section>
-        <a href={this.linkFromContractType() + this.props.contract.id + "/edit"}>Add Cover Sheet</a>
-      </section>
+      <table style={{ width: '90%', marginLeft: '5%', marginRight: '5%', fontSize: 24 }}>
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td><a href={this.linkFromContractType() + "/" + this.props.contract.id + "/edit"}>Add Cover Sheet</a></td>
+            <td>{this.props.contract.name}</td>
+            <td>Won on: {this.formattedDate(this.props.contract.created_at)}</td>
+          </tr>
+        </tbody>
+      </table>
     )
 
   }

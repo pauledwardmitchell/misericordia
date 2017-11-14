@@ -19,6 +19,8 @@
   <%= f.label :billing_end_date %>
   <%= f.date_field :billing_end_date %>
 
+  <%= f.hidden_field :cover_sheet_entered, value: true %>
+
   <%= f.submit "Update Contract" %>
 <% end %>
 

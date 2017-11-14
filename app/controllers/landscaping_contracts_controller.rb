@@ -12,7 +12,6 @@ class LandscapingContractsController < ApplicationController
 
   def edit
     @landscaping_contract = LandscapingContract.find(params[:id])
-    #qbo customer arrays
     # @super_admin_emails = ['felipe@cpa.coop', 'jessica@cpa.coop', 'joe.naroditsky@cpa.coop', 'pauledwardmitchell@gmail.com']
     # if @super_admin_emails.include? current_user.email
       qbo_api = QboApi.new(access_token: Qbo.first.access_token, realm_id: Qbo.first.realm_id)

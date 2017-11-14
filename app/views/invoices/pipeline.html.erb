@@ -1,3 +1,5 @@
-<%= @landscaping_contracts.count %>
+<p>Outstanding Landscaping Contracts: <%= @landscaping_contracts.count %></p>
+<p>Outstanding Waste Contracts: <%= @waste_contracts.count %></p>
 
-<%= react_component 'ContractsPipeline', { landscaping_contracts: @landscaping_contracts } %>
+<%= react_component 'ContractsPipeline', { landscaping_contracts: @landscaping_contracts,
+                                           waste_contracts: @waste_contracts } %>

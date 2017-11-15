@@ -1,0 +1,2 @@
+class CleaningContract < ApplicationRecord
+end

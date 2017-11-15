@@ -57,6 +57,7 @@ class InvoicesController < ApplicationController
   def pipeline
     @landscaping_contracts = LandscapingContract.where(cover_sheet_entered: false, active: true)
     @waste_contracts = WasteContract.where(cover_sheet_entered: false, active: true)
+    @cleaning_contracts = CleaningContract.where(cover_sheet_entered: false, active: true)
   end
 
   def webhook
@@ -106,6 +107,9 @@ class InvoicesController < ApplicationController
     elsif won_opportunity['tags'].include?("trash") || won_opportunity['tags'].include?("waste")
       WasteContract.create(name: won_opportunity['name'],
                            pw_organization_id: won_opportunity['company_id'])
+    elsif won_opportunity['tags'].include?("cleaning") || won_opportunity['tags'].include?("janitorial")
+      CleaningContract.create(name: won_opportunity['name'],
+                              pw_organization_id: won_opportunity['company_id'])
     end
   end
 

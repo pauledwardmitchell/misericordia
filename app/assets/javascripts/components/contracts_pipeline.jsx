@@ -15,6 +15,11 @@ const ContractsPipeline = React.createClass({
           contracts={this.props.waste_contracts}
           contract_type="waste"/>
 
+        <h2 style={{marginLeft: '10%'}}>Cleaning Contracts</h2>
+        <ServiceAreaPipeline
+          contracts={this.props.cleaning_contracts}
+          contract_type="cleaning"/>
+
       </section>
     )
 

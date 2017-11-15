@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115152223) do
+ActiveRecord::Schema.define(version: 20171115162230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -137,16 +137,20 @@ ActiveRecord::Schema.define(version: 20171115152223) do
   end
 
   create_table "security_contracts", force: :cascade do |t|
-    t.integer  "og_id"
-    t.integer  "security_vendor_id"
+    t.string   "name"
+    t.integer  "pw_organization_id"
     t.integer  "building_id"
-    t.integer  "current_month_pay"
-    t.integer  "new_month_pay"
-    t.string   "new_start_date"
-    t.string   "new_end_date"
-    t.string   "notes"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "old_monthly_payment"
+    t.integer  "cpa_monthly_payment"
+    t.datetime "contract_start_date"
+    t.datetime "contract_end_date"
+    t.integer  "qbo_customer_id"
+    t.float    "rebate_percentage"
+    t.boolean  "cover_sheet_entered", default: false
+    t.boolean  "invoices_generated",  default: false
+    t.boolean  "active",              default: true
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   create_table "security_vendors", force: :cascade do |t|

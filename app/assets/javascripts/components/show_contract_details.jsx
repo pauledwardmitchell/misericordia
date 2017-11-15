@@ -2,7 +2,7 @@ const ShowContractDetails = React.createClass({
 
   formattedDate: function(utc_date) {
     var date = new Date(utc_date)
-    var day = date.getUTCDate()
+    var day = date.getDate()
     var monthNumber = date.getMonth()
     var monthNames =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     var month = monthNames[monthNumber]

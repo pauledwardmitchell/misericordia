@@ -58,6 +58,7 @@ class InvoicesController < ApplicationController
     @landscaping_contracts = LandscapingContract.where(cover_sheet_entered: false, active: true)
     @waste_contracts = WasteContract.where(cover_sheet_entered: false, active: true)
     @cleaning_contracts = CleaningContract.where(cover_sheet_entered: false, active: true)
+    @security_contracts = SecurityContract.where(cover_sheet_entered: false, active: true)
   end
 
   def webhook

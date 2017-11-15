@@ -1,0 +1,2 @@
+class WasteContract < ApplicationRecord
+end

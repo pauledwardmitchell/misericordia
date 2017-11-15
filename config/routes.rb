@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :organizations, only: [:index]
   resources :customers, only: [:index, :show]
   resources :landscaping_contracts
+  resources :waste_contracts
 
   get '/dashboard', to: 'customers#dashboard'
   get '/pipeline', to: 'invoices#pipeline'

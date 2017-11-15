@@ -43,7 +43,7 @@ class LandscapingContractsController < ApplicationController
 
   private
   def landscaping_contract_params
-    params.require(:landscaping_contract).permit(:name, :old_annual_payment, :cpa_annual_payment, :rebate_percentage, :contract_start_date, :contract_end_date, :cover_sheet_entered, :billing_start_date, :billing_end_date, :active, :qbo_customer_id)
+    params.require(:landscaping_contract).permit(:name, :building_id, :old_annual_payment, :cpa_annual_payment, :rebate_percentage, :contract_start_date, :contract_end_date, :cover_sheet_entered, :billing_start_date, :billing_end_date, :active, :qbo_customer_id)
   end
 
 end

@@ -1,21 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  og_id: 1
-  security_vendor_id: 1
-  organization_id: 1
-  current_month_pay: 1
-  new_month_pay: 1
-  new_start_date: MyString
-  new_end_date: MyString
-  notes: MyString
+  name: MyString
+  pw_organization_id: 1
+  building_id: 1
+  old_monthly_payment: 1
+  cpa_monthly_payment: 1
+  contract_start_date: 2017-11-15 10:01:47
+  contract_end_date: 2017-11-15 10:01:47
+  qbo_customer_id: 1
+  rebate_percentage: 1.5
+  cover_sheet_entered: false
+  invoices_generated: false
+  active: false
 
 two:
-  og_id: 1
-  security_vendor_id: 1
-  organization_id: 1
-  current_month_pay: 1
-  new_month_pay: 1
-  new_start_date: MyString
-  new_end_date: MyString
-  notes: MyString
+  name: MyString
+  pw_organization_id: 1
+  building_id: 1
+  old_monthly_payment: 1
+  cpa_monthly_payment: 1
+  contract_start_date: 2017-11-15 10:01:47
+  contract_end_date: 2017-11-15 10:01:47
+  qbo_customer_id: 1
+  rebate_percentage: 1.5
+  cover_sheet_entered: false
+  invoices_generated: false
+  active: false

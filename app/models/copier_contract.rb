@@ -1,0 +1,2 @@
+class CopierContract < ApplicationRecord
+end

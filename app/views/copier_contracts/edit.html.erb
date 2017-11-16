@@ -1,0 +1,19 @@
+<%= form_for @copier_contract, :html => {:class => "form-group"}, url: {action: "update", :id => @copier_contract.id} do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :estimated_savings %>
+  <%= f.number_field :estimated_savings %>
+  <%= f.label :qbo_customer_id %>
+  <%= f.select :qbo_customer_id, options_for_select(@customer_arrays, @copier_contract.qbo_customer_id) %>
+  <%= f.label :scorecard_start_date %>
+  <%= f.date_field :scorecard_start_date %>
+  <%= f.label :scorecard_end_date %>
+  <%= f.date_field :scorecard_end_date %>
+  <%= f.label :invoice_date %>
+  <%= f.date_field :invoice_date %>
+
+  <%= f.hidden_field :cover_sheet_entered, value: true %>
+
+  <%= f.submit "Update Contract" %>
+<% end %>

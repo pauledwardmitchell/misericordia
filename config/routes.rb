@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :waste_contracts
   resources :cleaning_contracts
   resources :security_contracts
+  resources :copier_contracts
 
   get '/dashboard', to: 'customers#dashboard'
   get '/pipeline', to: 'invoices#pipeline'

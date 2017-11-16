@@ -2,11 +2,11 @@ const SingleContract = React.createClass({
 
   formattedDate: function(utc_date) {
     var date = new Date(utc_date)
-    var day = date.getDate()
-    var monthNumber = date.getMonth()
+    var day = date.getUTCDate()
+    var monthNumber = date.getUTCMonth()
     var monthNames =  ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     var month = monthNames[monthNumber]
-    var year = date.getFullYear()
+    var year = date.getUTCFullYear()
 
     return day + " " + month + " " + year
   },

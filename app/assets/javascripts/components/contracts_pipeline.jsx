@@ -25,6 +25,11 @@ const ContractsPipeline = React.createClass({
           contracts={this.props.security_contracts}
           contract_type="security"/>
 
+        <h2 style={{marginLeft: '10%'}}>Copier Contracts</h2>
+        <ServiceAreaPipeline
+          contracts={this.props.copier_contracts}
+          contract_type="copier"/>
+
       </section>
     )
 

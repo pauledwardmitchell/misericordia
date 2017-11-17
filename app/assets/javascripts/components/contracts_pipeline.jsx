@@ -35,6 +35,11 @@ const ContractsPipeline = React.createClass({
           contracts={this.props.solar_contracts}
           contract_type="solar"/>
 
+        <h2 style={{marginLeft: '10%'}}>Gas Contracts</h2>
+        <ServiceAreaPipeline
+          contracts={this.props.gas_contracts}
+          contract_type="gas"/>
+
       </section>
     )
 

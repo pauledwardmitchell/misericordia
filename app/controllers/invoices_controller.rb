@@ -61,6 +61,7 @@ class InvoicesController < ApplicationController
     @security_contracts = SecurityContract.where(cover_sheet_entered: false, active: true)
     @copier_contracts = CopierContract.where(cover_sheet_entered: false, active: true)
     @solar_contracts = SolarContract.where(cover_sheet_entered: false, active: true)
+    @gas_contracts = GasContract.where(cover_sheet_entered: false, active: true)
   end
 
   def webhook
@@ -121,7 +122,10 @@ class InvoicesController < ApplicationController
                             pw_organization_id: won_opportunity['company_id'])
     elsif won_opportunity['tags'].include?("solar")
       SolarContract.create(name: won_opportunity['name'],
-                            pw_organization_id: won_opportunity['company_id'])
+                           pw_organization_id: won_opportunity['company_id'])
+    elsif won_opportunity['tags'].include?("gas")
+      GasContract.create(name: won_opportunity['name'],
+                         pw_organization_id: won_opportunity['company_id'])
     end
   end
 

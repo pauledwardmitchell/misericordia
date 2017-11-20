@@ -1,0 +1,40 @@
+<%= form_for @gas_contract, :html => {:class => "form-group"}, url: {action: "update", :id => @gas_contract.id} do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :annual_therms %>
+  <%= f.number_field :annual_therms %>
+
+  <%= f.label :total_therms_expected %>
+  <%= f.number_field :total_therms_expected %>
+
+  <%= f.label :price_to_compare %>
+  <%= f.number_field :price_to_compare %>
+  <%= f.label :cpa_negotiated_price %>
+  <%= f.number_field :cpa_negotiated_price %>
+  <%= f.label :estimated_savings %>
+  <%= f.number_field :estimated_savings %>
+
+  <%= f.label :qbo_customer_id %>
+  <%= f.select :qbo_customer_id, options_for_select(@customer_arrays, @gas_contract.qbo_customer_id) %>
+  <%= f.label :rebate_to_cpa %>
+  <%= f.number_field :rebate_to_cpa, :step => 0.0001 %>
+  <%= f.label :rebate_to_broker %>
+  <%= f.number_field :rebate_to_broker, :step => 0.0001 %>
+  <%= f.label :contract_start_date %>
+  <%= f.date_field :contract_start_date %>
+  <%= f.label :contract_end_date %>
+  <%= f.date_field :contract_end_date %>
+
+  <%= f.label :ldc_id %>
+  <%= f.number_field :ldc_id %>
+
+  <%= f.label :supplier %>
+  <%= f.text_field :supplier %>
+
+  <%= f.hidden_field :cover_sheet_entered, value: true %>
+
+  <%= f.submit "Update Contract" %>
+
+<% end %>

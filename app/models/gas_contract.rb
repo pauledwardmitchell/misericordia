@@ -1,0 +1,2 @@
+class GasContract < ApplicationRecord
+end

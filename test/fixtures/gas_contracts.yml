@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pw_organization_id: 1
+  annual_therms: 1
+  price_to_compare: 1.5
+  cpa_negotiated_price: 1.5
+  contract_start_date: 2017-11-17
+  contract_end_date: 2017-11-17
+  qbo_customer_id: 1
+  rebate_to_cpa: 1.5
+  rebate_to_broker: 1.5
+  estimated_savings: 1.5
+  ldc: MyString
+  total_therms_expected: 1
+  supplier: MyString
+
+two:
+  name: MyString
+  pw_organization_id: 1
+  annual_therms: 1
+  price_to_compare: 1.5
+  cpa_negotiated_price: 1.5
+  contract_start_date: 2017-11-17
+  contract_end_date: 2017-11-17
+  qbo_customer_id: 1
+  rebate_to_cpa: 1.5
+  rebate_to_broker: 1.5
+  estimated_savings: 1.5
+  ldc: MyString
+  total_therms_expected: 1
+  supplier: MyString

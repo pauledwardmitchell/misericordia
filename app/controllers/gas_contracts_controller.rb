@@ -43,7 +43,7 @@ class GasContractsController < ApplicationController
 
   private
   def gas_contract_params
-    params.require(:gas_contract).permit(:name, :estimated_savings, :scorecard_start_date, :scorecard_end_date, :cover_sheet_entered, :active, :qbo_customer_id)
+    params.require(:gas_contract).permit(:name, :pw_organization_id, :annual_therms, :price_to_compare, :cpa_negotiated_price, :contract_start_date, :contract_end_date, :qbo_customer_id, :rebate_to_cpa, :rebate_to_broker, :estimated_savings, :ldc_id, :total_therms_expected, :supplier, :cover_sheet_entered, :invoices_generated, :active)
   end
 
 end

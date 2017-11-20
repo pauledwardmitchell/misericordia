@@ -26,8 +26,10 @@ class ElectricityContractsController < ApplicationController
       @customer_arrays << @customer_array
     end
     @customer_arrays
-    # @custgit add.
-
+    # @customer_arrays = [
+    #   ["Name 1", 1],
+    #   ["Name 2", 2]
+    # ]
   end
 
   def update

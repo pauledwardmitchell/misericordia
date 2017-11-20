@@ -1,0 +1,2 @@
+class ElectricityContract < ApplicationRecord
+end

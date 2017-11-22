@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171120154637) do
+ActiveRecord::Schema.define(version: 20171121153837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -144,8 +144,8 @@ ActiveRecord::Schema.define(version: 20171120154637) do
   create_table "landscaping_contracts", force: :cascade do |t|
     t.integer  "pw_organization_id"
     t.integer  "building_id"
-    t.integer  "old_annual_payment"
-    t.integer  "cpa_annual_payment"
+    t.float    "old_annual_payment"
+    t.float    "cpa_annual_payment"
     t.datetime "contract_start_date"
     t.datetime "contract_end_date"
     t.integer  "qbo_customer_id"

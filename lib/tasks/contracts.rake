@@ -99,5 +99,19 @@ end
       return 10
     when "Solar Gardens"
       return 126
+    when "Smart Cleaning Solutions"
+      return 99
+    when"PMM"
+      return 120
+    when "CleanNet USA"
+      return 108
+    when "Service Industries LLC"
+      return 104
+    when "Fresco Cleaning"
+      return 103
+    when "Busy Bee"
+      return 248
+    when "GSI"
+      return 176
     end
   end

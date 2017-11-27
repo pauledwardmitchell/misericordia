@@ -1,0 +1,157 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'cpacogsb_database'
+// cpacogsb_database.Landscaping
+
+[{
+  "id": 2,
+  "Building_id": 51,
+  "PreviousPrice": 27600,
+  "NewPrice": 24000,
+  "Vendor": "Complete",
+  "Rebate": 0.064,
+  "StatusNotes": "Signed",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 5,
+  "Building_id": 87,
+  "PreviousPrice": 3600,
+  "NewPrice": 1070,
+  "Vendor": "Complete",
+  "Rebate": 0.04505,
+  "StatusNotes": "Signed",
+  "DateStarted": "2015-04-01",
+  "EndDate": "2016-12-31"
+}, {
+  "id": 12,
+  "Building_id": 99,
+  "PreviousPrice": 3480,
+  "NewPrice": 3120,
+  "Vendor": "Level Green",
+  "Rebate": 0.04505,
+  "StatusNotes": "Signed",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 13,
+  "Building_id": 54,
+  "PreviousPrice": 4140,
+  "NewPrice": 3840,
+  "Vendor": "Level Green",
+  "Rebate": 0.04505,
+  "StatusNotes": "Signed",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 14,
+  "Building_id": 80,
+  "PreviousPrice": 6000,
+  "NewPrice": 5814,
+  "Vendor": "Complete",
+  "Rebate": 0.04505,
+  "StatusNotes": "Signed",
+  "DateStarted": "2015-02-01",
+  "EndDate": "2016-12-31"
+}, {
+  "id": 15,
+  "Building_id": 370,
+  "PreviousPrice": 8000,
+  "NewPrice": 7618,
+  "Vendor": "Level Green",
+  "Rebate": 0.04505,
+  "StatusNotes": "Signed",
+  "DateStarted": "2016-01-01",
+  "EndDate": "2016-12-31"
+}, {
+  "id": 17,
+  "Building_id": 607,
+  "PreviousPrice": 5760,
+  "NewPrice": 5040,
+  "Vendor": "Solar Gardens",
+  "Rebate": 0.05,
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 18,
+  "Building_id": 566,
+  "PreviousPrice": 10764,
+  "NewPrice": 9360,
+  "Vendor": "Greenscape",
+  "Rebate": 0.04763,
+  "StatusNotes": " PO 0501595 June-Dec contract $5530",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 19,
+  "Building_id": 621,
+  "PreviousPrice": 70800,
+  "NewPrice": 61680,
+  "Vendor": "Greenscape",
+  "Rebate": 0.04763,
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 35,
+  "Building_id": 76,
+  "PreviousPrice": 38389.6,
+  "NewPrice": 33382.3,
+  "Vendor": "Greenscape",
+  "Rebate": 0.04763,
+  "StatusNotes": "PO 0501657",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 36,
+  "Building_id": 81,
+  "PreviousPrice": 5760,
+  "NewPrice": 5040,
+  "Vendor": "Complete",
+  "Rebate": 0.05,
+  "StatusNotes": "",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 37,
+  "Building_id": 579,
+  "PreviousPrice": 33464.2,
+  "NewPrice": 29099.3,
+  "Vendor": "Greenscape",
+  "Rebate": 0.04763,
+  "StatusNotes": "PO 0501655",
+  "DateStarted": "2017-03-01",
+  "EndDate": "2017-12-31"
+}, {
+  "id": 38,
+  "Building_id": 472,
+  "PreviousPrice": 12293.4,
+  "NewPrice": 10689.9,
+  "Vendor": "Greenscape",
+  "Rebate": 0.04763,
+  "StatusNotes": "po 0501691",
+  "DateStarted": "2017-08-01",
+  "EndDate": "2022-12-31"
+}, {
+  "id": 39,
+  "Building_id": 29,
+  "PreviousPrice": 5713,
+  "NewPrice": 4968,
+  "Vendor": "Level Green",
+  "Rebate": 0.05,
+  "StatusNotes": "",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2022-12-31"
+}, {
+  "id": 40,
+  "Building_id": 629,
+  "PreviousPrice": 5,
+  "NewPrice": 4,
+  "Vendor": "Level Green",
+  "Rebate": 0.07,
+  "StatusNotes": "",
+  "DateStarted": "2017-01-01",
+  "EndDate": "2022-12-31"
+}]

@@ -3,7 +3,7 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :old_annual_payment %>
-  <%= f.number_field :old_annual_payment %>
+  <%= f.number_field :old_annual_payment, :value => (number_with_precision(@landscaping_contract.old_annual_payment, :precision => 2) || 0) %>
   <%= f.label :cpa_annual_payment %>
   <%= f.number_field :cpa_annual_payment %>
   <%= f.label :qbo_customer_id %>

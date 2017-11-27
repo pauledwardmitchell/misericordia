@@ -70,6 +70,82 @@ task :load_land => :environment do
 
   end
 
+end
+
+task :load_waste => :environment do
+
+  waste_contracts = File.read('db/data/Waste_ready.json')
+  puts "File read"
+
+  contracts_hash = JSON.parse(waste_contracts)
+  puts "Hash made"
+
+
+  contracts_hash.each do |contract|
+
+    org = find_org_from_building_id(contract["Building_id"])
+    puts org.legal_name
+
+    url = URI("https://api.prosperworks.com/developer_api/v1/companies/search")
+
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl= true
+
+    request = set_up_pw_post_request(url)
+
+    #Request with Legal Name
+    request.body = "{\n  \"name\":\"" + org.legal_name + "\"\n}"
+    response_from_legal_name = http.request(request)
+    puts "Response from legal name: " + org.legal_name
+    puts response_from_legal_name.read_body
+
+    #Request with Common Name
+    if org.common_name.length > 1
+      request.body = "{\n  \"name\":\"" + org.common_name + "\"\n}"
+      response_from_common_name = http.request(request)
+      puts "Response from common name: " + org.common_name
+      puts response_from_common_name.read_body
+    else
+      puts "No common name"
+    end
+
+    if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
+
+      puts "Create Legal!"
+        # new_contract = LandscapingContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
+        #                                           building_id: contract["Building_id"],
+        #                                           old_annual_payment: contract["PreviousPrice"],
+        #                                           cpa_annual_payment: contract["NewPrice"],
+        #                                           contract_start_date: contract["DateStarted"],
+        #                                           contract_end_date: contract["EndDate"],
+        #                                           qbo_customer_id: qbo_customer_id_from_vendor_name(contract["Vendor"]),
+        #                                           rebate_percentage: contract["Rebate"],
+        #                                           cover_sheet_entered: true)
+        #
+    elsif response_from_common_name
+      if response_from_common_name.read_body.length > 2
+        response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
+
+          # new_contract = LandscapingContract.create(pw_organization_id: response_as_json_from_common_name["id"],
+          #                                           building_id: contract["Building_id"],
+          #                                           old_annual_payment: contract["PreviousPrice"],
+          #                                           cpa_annual_payment: contract["NewPrice"],
+          #                                           contract_start_date: contract["DateStarted"],
+          #                                           contract_end_date: contract["EndDate"],
+          #                                           qbo_customer_id: qbo_customer_id_from_vendor_name(contract["Vendor"]),
+          #                                           rebate_percentage: contract["Rebate"],
+          #                                           cover_sheet_entered: true)
+
+        puts "Create Common!"
+      else
+        puts "NO DICE " + org.legal_name
+      end
+    else
+     puts "NO DICE " + org.legal_name
+    end
+
+  end
+
 
 
 end
@@ -113,5 +189,24 @@ end
       return 248
     when "GSI"
       return 176
+    when "Tenleytown"
+      return 3
+    when "Bates"
+      return 1
+    when "Affordable Refuse"
+      return 246
+    end
+  end
+
+  def qbo_customer_id_from_og_security_vendor_id(og_vendor_id)
+    case og_vendor_id
+    when 1
+      return 121
+    when 2
+      return 178
+    when 3
+      return 247
+    when 4
+      return 273
     end
   end

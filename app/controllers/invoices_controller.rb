@@ -87,12 +87,9 @@ class InvoicesController < ApplicationController
                            revenue: all_rebates,
                            id: org["id"]
                           }
-      all_tracked_organizations << organization_hash
-
-      all_tracked_organizations
-      tracked_organizations_array << all_tracked_organizations
+      tracked_organizations_array << organization_hash
     end
-    @data = tracked_organizations_array[0]
+    @data = tracked_organizations_array
   end
 
   def webhook

@@ -4,11 +4,13 @@ const BigRebateTracker = React.createClass({
 
     return (
       <section>
+
         <table style={{ width: '90%', marginLeft: '5%', marginRight: '5%', fontSize: 18 }}>
           <thead>
             <tr>
               <th>Organization:</th>
               <th>Rebate Generated to CPA</th>
+              <th>Year End Check Amount</th>
             </tr>
           </thead>
           <tbody>

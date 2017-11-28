@@ -5,7 +5,8 @@ const SingleRebateRow = React.createClass({
     return (
       <tr>
         <td>{this.props.org.name}</td>
-        <td>Won on: {this.props.org.revenue}</td>
+        <td>${this.props.org.revenue}</td>
+        <td>-</td>
       </tr>
     )
 

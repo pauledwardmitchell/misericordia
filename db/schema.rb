@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171121153837) do
+ActiveRecord::Schema.define(version: 20171128153230) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -146,8 +146,8 @@ ActiveRecord::Schema.define(version: 20171121153837) do
     t.integer  "building_id"
     t.float    "old_annual_payment"
     t.float    "cpa_annual_payment"
-    t.datetime "contract_start_date"
-    t.datetime "contract_end_date"
+    t.date     "contract_start_date"
+    t.date     "contract_end_date"
     t.integer  "qbo_customer_id"
     t.float    "rebate_percentage"
     t.datetime "billing_start_date"

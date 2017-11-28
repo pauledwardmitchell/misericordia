@@ -91,10 +91,8 @@ class InvoicesController < ApplicationController
 
       all_tracked_organizations
       tracked_organizations_array << all_tracked_organizations
-      # binding.pry
     end
     @data = tracked_organizations_array[0]
-    # binding.pry
   end
 
   def webhook

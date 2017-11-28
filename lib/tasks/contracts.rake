@@ -125,8 +125,7 @@ task :load_waste => :environment do
         #                                           cover_sheet_entered: true)
         #
     elsif response_from_common_name
-      if response_from_common_name.read_body.length > 2
-        response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
+      response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
 
           # new_contract = LandscapingContract.create(pw_organization_id: response_as_json_from_common_name["id"],
           #                                           building_id: contract["Building_id"],
@@ -139,9 +138,6 @@ task :load_waste => :environment do
           #                                           cover_sheet_entered: true)
 
         puts "Create Common!"
-      else
-        puts "NO DICE " + org.legal_name
-      end
     else
      puts "NO DICE " + org.legal_name
     end

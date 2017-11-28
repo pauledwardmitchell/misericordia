@@ -12,6 +12,7 @@ module Misericordia
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     Rails.application.config.tap do |config|
+      config.active_record.default_timezone = :utc
     end
   end
 end

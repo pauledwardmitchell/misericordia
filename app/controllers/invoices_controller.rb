@@ -65,6 +65,38 @@ class InvoicesController < ApplicationController
     @electricity_contracts = ElectricityContract.where(cover_sheet_entered: false, active: true)
   end
 
+  def report
+    #get all PW companies with tag "track"
+    url = URI("https://api.prosperworks.com/developer_api/v1/companies/search")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl= true
+
+    request = set_up_pw_post_request(url)
+    request.body = "{\n  \"tags\":\"track\"\n}"
+    response = http.request(request)
+    tracked_organizations = JSON.parse(response.body)
+    tracked_organizations_array = []
+
+    tracked_organizations.each do |org|
+      all_tracked_organizations = []
+      landscaping_contracts = LandscapingContract.where(pw_organization_id: org["id"])
+
+      all_rebates = landscaping_contracts.map{ |c| c.annualized_revenue(2018) }.reduce(:+)
+
+      organization_hash = {name: org["name"],
+                           revenue: all_rebates,
+                           id: org["id"]
+                          }
+      all_tracked_organizations << organization_hash
+
+      all_tracked_organizations
+      tracked_organizations_array << all_tracked_organizations
+      # binding.pry
+    end
+    @data = tracked_organizations_array[0]
+    # binding.pry
+  end
+
   def webhook
     puts "Params:"
     puts params
@@ -131,6 +163,15 @@ class InvoicesController < ApplicationController
       ElectricityContract.create(name: won_opportunity['name'],
                                  pw_organization_id: won_opportunity['company_id'])
     end
+  end
+
+  def set_up_pw_post_request(url)
+    request = Net::HTTP::Post.new(url)
+    request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+    request["x-pw-application"] = 'developer_api'
+    request["x-pw-useremail"] = 'felipe@cpa.coop'
+    request["content-type"] = 'application/json'
+    request
   end
 
 end

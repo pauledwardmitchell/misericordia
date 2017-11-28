@@ -81,7 +81,7 @@ class InvoicesController < ApplicationController
       all_tracked_organizations = []
       landscaping_contracts = LandscapingContract.where(pw_organization_id: org["id"])
 
-      all_rebates = landscaping_contracts.map{ |c| c.annualized_revenue(2018) }.reduce(:+)
+      all_rebates = landscaping_contracts.map{ |c| c.annualized_revenue(2017) }.reduce(:+)
 
       organization_hash = {name: org["name"],
                            revenue: all_rebates,

@@ -149,6 +149,7 @@ task :load_waste => :environment do
 
 end
 
+
 task :load_clean => :environment do
 
   cleaning_contracts = File.read('db/data/Cleaning_ready.json')
@@ -196,7 +197,7 @@ task :load_clean => :environment do
                                                cpa_monthly_payment: contract["NewMonthPay"],
                                                contract_start_date: contract["NewStartDate"],
                                                contract_end_date: "2021-12-31",
-                                               qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["Vendor"]),
+                                               qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["CleanVendor"]),
                                                rebate_percentage: contract["Rebate"],
                                                cover_sheet_entered: true)
 
@@ -210,7 +211,7 @@ task :load_clean => :environment do
                                                cpa_monthly_payment: contract["NewMonthPay"],
                                                contract_start_date: contract["NewStartDate"],
                                                contract_end_date: "2021-12-31",
-                                               qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["Vendor"]),
+                                               qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["CleanVendor"]),
                                                rebate_percentage: contract["Rebate"],
                                                cover_sheet_entered: true)
 

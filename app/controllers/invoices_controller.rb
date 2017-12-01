@@ -166,7 +166,8 @@ class InvoicesController < ApplicationController
   def all_contracts(id)
     landscaping_contracts = LandscapingContract.where(pw_organization_id: id)
     waste_contracts = WasteContract.where(pw_organization_id: id)
-    contracts_array = landscaping_contracts + waste_contracts
+    cleaning_contracts = CleaningContract.where(pw_organization_id: id)
+    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts
     contracts_array
   end
 

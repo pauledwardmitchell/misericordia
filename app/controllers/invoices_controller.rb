@@ -79,7 +79,7 @@ class InvoicesController < ApplicationController
 
     tracked_organizations.each do |org|
 
-      all_rebates = all_contracts(org["id"]).map{ |c| c.annualized_revenue(2018) }.reduce(:+)
+      all_rebates = all_contracts(org["id"]).map{ |c| c.annualized_revenue(2017) }.reduce(:+)
 
       organization_hash = {name: org["name"],
                            revenue: all_rebates,

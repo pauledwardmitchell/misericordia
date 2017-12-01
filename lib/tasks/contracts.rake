@@ -264,31 +264,31 @@ task :load_security => :environment do
     if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
 
       puts "Create Legal!"
-        # new_contract = CleaningContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
-        #                                        name: "Security at " + org.legal_name,
-        #                                        building_id: contract["Building_id"],
-        #                                        old_monthly_payment: contract["CurrentMonthPay"],
-        #                                        cpa_monthly_payment: contract["NewMonthPay"],
-        #                                        contract_start_date: contract["NewStartDate"],
-        #                                        contract_end_date: contract["NewEndDate"],
-        #                                        qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["CleanVendor"]),
-        #                                        rebate_percentage: 0.05,
-        #                                        cover_sheet_entered: true)
+        new_contract = CleaningContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
+                                               name: "Security at " + org.legal_name,
+                                               building_id: contract["Building_id"],
+                                               old_monthly_payment: contract["CurrentMonthPay"],
+                                               cpa_monthly_payment: contract["NewMonthPay"],
+                                               contract_start_date: contract["NewStartDate"],
+                                               contract_end_date: contract["NewEndDate"],
+                                               qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["CleanVendor"]),
+                                               rebate_percentage: 0.05,
+                                               cover_sheet_entered: true)
 
     elsif response_from_common_name
       response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
 
       puts "Create Common!"
-        # new_contract = CleaningContract.create(pw_organization_id: response_as_json_from_common_name["id"],
-        #                                        name: "Security at " + org.legal_name,
-        #                                        building_id: contract["Building_id"],
-        #                                        old_monthly_payment: contract["CurrentMonthPay"],
-        #                                        cpa_monthly_payment: contract["NewMonthPay"],
-        #                                        contract_start_date: contract["NewStartDate"],
-        #                                        contract_end_date: contract["NewEndDate"],
-        #                                        qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["CleanVendor"]),
-        #                                        rebate_percentage: 0.05,
-        #                                        cover_sheet_entered: true)
+        new_contract = CleaningContract.create(pw_organization_id: response_as_json_from_common_name["id"],
+                                               name: "Security at " + org.legal_name,
+                                               building_id: contract["Building_id"],
+                                               old_monthly_payment: contract["CurrentMonthPay"],
+                                               cpa_monthly_payment: contract["NewMonthPay"],
+                                               contract_start_date: contract["NewStartDate"],
+                                               contract_end_date: contract["NewEndDate"],
+                                               qbo_customer_id: qbo_customer_id_from_vendor_name_string(contract["CleanVendor"]),
+                                               rebate_percentage: 0.05,
+                                               cover_sheet_entered: true)
 
     else
      puts "NO DICE " + org.legal_name

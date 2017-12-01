@@ -25,7 +25,7 @@ class GasContract < ApplicationRecord
   private
 
   def contract_revenue
-    self.annual_therms*self.cpa_negotiated_price*self.rebate_to_cpa
+    self.total_therms_expected*self.cpa_negotiated_price*self.rebate_to_cpa
   end
 
 end

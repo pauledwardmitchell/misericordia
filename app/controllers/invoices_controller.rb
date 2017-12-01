@@ -78,10 +78,8 @@ class InvoicesController < ApplicationController
     tracked_organizations_array = []
 
     tracked_organizations.each do |org|
-      all_tracked_organizations = []
-      landscaping_contracts = LandscapingContract.where(pw_organization_id: org["id"])
 
-      all_rebates = landscaping_contracts.map{ |c| c.annualized_revenue(2017) }.reduce(:+)
+      all_rebates = all_contracts(org["id"]).map{ |c| c.annualized_revenue(2017) }.reduce(:+)
 
       organization_hash = {name: org["name"],
                            revenue: all_rebates,
@@ -110,10 +108,6 @@ class InvoicesController < ApplicationController
 
     end
 
-  end
-
-  def all_contracts
-    @landscaping_contracts = LandscapingContract.all
   end
 
   private
@@ -167,6 +161,13 @@ class InvoicesController < ApplicationController
     request["x-pw-useremail"] = 'felipe@cpa.coop'
     request["content-type"] = 'application/json'
     request
+  end
+
+  def all_contracts(id)
+    landscaping_contracts = LandscapingContract.where(pw_organization_id: id)
+    waste_contracts = WasteContract.where(pw_organization_id: id)
+    contracts_array = landscaping_contracts + waste_contracts
+    contracts_array
   end
 
 end

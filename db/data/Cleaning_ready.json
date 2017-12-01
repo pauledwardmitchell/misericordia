@@ -1,0 +1,198 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'cpacogsb_database'
+// cpacogsb_database.CleaningServices
+
+[{
+  "id": 1,
+  "Building_id": 358,
+  "CurrentMonthPay": 11000,
+  "NewMonthPay": 4192,
+  "NewStartDate": "2015-11-15",
+  "CleanVendor": "Smart Cleaning Solutions",
+  "Rebate": 0.05,
+  "Notes": "NEW CONTRACT - Nov 1 changed to  $1070.38 con"
+}, {
+  "id": 2,
+  "Building_id": 142,
+  "CurrentMonthPay": 14500,
+  "NewMonthPay": 17530,
+  "NewStartDate": "2015-11-15",
+  "CleanVendor": "Smart Cleaning Solutions",
+  "Rebate": 0.05,
+  "Notes": "NEW CONTRACT - Nov 1 changed to $14020 contra"
+}, {
+  "id": 3,
+  "Building_id": 141,
+  "CurrentMonthPay": 14800,
+  "NewMonthPay": 17588,
+  "NewStartDate": "2015-11-15",
+  "CleanVendor": "Smart Cleaning Solutions",
+  "Rebate": 0.05,
+  "Notes": "NEW CONTRACT - Nov 1 changed to $14075.62 con"
+}, {
+  "id": 4,
+  "Building_id": 178,
+  "CurrentMonthPay": 5800,
+  "NewMonthPay": 5624,
+  "NewStartDate": "2016-04-18",
+  "CleanVendor": "PMM",
+  "Rebate": 0.05,
+  "Notes": "CHANGE TO $5,624"
+}, {
+  "id": 6,
+  "Building_id": 99,
+  "CurrentMonthPay": 8900,
+  "NewMonthPay": 8840,
+  "NewStartDate": "2016-06-01",
+  "CleanVendor": "PMM",
+  "Rebate": 0.05,
+  "Notes": "Changed from $8500"
+}, {
+  "id": 8,
+  "Building_id": 457,
+  "CurrentMonthPay": 3600,
+  "NewMonthPay": 3461,
+  "NewStartDate": "2016-02-01",
+  "CleanVendor": "PMM",
+  "Rebate": 0.05,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05).  chang"
+}, {
+  "id": 10,
+  "Building_id": 20,
+  "CurrentMonthPay": 1350,
+  "NewMonthPay": 1234,
+  "NewStartDate": "2016-02-01",
+  "CleanVendor": "CleanNet USA",
+  "Rebate": 0.0476,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05)"
+}, {
+  "id": 11,
+  "Building_id": 81,
+  "CurrentMonthPay": 6750,
+  "NewMonthPay": 6530,
+  "NewStartDate": "2016-05-01",
+  "CleanVendor": "Service Industries LLC",
+  "Rebate": 0.05,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05)"
+}, {
+  "id": 12,
+  "Building_id": 80,
+  "CurrentMonthPay": 4150,
+  "NewMonthPay": 3643,
+  "NewStartDate": "2016-05-01",
+  "CleanVendor": "Service Industries LLC",
+  "Rebate": 0.05,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05)"
+}, {
+  "id": 13,
+  "Building_id": 50,
+  "CurrentMonthPay": 5700,
+  "NewMonthPay": 5292,
+  "NewStartDate": "2015-12-01",
+  "CleanVendor": "Fresco Cleaning",
+  "Rebate": 0.05,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05)"
+}, {
+  "id": 14,
+  "Building_id": 195,
+  "CurrentMonthPay": 6100,
+  "NewMonthPay": 5978,
+  "NewStartDate": "2016-01-01",
+  "CleanVendor": "Service Industries LLC",
+  "Rebate": 0.05,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05)"
+}, {
+  "id": 15,
+  "Building_id": 203,
+  "CurrentMonthPay": 1900,
+  "NewMonthPay": 1800,
+  "NewStartDate": "2016-01-01",
+  "CleanVendor": "Smart Cleaning Solutions",
+  "Rebate": 0.05,
+  "Notes": "rebate=NewMonthPay-(NewMonthPay/1.05)"
+}, {
+  "id": 16,
+  "Building_id": 566,
+  "CurrentMonthPay": 15000,
+  "NewMonthPay": 14577,
+  "NewStartDate": "2017-04-17",
+  "CleanVendor": "Busy Bee",
+  "Rebate": 0.05,
+  "Notes": "change monthly payment from $2399 to $12,629."
+}, {
+  "id": 17,
+  "Building_id": 100,
+  "CurrentMonthPay": 6457,
+  "NewMonthPay": 5457,
+  "NewStartDate": "2016-04-01",
+  "CleanVendor": "Service Industries LLC",
+  "Rebate": 0.05,
+  "Notes": "$259.85/month to cpa"
+}, {
+  "id": 18,
+  "Building_id": 517,
+  "CurrentMonthPay": 7500,
+  "NewMonthPay": 6739,
+  "NewStartDate": "2016-07-01",
+  "CleanVendor": "Smart Cleaning Solutions",
+  "Rebate": 0.05,
+  "Notes": ""
+}, {
+  "id": 20,
+  "Building_id": 273,
+  "CurrentMonthPay": 13500,
+  "NewMonthPay": 12593,
+  "NewStartDate": "2016-07-01",
+  "CleanVendor": "GSI",
+  "Rebate": 0.05,
+  "Notes": ""
+}, {
+  "id": 21,
+  "Building_id": 617,
+  "CurrentMonthPay": 9800,
+  "NewMonthPay": 8897,
+  "NewStartDate": "2016-09-01",
+  "CleanVendor": "Service Industries LLC",
+  "Rebate": 0.05,
+  "Notes": ""
+}, {
+  "id": 22,
+  "Building_id": 314,
+  "CurrentMonthPay": 960,
+  "NewMonthPay": 858,
+  "NewStartDate": "2016-10-01",
+  "CleanVendor": "Service Industries LLC",
+  "Rebate": 0.05,
+  "Notes": ""
+}, {
+  "id": 23,
+  "Building_id": 523,
+  "CurrentMonthPay": 4800,
+  "NewMonthPay": 3835,
+  "NewStartDate": "2016-10-31",
+  "CleanVendor": "Smart Cleaning Solutions",
+  "Rebate": 0.05,
+  "Notes": ""
+}, {
+  "id": 24,
+  "Building_id": 612,
+  "CurrentMonthPay": 2000,
+  "NewMonthPay": 1748,
+  "NewStartDate": "2016-10-01",
+  "CleanVendor": "PMM",
+  "Rebate": 0.05,
+  "Notes": "Changes to $1748 on 10/1/17"
+}, {
+  "id": 25,
+  "Building_id": 510,
+  "CurrentMonthPay": 24000,
+  "NewMonthPay": 23217,
+  "NewStartDate": "2017-07-01",
+  "CleanVendor": "Busy Bee",
+  "Rebate": 0.05,
+  "Notes": ""
+}]

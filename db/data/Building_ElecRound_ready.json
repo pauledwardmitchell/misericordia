@@ -1,0 +1,1279 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'cpacogsb_database'
+// cpacogsb_database.Building_ElecRound
+
+[{
+  "Building_id": 1,
+  "ElecRound_id": 2,
+  "StartDate": "2012-07-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 1,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 1,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 1,
+  "ElecRound_id": 65,
+  "StartDate": "2017-05-04",
+  "EndDate": "2020-05-01"
+}, {
+  "Building_id": 2,
+  "ElecRound_id": 26,
+  "StartDate": "2015-06-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 2,
+  "ElecRound_id": 65,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-05-01"
+}, {
+  "Building_id": 3,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 3,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 4,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 4,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 5,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 5,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 6,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 6,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 7,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 7,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 8,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 8,
+  "ElecRound_id": 75,
+  "StartDate": "2017-05-01",
+  "EndDate": "2019-10-31"
+}, {
+  "Building_id": 10,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 10,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 11,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 11,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 12,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 12,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 13,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 13,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 14,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 14,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 17,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 17,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 18,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 18,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 18,
+  "ElecRound_id": 74,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 19,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 19,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 20,
+  "ElecRound_id": 8,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 20,
+  "ElecRound_id": 41,
+  "StartDate": "2015-05-18",
+  "EndDate": "2017-05-18"
+}, {
+  "Building_id": 21,
+  "ElecRound_id": 8,
+  "StartDate": "2012-04-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 21,
+  "ElecRound_id": 15,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 21,
+  "ElecRound_id": 50,
+  "StartDate": "2016-05-01",
+  "EndDate": "2018-01-01"
+}, {
+  "Building_id": 23,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 23,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 23,
+  "ElecRound_id": 78,
+  "StartDate": "2017-05-01",
+  "EndDate": "2019-04-30"
+}, {
+  "Building_id": 25,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 28,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 28,
+  "ElecRound_id": 88,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-01-01"
+}, {
+  "Building_id": 36,
+  "ElecRound_id": 42,
+  "StartDate": "2013-12-01",
+  "EndDate": "2015-05-01"
+}, {
+  "Building_id": 36,
+  "ElecRound_id": 70,
+  "StartDate": "2016-05-01",
+  "EndDate": "2018-11-30"
+}, {
+  "Building_id": 50,
+  "ElecRound_id": 17,
+  "StartDate": "2015-01-01",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 52,
+  "ElecRound_id": 97,
+  "StartDate": "2017-10-01",
+  "EndDate": "2020-10-01"
+}, {
+  "Building_id": 53,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 53,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 53,
+  "ElecRound_id": 64,
+  "StartDate": "2017-05-12",
+  "EndDate": "2020-05-12"
+}, {
+  "Building_id": 54,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 54,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 54,
+  "ElecRound_id": 82,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 55,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 55,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 57,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 57,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 57,
+  "ElecRound_id": 64,
+  "StartDate": "2017-05-12",
+  "EndDate": "2020-05-12"
+}, {
+  "Building_id": 58,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 58,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 58,
+  "ElecRound_id": 64,
+  "StartDate": "2017-05-12",
+  "EndDate": "2020-05-12"
+}, {
+  "Building_id": 59,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 59,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 60,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 60,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 64,
+  "ElecRound_id": 5,
+  "StartDate": "2013-02-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 64,
+  "ElecRound_id": 53,
+  "StartDate": "2016-03-01",
+  "EndDate": "2018-03-01"
+}, {
+  "Building_id": 65,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 66,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 66,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 67,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 67,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 68,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 68,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 69,
+  "ElecRound_id": 71,
+  "StartDate": "2016-06-01",
+  "EndDate": "2018-05-31"
+}, {
+  "Building_id": 70,
+  "ElecRound_id": 20,
+  "StartDate": "2014-11-01",
+  "EndDate": "2016-11-30"
+}, {
+  "Building_id": 71,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 71,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 73,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 73,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 74,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 74,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 75,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 79,
+  "ElecRound_id": 63,
+  "StartDate": "2016-12-01",
+  "EndDate": "2019-01-01"
+}, {
+  "Building_id": 80,
+  "ElecRound_id": 8,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 80,
+  "ElecRound_id": 14,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 82,
+  "ElecRound_id": 27,
+  "StartDate": "2015-06-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 82,
+  "ElecRound_id": 77,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 83,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 83,
+  "ElecRound_id": 13,
+  "StartDate": "2014-05-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 83,
+  "ElecRound_id": 77,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 85,
+  "ElecRound_id": 18,
+  "StartDate": "2014-11-01",
+  "EndDate": "2017-10-31"
+}, {
+  "Building_id": 88,
+  "ElecRound_id": 5,
+  "StartDate": "2012-04-15",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 88,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 88,
+  "ElecRound_id": 67,
+  "StartDate": "2017-05-01",
+  "EndDate": "2019-04-30"
+}, {
+  "Building_id": 89,
+  "ElecRound_id": 5,
+  "StartDate": "2012-04-15",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 89,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 89,
+  "ElecRound_id": 67,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 90,
+  "ElecRound_id": 5,
+  "StartDate": "2012-04-15",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 90,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 91,
+  "ElecRound_id": 5,
+  "StartDate": "2012-04-15",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 91,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 92,
+  "ElecRound_id": 5,
+  "StartDate": "2012-04-15",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 92,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 93,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 94,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 95,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 95,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 96,
+  "ElecRound_id": 7,
+  "StartDate": "2013-07-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 97,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 97,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 98,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 98,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 99,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 99,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 99,
+  "ElecRound_id": 86,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-05-01"
+}, {
+  "Building_id": 100,
+  "ElecRound_id": 49,
+  "StartDate": "2016-01-01",
+  "EndDate": "2017-01-01"
+}, {
+  "Building_id": 100,
+  "ElecRound_id": 66,
+  "StartDate": "2016-12-01",
+  "EndDate": "2019-12-01"
+}, {
+  "Building_id": 102,
+  "ElecRound_id": 5,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 102,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 105,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 105,
+  "ElecRound_id": 19,
+  "StartDate": "2014-11-01",
+  "EndDate": "2017-10-31"
+}, {
+  "Building_id": 108,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 108,
+  "ElecRound_id": 93,
+  "StartDate": "2017-05-01",
+  "EndDate": "2019-12-31"
+}, {
+  "Building_id": 109,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 114,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 114,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 114,
+  "ElecRound_id": 76,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 115,
+  "ElecRound_id": 92,
+  "StartDate": "2017-06-01",
+  "EndDate": "2019-12-31"
+}, {
+  "Building_id": 116,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 117,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 123,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 124,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 125,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 130,
+  "ElecRound_id": 26,
+  "StartDate": "2015-06-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 132,
+  "ElecRound_id": 34,
+  "StartDate": "2015-05-29",
+  "EndDate": "2017-12-28"
+}, {
+  "Building_id": 134,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 134,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 135,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 135,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 136,
+  "ElecRound_id": 25,
+  "StartDate": "2015-06-01",
+  "EndDate": "2016-12-01"
+}, {
+  "Building_id": 136,
+  "ElecRound_id": 81,
+  "StartDate": "2016-12-01",
+  "EndDate": "2019-11-30"
+}, {
+  "Building_id": 138,
+  "ElecRound_id": 47,
+  "StartDate": "2015-12-01",
+  "EndDate": "2017-12-01"
+}, {
+  "Building_id": 140,
+  "ElecRound_id": 72,
+  "StartDate": "2016-12-01",
+  "EndDate": "2018-11-30"
+}, {
+  "Building_id": 141,
+  "ElecRound_id": 25,
+  "StartDate": "2015-06-01",
+  "EndDate": "2016-12-01"
+}, {
+  "Building_id": 141,
+  "ElecRound_id": 84,
+  "StartDate": "2016-12-09",
+  "EndDate": "2017-12-06"
+}, {
+  "Building_id": 142,
+  "ElecRound_id": 25,
+  "StartDate": "2015-06-01",
+  "EndDate": "2016-12-01"
+}, {
+  "Building_id": 142,
+  "ElecRound_id": 84,
+  "StartDate": "2016-12-09",
+  "EndDate": "2017-12-06"
+}, {
+  "Building_id": 144,
+  "ElecRound_id": 22,
+  "StartDate": "2015-05-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 146,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 146,
+  "ElecRound_id": 19,
+  "StartDate": "2014-11-01",
+  "EndDate": "2017-10-31"
+}, {
+  "Building_id": 148,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 148,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 149,
+  "ElecRound_id": 23,
+  "StartDate": "2015-04-01",
+  "EndDate": "2016-10-01"
+}, {
+  "Building_id": 149,
+  "ElecRound_id": 58,
+  "StartDate": "2016-10-20",
+  "EndDate": "2019-10-17"
+}, {
+  "Building_id": 150,
+  "ElecRound_id": 8,
+  "StartDate": "2012-04-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 150,
+  "ElecRound_id": 15,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 150,
+  "ElecRound_id": 69,
+  "StartDate": "2017-05-01",
+  "EndDate": "2018-04-30"
+}, {
+  "Building_id": 151,
+  "ElecRound_id": 8,
+  "StartDate": "2012-04-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 151,
+  "ElecRound_id": 15,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 151,
+  "ElecRound_id": 69,
+  "StartDate": "2017-05-01",
+  "EndDate": "2018-04-30"
+}, {
+  "Building_id": 152,
+  "ElecRound_id": 5,
+  "StartDate": "2012-04-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 152,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 152,
+  "ElecRound_id": 90,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-11-01"
+}, {
+  "Building_id": 153,
+  "ElecRound_id": 15,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 154,
+  "ElecRound_id": 5,
+  "StartDate": "2013-03-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 154,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 155,
+  "ElecRound_id": 5,
+  "StartDate": "2013-03-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 155,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 156,
+  "ElecRound_id": 10,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 156,
+  "ElecRound_id": 15,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 157,
+  "ElecRound_id": 10,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 158,
+  "ElecRound_id": 10,
+  "StartDate": "2013-12-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 158,
+  "ElecRound_id": 14,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 159,
+  "ElecRound_id": 9,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 159,
+  "ElecRound_id": 18,
+  "StartDate": "2014-11-01",
+  "EndDate": "2017-10-01"
+}, {
+  "Building_id": 159,
+  "ElecRound_id": 89,
+  "StartDate": "2017-05-01",
+  "EndDate": "2019-05-01"
+}, {
+  "Building_id": 160,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 160,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 161,
+  "ElecRound_id": 5,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 162,
+  "ElecRound_id": 3,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 169,
+  "ElecRound_id": 3,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 170,
+  "ElecRound_id": 3,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 171,
+  "ElecRound_id": 3,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 176,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 181,
+  "ElecRound_id": 25,
+  "StartDate": "2015-06-01",
+  "EndDate": "2016-12-01"
+}, {
+  "Building_id": 182,
+  "ElecRound_id": 8,
+  "StartDate": "2012-05-01",
+  "EndDate": "2013-05-01"
+}, {
+  "Building_id": 182,
+  "ElecRound_id": 14,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 183,
+  "ElecRound_id": 10,
+  "StartDate": "2012-10-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 184,
+  "ElecRound_id": 10,
+  "StartDate": "2012-10-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 185,
+  "ElecRound_id": 10,
+  "StartDate": "2012-10-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 186,
+  "ElecRound_id": 10,
+  "StartDate": "2012-10-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 187,
+  "ElecRound_id": 10,
+  "StartDate": "2012-10-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 188,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 188,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 189,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 189,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 190,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 191,
+  "ElecRound_id": 9,
+  "StartDate": "2012-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 191,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 191,
+  "ElecRound_id": 48,
+  "StartDate": "2015-12-01",
+  "EndDate": "2017-12-01"
+}, {
+  "Building_id": 192,
+  "ElecRound_id": 6,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 192,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 193,
+  "ElecRound_id": 5,
+  "StartDate": "2012-10-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 193,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 195,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 195,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 196,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 196,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 197,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 197,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 198,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 198,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 199,
+  "ElecRound_id": 7,
+  "StartDate": "2013-05-01",
+  "EndDate": "2014-02-01"
+}, {
+  "Building_id": 199,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 199,
+  "ElecRound_id": 80,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 200,
+  "ElecRound_id": 13,
+  "StartDate": "2014-04-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 201,
+  "ElecRound_id": 19,
+  "StartDate": "2014-11-01",
+  "EndDate": "2017-10-01"
+}, {
+  "Building_id": 202,
+  "ElecRound_id": 67,
+  "StartDate": "2017-05-01",
+  "EndDate": "2020-04-30"
+}, {
+  "Building_id": 204,
+  "ElecRound_id": 26,
+  "StartDate": "2015-06-01",
+  "EndDate": "2017-05-01"
+}, {
+  "Building_id": 210,
+  "ElecRound_id": 87,
+  "StartDate": "2017-02-17",
+  "EndDate": "2019-12-17"
+}, {
+  "Building_id": 214,
+  "ElecRound_id": 46,
+  "StartDate": "2015-09-27",
+  "EndDate": "2017-09-27"
+}, {
+  "Building_id": 238,
+  "ElecRound_id": 57,
+  "StartDate": "2016-07-02",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 258,
+  "ElecRound_id": 51,
+  "StartDate": "2016-10-01",
+  "EndDate": "2019-01-01"
+}, {
+  "Building_id": 273,
+  "ElecRound_id": 79,
+  "StartDate": "2016-11-01",
+  "EndDate": "2019-10-31"
+}, {
+  "Building_id": 275,
+  "ElecRound_id": 52,
+  "StartDate": "2016-04-15",
+  "EndDate": "2019-04-15"
+}, {
+  "Building_id": 314,
+  "ElecRound_id": 91,
+  "StartDate": "2017-05-01",
+  "EndDate": "2018-04-30"
+}, {
+  "Building_id": 335,
+  "ElecRound_id": 68,
+  "StartDate": "2016-09-01",
+  "EndDate": "2018-08-31"
+}, {
+  "Building_id": 341,
+  "ElecRound_id": 43,
+  "StartDate": "2015-07-20",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 342,
+  "ElecRound_id": 43,
+  "StartDate": "2015-07-27",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 343,
+  "ElecRound_id": 44,
+  "StartDate": "2015-12-01",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 344,
+  "ElecRound_id": 44,
+  "StartDate": "2015-12-01",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 345,
+  "ElecRound_id": 44,
+  "StartDate": "2015-12-01",
+  "EndDate": "2017-12-31"
+}, {
+  "Building_id": 352,
+  "ElecRound_id": 85,
+  "StartDate": "2017-02-01",
+  "EndDate": "2020-02-01"
+}, {
+  "Building_id": 435,
+  "ElecRound_id": 83,
+  "StartDate": "2016-05-01",
+  "EndDate": "2018-01-01"
+}, {
+  "Building_id": 437,
+  "ElecRound_id": 45,
+  "StartDate": "2015-10-10",
+  "EndDate": "2017-10-10"
+}, {
+  "Building_id": 459,
+  "ElecRound_id": 55,
+  "StartDate": "2016-05-01",
+  "EndDate": "2018-01-01"
+}, {
+  "Building_id": 500,
+  "ElecRound_id": 95,
+  "StartDate": "2015-12-01",
+  "EndDate": "2017-11-30"
+}, {
+  "Building_id": 509,
+  "ElecRound_id": 56,
+  "StartDate": "2016-06-01",
+  "EndDate": "2018-06-01"
+}, {
+  "Building_id": 510,
+  "ElecRound_id": 59,
+  "StartDate": "2016-07-18",
+  "EndDate": "2019-07-18"
+}, {
+  "Building_id": 537,
+  "ElecRound_id": 19,
+  "StartDate": "2014-11-01",
+  "EndDate": "2017-10-31"
+}, {
+  "Building_id": 574,
+  "ElecRound_id": 94,
+  "StartDate": "2016-04-01",
+  "EndDate": "2018-04-01"
+}, {
+  "Building_id": 575,
+  "ElecRound_id": 94,
+  "StartDate": "0000-00-00",
+  "EndDate": "0000-00-00"
+}, {
+  "Building_id": 578,
+  "ElecRound_id": 54,
+  "StartDate": "2016-05-01",
+  "EndDate": "2018-05-01"
+}, {
+  "Building_id": 588,
+  "ElecRound_id": 73,
+  "StartDate": "2016-10-01",
+  "EndDate": "2019-09-30"
+}, {
+  "Building_id": 589,
+  "ElecRound_id": 52,
+  "StartDate": "2016-04-15",
+  "EndDate": "2019-04-05"
+}, {
+  "Building_id": 612,
+  "ElecRound_id": 61,
+  "StartDate": "2016-08-01",
+  "EndDate": "2018-02-01"
+}, {
+  "Building_id": 615,
+  "ElecRound_id": 60,
+  "StartDate": "2016-08-01",
+  "EndDate": "2018-02-01"
+}, {
+  "Building_id": 616,
+  "ElecRound_id": 62,
+  "StartDate": "2016-11-01",
+  "EndDate": "2019-11-01"
+}, {
+  "Building_id": 617,
+  "ElecRound_id": 96,
+  "StartDate": "2017-07-01",
+  "EndDate": "2020-01-01"
+}, {
+  "Building_id": 623,
+  "ElecRound_id": 95,
+  "StartDate": "0000-00-00",
+  "EndDate": "0000-00-00"
+}]

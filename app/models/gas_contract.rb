@@ -18,7 +18,7 @@ class GasContract < ApplicationRecord
       report_end_date = Date.new(year,12,31)
     end
 
-    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_i*contract_revenue
+    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_f*contract_revenue
     ann_revenue
   end
 

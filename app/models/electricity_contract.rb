@@ -19,7 +19,6 @@ class ElectricityContract < ApplicationRecord
     end
 
     ann_revenue = ((report_end_date - report_start_date + 1)/365).to_f*contract_revenue
-    binding.pry
     ann_revenue
   end
 

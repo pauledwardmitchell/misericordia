@@ -307,6 +307,8 @@ task :load_electricity => :environment do
   join_data = File.read('db/data/Building_ElecRound_ready.json')
   join_hash = JSON.parse(join_data)
 
+  no_dice_names = []
+
   join_hash.each do |contract|
 
     round = rounds_hash.select {|r| r["id"] == contract["ElecRound_id"]}
@@ -372,10 +374,11 @@ task :load_electricity => :environment do
 
     else
      puts "NO DICE " + org.legal_name
+     no_dice_names << org.legal_name
     end
-
+    no_dice_names
   end
-
+  puts no_dice_names
 end
 
 ###

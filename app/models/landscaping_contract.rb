@@ -18,7 +18,7 @@ class LandscapingContract < ApplicationRecord
       report_end_date = Date.new(year,12,31)
     end
 
-    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_i*self.cpa_annual_payment*self.rebate_percentage
+    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_f*self.cpa_annual_payment*self.rebate_percentage
     ann_revenue
   end
 

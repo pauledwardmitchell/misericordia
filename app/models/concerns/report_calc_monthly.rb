@@ -17,7 +17,7 @@ module ReportCalcMonthly
       report_end_date = Date.new(year,12,31)
     end
 
-    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_i*(self.cpa_monthly_payment*12)*self.rebate_percentage
+    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_f*(self.cpa_monthly_payment*12)*self.rebate_percentage
     ann_revenue
   end
 

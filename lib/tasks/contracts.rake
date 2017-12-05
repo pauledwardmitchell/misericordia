@@ -311,7 +311,8 @@ task :load_electricity => :environment do
 
   join_hash.each do |contract|
 
-    round = rounds_hash.select {|r| r["id"] == contract["ElecRound_id"]}
+    round = rounds_hash.select {|r| r["id"] == contract["ElecRound_id"]}[0]
+    building = Building.find(contract["Building_id"])
     org = find_org_from_building_id(contract["Building_id"])
     puts org.legal_name
 
@@ -340,41 +341,49 @@ task :load_electricity => :environment do
     end
 
     if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
-
       puts "Create Legal!"
-        # new_contract = ElectricityContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
-        #                                           name: "Electricity at " + org.legal_name + " - Round: " + round["Name"],
-        #                                           building_id: contract["Building_id"],
-        #                                           price_to_compare: round["SOSPrice"],
-        #                                           cpa_negotiated_price: round["RoundPrice"],
-        #                                           contract_start_date: contract["StartDate"],
-        #                                           contract_end_date: contract["EndDate"],
-        #                                           rebate_to_cpa: round["CPARebate"],
-        #                                           rebate_to_broker: round["BrokerRebate"],
-        #                                           estimated_savings: round["EstSavings"],
-        #                                           qbo_customer_id: qbo_customer_id_from_og_elec_broker_id(round["ElecBroker_id"]),
-        #                                           ldc_id: round["LDC_id"],
-        #                                           total_kwh_expected: round["TotalKwHExpected"],
-        #                                           cover_sheet_entered: true)
+        new_contract = ElectricityContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
+                                                  name: "Electricity at " + org.legal_name + " - Round: " + round["Name"],
+                                                  building_id: contract["Building_id"],
+                                                  price_to_compare: round["SOSPrice"],
+                                                  cpa_negotiated_price: round["RoundPrice"],
+                                                  contract_start_date: contract["StartDate"],
+                                                  contract_end_date: contract["EndDate"],
+                                                  rebate_to_cpa: round["CPARebate"],
+                                                  rebate_to_broker: round["BrokerRebate"],
+                                                  estimated_savings: round["EstSavings"],
+                                                  qbo_customer_id: qbo_customer_id_from_og_elec_broker_id(round["ElecBroker_id"]),
+                                                  ldc_id: round["LDC_id"],
+                                                  total_kwh_expected: building.annual_elec_usage,
+                                                  cover_sheet_entered: true)
 
     elsif response_from_common_name
       response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
 
       puts "Create Common!"
-        # new_contract = ElectricityContract.create(pw_organization_id: response_as_json_from_common_name["id"],
-        #                                        name: "Electricity at " + org.legal_name,
-        #                                        building_id: contract["Building_id"],
-        #                                        old_monthly_payment: contract["CurrentMonthPay"],
-        #                                        cpa_monthly_payment: contract["NewMonthPay"],
-        #                                        contract_start_date: contract["NewStartDate"],
-        #                                        contract_end_date: contract["NewEndDate"],
-        #                                        qbo_customer_id: qbo_customer_id_from_og_security_vendor_id(contract["SecurityVendor_id"]),
-        #                                        rebate_percentage: 0.05,
-        #                                        cover_sheet_entered: true)
+        new_contract = ElectricityContract.create(pw_organization_id: response_as_json_from_common_name["id"],
+                                                  name: "Electricity at " + org.legal_name + " - Round: " + round["Name"],
+                                                  building_id: contract["Building_id"],
+                                                  price_to_compare: round["SOSPrice"],
+                                                  cpa_negotiated_price: round["RoundPrice"],
+                                                  contract_start_date: contract["StartDate"],
+                                                  contract_end_date: contract["EndDate"],
+                                                  rebate_to_cpa: round["CPARebate"],
+                                                  rebate_to_broker: round["BrokerRebate"],
+                                                  estimated_savings: round["EstSavings"],
+                                                  qbo_customer_id: qbo_customer_id_from_og_elec_broker_id(round["ElecBroker_id"]),
+                                                  ldc_id: round["LDC_id"],
+                                                  total_kwh_expected: building.annual_elec_usage,
+                                                  cover_sheet_entered: true)
 
+      if response_from_common_name.body.length == 2
+        no_dice_names << org.legal_name
+        puts "***"
+        puts no_dice_names
+      end
+# binding.pry
     else
      puts "NO DICE " + org.legal_name
-     no_dice_names << org.legal_name
     end
     no_dice_names
   end
@@ -447,13 +456,13 @@ end
   def qbo_customer_id_from_og_elec_broker_id(og_broker_id)
     case og_broker_id
     when 2
-      return
+      return 286 #bh
     when 3
-      return
+      return 287 #gs
     when 4
       return 6 #cqi
     when 6
-      return
+      return 11 # bue == nrg
     when 7
       return 9 #nextility
     when 8

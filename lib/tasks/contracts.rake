@@ -340,20 +340,20 @@ task :load_electricity => :environment do
     if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
 
       puts "Create Legal!"
-        new_contract = ElectricityContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
-                                                  name: "Electricity at " + org.legal_name + " - Round: " + round["Name"],
-                                                  building_id: contract["Building_id"],
-                                                  price_to_compare: round["SOSPrice"],
-                                                  cpa_negotiated_price: round["RoundPrice"],
-                                                  contract_start_date: contract["StartDate"],
-                                                  contract_end_date: contract["EndDate"],
-                                                  rebate_to_cpa: round["CPARebate"],
-                                                  rebate_to_broker: round["BrokerRebate"],
-                                                  estimated_savings: round["EstSavings"],
-                                                  qbo_customer_id: qbo_customer_id_from_og_elec_broker_id(round["ElecBroker_id"]),
-                                                  ldc_id: round["LDC_id"],
-                                                  total_kwh_expected: round["TotalKwHExpected"],
-                                                  cover_sheet_entered: true)
+        # new_contract = ElectricityContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
+        #                                           name: "Electricity at " + org.legal_name + " - Round: " + round["Name"],
+        #                                           building_id: contract["Building_id"],
+        #                                           price_to_compare: round["SOSPrice"],
+        #                                           cpa_negotiated_price: round["RoundPrice"],
+        #                                           contract_start_date: contract["StartDate"],
+        #                                           contract_end_date: contract["EndDate"],
+        #                                           rebate_to_cpa: round["CPARebate"],
+        #                                           rebate_to_broker: round["BrokerRebate"],
+        #                                           estimated_savings: round["EstSavings"],
+        #                                           qbo_customer_id: qbo_customer_id_from_og_elec_broker_id(round["ElecBroker_id"]),
+        #                                           ldc_id: round["LDC_id"],
+        #                                           total_kwh_expected: round["TotalKwHExpected"],
+        #                                           cover_sheet_entered: true)
 
     elsif response_from_common_name
       response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]

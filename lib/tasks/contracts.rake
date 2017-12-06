@@ -521,29 +521,27 @@ task :load_solar => :environment do
     if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
 
       puts "Create Legal!"
-        # new_contract = SolarContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
-        #                                     name: "Solar at " + org.legal_name,
-        #                                     estimated_savings: contract["YrSavingsEst"],
-        #                                     scorecard_start_date: contract["InstallDate"],
-        #                                     scorecard_end_date: Date.parse(contract["InstallDate"]).next_year(15),
-        #                                     qbo_customer_id: qbo_customer_id_from_og_solar_vendor_id(contract["SolarVendor_id"]),
-        #                                     total_rebate_to_cpa: size of system * rebate?
-        #                                     cover_sheet_entered: true)
+        new_contract = SolarContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
+                                            name: "Solar at " + org.legal_name,
+                                            estimated_savings: contract["YrSavingsEst"],
+                                            scorecard_start_date: contract["InstallDate"],
+                                            scorecard_end_date: Date.parse(contract["InstallDate"]).next_year(15),
+                                            qbo_customer_id: qbo_customer_id_from_og_solar_vendor_id(contract["SolarVendor_id"]),
+                                            total_rebate_to_cpa: solar_rebate(contract),
+                                            cover_sheet_entered: true)
 
     elsif response_from_common_name
       response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
 
       puts "Create Common!"
-        # new_contract = SecurityContract.create(pw_organization_id: response_as_json_from_common_name["id"],
-        #                                        name: "Security at " + org.legal_name,
-        #                                        building_id: contract["Building_id"],
-        #                                        old_monthly_payment: contract["CurrentMonthPay"],
-        #                                        cpa_monthly_payment: contract["NewMonthPay"],
-        #                                        contract_start_date: contract["NewStartDate"],
-        #                                        contract_end_date: contract["NewEndDate"],
-        #                                        qbo_customer_id: qbo_customer_id_from_og_security_vendor_id(contract["SecurityVendor_id"]),
-        #                                        rebate_percentage: 0.05,
-        #                                        cover_sheet_entered: true)
+        new_contract = SolarContract.create(pw_organization_id: response_as_json_from_common_name["id"],
+                                            name: "Solar at " + org.legal_name,
+                                            estimated_savings: contract["YrSavingsEst"],
+                                            scorecard_start_date: contract["InstallDate"],
+                                            scorecard_end_date: Date.parse(contract["InstallDate"]).next_year(15),
+                                            qbo_customer_id: qbo_customer_id_from_og_solar_vendor_id(contract["SolarVendor_id"]),
+                                            total_rebate_to_cpa: solar_rebate(contract),
+                                            cover_sheet_entered: true)
 
       if response_from_common_name.body.length == 2
         no_dice_names << org.legal_name
@@ -663,4 +661,8 @@ end
     when 4
       return 210 #new columbia
     end
+  end
+
+  def solar_rebate(contract)
+    contract["SizeOfSystem"].to_f*contract["Rebate"].to_f*1000
   end

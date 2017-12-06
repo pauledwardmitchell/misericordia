@@ -79,7 +79,7 @@ class InvoicesController < ApplicationController
 
     tracked_organizations.each do |org|
 
-      all_rebates = all_contracts(org["id"]).map{ |c| c.annualized_revenue(2017) }.reduce(:+)
+      all_rebates = all_org_contracts(org["id"]).map{ |c| c.annualized_revenue(2017) }.reduce(:+)
 
       organization_hash = {name: org["name"],
                            revenue: all_rebates,
@@ -88,6 +88,7 @@ class InvoicesController < ApplicationController
       tracked_organizations_array << organization_hash
     end
     @data = tracked_organizations_array
+    @annualized_revenue = all_contracts.map{ |c| c.annualized_revenue(2017) }.reduce(:+)
   end
 
   def webhook
@@ -163,7 +164,7 @@ class InvoicesController < ApplicationController
     request
   end
 
-  def all_contracts(id)
+  def all_org_contracts(id)
     landscaping_contracts = LandscapingContract.where(pw_organization_id: id)
     waste_contracts = WasteContract.where(pw_organization_id: id)
     cleaning_contracts = CleaningContract.where(pw_organization_id: id)
@@ -172,6 +173,19 @@ class InvoicesController < ApplicationController
     gas_contracts = GasContract.where(pw_organization_id: id)
     copier_contracts = CopierContract.where(pw_organization_id: id)
     solar_contracts = SolarContract.where(pw_organization_id: id)
+    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts
+    contracts_array
+  end
+
+  def all_contracts
+    landscaping_contracts = LandscapingContract.all
+    waste_contracts = WasteContract.all
+    cleaning_contracts = CleaningContract.all
+    security_contracts = SecurityContract.all
+    electricity_contracts = ElectricityContract.all
+    gas_contracts = GasContract.all
+    copier_contracts = CopierContract.all
+    solar_contracts = SolarContract.all
     contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts
     contracts_array
   end

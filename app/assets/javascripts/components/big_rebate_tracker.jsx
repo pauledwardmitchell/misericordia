@@ -1,5 +1,13 @@
 const BigRebateTracker = React.createClass({
 
+  formatMoneyNumber: function(number) {
+    if (number === null) {
+      return 0.00
+    }  else {
+      return Number(number.toFixed(2)).toLocaleString()
+    }
+  },
+
   render: function() {
 
     return (
@@ -20,6 +28,11 @@ const BigRebateTracker = React.createClass({
                          org={org}/>
                 }
             )}
+            <tr style={{ fontWeight: 'bold', fontSize: 20 }} >
+              <td>ANNUAL TOTAL</td>
+              <td>$ {this.formatMoneyNumber(this.props.total_revenue)}</td>
+              <td>-</td>
+            </tr>
           </tbody>
         </table>
       </section>

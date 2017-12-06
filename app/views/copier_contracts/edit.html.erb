@@ -4,6 +4,8 @@
   <%= f.text_field :name %>
   <%= f.label :estimated_savings %>
   <%= f.number_field :estimated_savings %>
+  <%= f.label :total_rebate_to_cpa %>
+  <%= f.number_field :total_rebate_to_cpa %>
   <%= f.label :qbo_customer_id %>
   <%= f.select :qbo_customer_id, options_for_select(@customer_arrays, @copier_contract.qbo_customer_id) %>
   <%= f.label :scorecard_start_date %>

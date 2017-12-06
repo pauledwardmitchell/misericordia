@@ -169,7 +169,10 @@ class InvoicesController < ApplicationController
     cleaning_contracts = CleaningContract.where(pw_organization_id: id)
     security_contracts = SecurityContract.where(pw_organization_id: id)
     electricity_contracts = ElectricityContract.where(pw_organization_id: id)
-    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts
+    gas_contracts = GasContract.where(pw_organization_id: id)
+    copier_contracts = CopierContract.where(pw_organization_id: id)
+    solar_contracts = SolarContract.where(pw_organization_id: id)
+    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts
     contracts_array
   end
 

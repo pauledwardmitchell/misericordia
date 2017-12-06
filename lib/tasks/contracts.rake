@@ -433,39 +433,41 @@ task :load_gas => :environment do
 
     if response_as_json_from_legal_name = JSON.parse(response_from_legal_name.body)[0]
       puts "Create Legal!"
-        # new_contract = GasContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
-        #                                   name: "Gas at " + org.legal_name + " - Round: " + round["Name"],
-        #                                   building_id: contract["Building_id"],
-        #                                   price_to_compare: round["SOSPrice"],
-        #                                   cpa_negotiated_price: round["RoundPrice"],
-        #                                   contract_start_date: round["StartDate"],
-        #                                   contract_end_date: round["EndDate"],
-        #                                   rebate_to_cpa: round["Rebate"],
-        #                                   rebate_to_broker: round["BrokerRebate"],
-        #                                   estimated_savings: round["EstSavings"],
-        #                                   qbo_customer_id: qbo_customer_id_from_og_gas_broker_id(round["ElecBroker_id"]),
-        #                                   ldc_id: round["LDC_id"],
-        #                                   total_kwh_expected: building.annual_gas_usage,
-        #                                   cover_sheet_entered: true)
+        new_contract = GasContract.create(pw_organization_id: response_as_json_from_legal_name["id"],
+                                          name: "Gas at " + org.legal_name + " - Round: " + round["Name"],
+                                          building_id: contract["Building_id"],
+                                          price_to_compare: round["SOSPrice"],
+                                          cpa_negotiated_price: round["RoundPrice"],
+                                          contract_start_date: round["StartDate"],
+                                          contract_end_date: round["EndDate"],
+                                          rebate_to_cpa: round["Rebate"],
+                                          rebate_to_broker: round["BrokerRebate"],
+                                          estimated_savings: round["EstSavings"],
+                                          qbo_customer_id: qbo_customer_id_from_og_gas_broker_id(round["GasBroker_id"]),
+                                          ldc_id: round["LDC_id"],
+                                          supplier: round["Supplier"],
+                                          total_therms_expected: building.annual_gas_usage,
+                                          cover_sheet_entered: true)
 
     elsif response_from_common_name
       response_as_json_from_common_name = JSON.parse(response_from_common_name.body)[0]
 
       puts "Create Common!"
-        # new_contract = GasContract.create(pw_organization_id: response_as_json_from_common_name["id"],
-        #                                           name: "Gas at " + org.legal_name + " - Round: " + round["Name"],
-        #                                           building_id: contract["Building_id"],
-        #                                           price_to_compare: round["SOSPrice"],
-        #                                           cpa_negotiated_price: round["RoundPrice"],
-        #                                           contract_start_date: contract["StartDate"],
-        #                                           contract_end_date: contract["EndDate"],
-        #                                           rebate_to_cpa: round["CPARebate"],
-        #                                           rebate_to_broker: round["BrokerRebate"],
-        #                                           estimated_savings: round["EstSavings"],
-        #                                           qbo_customer_id: qbo_customer_id_from_og_elec_broker_id(round["ElecBroker_id"]),
-        #                                           ldc_id: round["LDC_id"],
-        #                                           total_kwh_expected: building.annual_elec_usage,
-        #                                           cover_sheet_entered: true)
+        new_contract = GasContract.create(pw_organization_id: response_as_json_from_common_name["id"],
+                                          name: "Gas at " + org.legal_name + " - Round: " + round["Name"],
+                                          building_id: contract["Building_id"],
+                                          price_to_compare: round["SOSPrice"],
+                                          cpa_negotiated_price: round["RoundPrice"],
+                                          contract_start_date: round["StartDate"],
+                                          contract_end_date: round["EndDate"],
+                                          rebate_to_cpa: round["Rebate"],
+                                          rebate_to_broker: round["BrokerRebate"],
+                                          estimated_savings: round["EstSavings"],
+                                          qbo_customer_id: qbo_customer_id_from_og_gas_broker_id(round["GasBroker_id"]),
+                                          ldc_id: round["LDC_id"],
+                                          supplier: round["Supplier"],
+                                          total_therms_expected: building.annual_gas_usage,
+                                          cover_sheet_entered: true)
 
       if response_from_common_name.body.length == 2
         no_dice_names << org.legal_name

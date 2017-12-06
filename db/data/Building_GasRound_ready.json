@@ -1,0 +1,396 @@
+/**
+ Export to JSON plugin for PHPMyAdmin
+ @version 0.1
+ */
+
+// Database 'cpacogsb_database'
+// cpacogsb_database.Building_GasRound
+
+[{
+  "Building_id": 4,
+  "GasRound_id": 5
+}, {
+  "Building_id": 5,
+  "GasRound_id": 5
+}, {
+  "Building_id": 7,
+  "GasRound_id": 12
+}, {
+  "Building_id": 8,
+  "GasRound_id": 4
+}, {
+  "Building_id": 18,
+  "GasRound_id": 6
+}, {
+  "Building_id": 19,
+  "GasRound_id": 19
+}, {
+  "Building_id": 19,
+  "GasRound_id": 53
+}, {
+  "Building_id": 20,
+  "GasRound_id": 5
+}, {
+  "Building_id": 21,
+  "GasRound_id": 5
+}, {
+  "Building_id": 23,
+  "GasRound_id": 4
+}, {
+  "Building_id": 23,
+  "GasRound_id": 26
+}, {
+  "Building_id": 23,
+  "GasRound_id": 57
+}, {
+  "Building_id": 29,
+  "GasRound_id": 17
+}, {
+  "Building_id": 36,
+  "GasRound_id": 5
+}, {
+  "Building_id": 36,
+  "GasRound_id": 32
+}, {
+  "Building_id": 64,
+  "GasRound_id": 35
+}, {
+  "Building_id": 67,
+  "GasRound_id": 27
+}, {
+  "Building_id": 68,
+  "GasRound_id": 4
+}, {
+  "Building_id": 68,
+  "GasRound_id": 27
+}, {
+  "Building_id": 69,
+  "GasRound_id": 16
+}, {
+  "Building_id": 71,
+  "GasRound_id": 4
+}, {
+  "Building_id": 71,
+  "GasRound_id": 9
+}, {
+  "Building_id": 71,
+  "GasRound_id": 40
+}, {
+  "Building_id": 73,
+  "GasRound_id": 18
+}, {
+  "Building_id": 74,
+  "GasRound_id": 18
+}, {
+  "Building_id": 80,
+  "GasRound_id": 5
+}, {
+  "Building_id": 80,
+  "GasRound_id": 22
+}, {
+  "Building_id": 80,
+  "GasRound_id": 47
+}, {
+  "Building_id": 81,
+  "GasRound_id": 5
+}, {
+  "Building_id": 81,
+  "GasRound_id": 22
+}, {
+  "Building_id": 81,
+  "GasRound_id": 47
+}, {
+  "Building_id": 82,
+  "GasRound_id": 6
+}, {
+  "Building_id": 82,
+  "GasRound_id": 56
+}, {
+  "Building_id": 83,
+  "GasRound_id": 5
+}, {
+  "Building_id": 83,
+  "GasRound_id": 10
+}, {
+  "Building_id": 85,
+  "GasRound_id": 6
+}, {
+  "Building_id": 85,
+  "GasRound_id": 45
+}, {
+  "Building_id": 89,
+  "GasRound_id": 5
+}, {
+  "Building_id": 90,
+  "GasRound_id": 5
+}, {
+  "Building_id": 92,
+  "GasRound_id": 5
+}, {
+  "Building_id": 96,
+  "GasRound_id": 4
+}, {
+  "Building_id": 96,
+  "GasRound_id": 14
+}, {
+  "Building_id": 97,
+  "GasRound_id": 36
+}, {
+  "Building_id": 98,
+  "GasRound_id": 18
+}, {
+  "Building_id": 99,
+  "GasRound_id": 4
+}, {
+  "Building_id": 99,
+  "GasRound_id": 15
+}, {
+  "Building_id": 99,
+  "GasRound_id": 41
+}, {
+  "Building_id": 102,
+  "GasRound_id": 4
+}, {
+  "Building_id": 108,
+  "GasRound_id": 5
+}, {
+  "Building_id": 108,
+  "GasRound_id": 13
+}, {
+  "Building_id": 108,
+  "GasRound_id": 48
+}, {
+  "Building_id": 114,
+  "GasRound_id": 5
+}, {
+  "Building_id": 114,
+  "GasRound_id": 21
+}, {
+  "Building_id": 115,
+  "GasRound_id": 49
+}, {
+  "Building_id": 132,
+  "GasRound_id": 5
+}, {
+  "Building_id": 136,
+  "GasRound_id": 60
+}, {
+  "Building_id": 138,
+  "GasRound_id": 50
+}, {
+  "Building_id": 142,
+  "GasRound_id": 30
+}, {
+  "Building_id": 146,
+  "GasRound_id": 20
+}, {
+  "Building_id": 152,
+  "GasRound_id": 5
+}, {
+  "Building_id": 156,
+  "GasRound_id": 5
+}, {
+  "Building_id": 190,
+  "GasRound_id": 5
+}, {
+  "Building_id": 190,
+  "GasRound_id": 33
+}, {
+  "Building_id": 195,
+  "GasRound_id": 4
+}, {
+  "Building_id": 195,
+  "GasRound_id": 25
+}, {
+  "Building_id": 196,
+  "GasRound_id": 4
+}, {
+  "Building_id": 196,
+  "GasRound_id": 27
+}, {
+  "Building_id": 197,
+  "GasRound_id": 27
+}, {
+  "Building_id": 198,
+  "GasRound_id": 27
+}, {
+  "Building_id": 199,
+  "GasRound_id": 5
+}, {
+  "Building_id": 199,
+  "GasRound_id": 34
+}, {
+  "Building_id": 199,
+  "GasRound_id": 59
+}, {
+  "Building_id": 200,
+  "GasRound_id": 24
+}, {
+  "Building_id": 212,
+  "GasRound_id": 27
+}, {
+  "Building_id": 217,
+  "GasRound_id": 4
+}, {
+  "Building_id": 218,
+  "GasRound_id": 4
+}, {
+  "Building_id": 218,
+  "GasRound_id": 24
+}, {
+  "Building_id": 219,
+  "GasRound_id": 4
+}, {
+  "Building_id": 219,
+  "GasRound_id": 24
+}, {
+  "Building_id": 220,
+  "GasRound_id": 5
+}, {
+  "Building_id": 221,
+  "GasRound_id": 5
+}, {
+  "Building_id": 222,
+  "GasRound_id": 5
+}, {
+  "Building_id": 223,
+  "GasRound_id": 5
+}, {
+  "Building_id": 224,
+  "GasRound_id": 5
+}, {
+  "Building_id": 225,
+  "GasRound_id": 5
+}, {
+  "Building_id": 226,
+  "GasRound_id": 5
+}, {
+  "Building_id": 238,
+  "GasRound_id": 51
+}, {
+  "Building_id": 258,
+  "GasRound_id": 29
+}, {
+  "Building_id": 258,
+  "GasRound_id": 52
+}, {
+  "Building_id": 270,
+  "GasRound_id": 55
+}, {
+  "Building_id": 275,
+  "GasRound_id": 38
+}, {
+  "Building_id": 293,
+  "GasRound_id": 44
+}, {
+  "Building_id": 341,
+  "GasRound_id": 8
+}, {
+  "Building_id": 341,
+  "GasRound_id": 43
+}, {
+  "Building_id": 342,
+  "GasRound_id": 8
+}, {
+  "Building_id": 342,
+  "GasRound_id": 43
+}, {
+  "Building_id": 343,
+  "GasRound_id": 8
+}, {
+  "Building_id": 343,
+  "GasRound_id": 43
+}, {
+  "Building_id": 344,
+  "GasRound_id": 7
+}, {
+  "Building_id": 344,
+  "GasRound_id": 43
+}, {
+  "Building_id": 345,
+  "GasRound_id": 8
+}, {
+  "Building_id": 345,
+  "GasRound_id": 43
+}, {
+  "Building_id": 348,
+  "GasRound_id": 8
+}, {
+  "Building_id": 348,
+  "GasRound_id": 43
+}, {
+  "Building_id": 358,
+  "GasRound_id": 30
+}, {
+  "Building_id": 365,
+  "GasRound_id": 11
+}, {
+  "Building_id": 365,
+  "GasRound_id": 55
+}, {
+  "Building_id": 366,
+  "GasRound_id": 11
+}, {
+  "Building_id": 366,
+  "GasRound_id": 55
+}, {
+  "Building_id": 438,
+  "GasRound_id": 23
+}, {
+  "Building_id": 438,
+  "GasRound_id": 54
+}, {
+  "Building_id": 465,
+  "GasRound_id": 58
+}, {
+  "Building_id": 500,
+  "GasRound_id": 42
+}, {
+  "Building_id": 500,
+  "GasRound_id": 62
+}, {
+  "Building_id": 524,
+  "GasRound_id": 22
+}, {
+  "Building_id": 524,
+  "GasRound_id": 47
+}, {
+  "Building_id": 525,
+  "GasRound_id": 28
+}, {
+  "Building_id": 525,
+  "GasRound_id": 61
+}, {
+  "Building_id": 526,
+  "GasRound_id": 28
+}, {
+  "Building_id": 526,
+  "GasRound_id": 61
+}, {
+  "Building_id": 527,
+  "GasRound_id": 28
+}, {
+  "Building_id": 527,
+  "GasRound_id": 61
+}, {
+  "Building_id": 537,
+  "GasRound_id": 31
+}, {
+  "Building_id": 553,
+  "GasRound_id": 63
+}, {
+  "Building_id": 557,
+  "GasRound_id": 39
+}, {
+  "Building_id": 578,
+  "GasRound_id": 37
+}, {
+  "Building_id": 589,
+  "GasRound_id": 38
+}, {
+  "Building_id": 612,
+  "GasRound_id": 46
+}, {
+  "Building_id": 612,
+  "GasRound_id": 64
+}]

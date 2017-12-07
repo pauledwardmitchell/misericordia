@@ -1,4 +1,5 @@
 class CopierContract < ApplicationRecord
+  has_many :invoices
 
   def annualized_revenue(year)
 

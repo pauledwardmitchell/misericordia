@@ -1,4 +1,5 @@
 class SolarContract < ApplicationRecord
+  has_many :invoices
 
   def annualized_revenue(year)
 

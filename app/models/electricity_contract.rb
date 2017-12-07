@@ -1,6 +1,15 @@
 class ElectricityContract < ApplicationRecord
   include ReportCalc
 
+  def current?
+    year = Date.today.year
+    if contract_ends_prior_to(year) || !contract_started_by_end_of(year)
+      false
+    else
+      true
+    end
+  end
+
   def annualized_revenue(year)
     if contract_ends_prior_to(year) || !contract_started_by_end_of(year)
       return 0

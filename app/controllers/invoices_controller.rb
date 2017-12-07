@@ -98,7 +98,7 @@ class InvoicesController < ApplicationController
       waste_revenue: total_revenue(2017, WasteContract.all),
       landscaping_revenue: total_revenue(2017, LandscapingContract.all),
       copier_revenue: total_copier_revenue(2017, CopierContract.all),
-      solar_revenue: total_2solar_revenue(2017, SolarContract.all)
+      solar_revenue: total_solar_revenue(2017, SolarContract.all)
     }
   end
 

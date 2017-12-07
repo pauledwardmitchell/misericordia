@@ -89,6 +89,10 @@ class InvoicesController < ApplicationController
     end
     @data = tracked_organizations_array
     @annualized_revenue = all_contracts.map{ |c| c.annualized_revenue(2017) }.reduce(:+)
+    @totals_data = {
+      total_revenue: total_revenue(2017, all_contracts),
+      electricity_revenue: total_revenue(2017, ElectricityContract.all)
+    }
   end
 
   def webhook
@@ -188,6 +192,10 @@ class InvoicesController < ApplicationController
     solar_contracts = SolarContract.all
     contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts
     contracts_array
+  end
+
+  def total_revenue(year, array)
+    array.map{ |c| c.annualized_revenue(year) }.reduce(:+)
   end
 
 end

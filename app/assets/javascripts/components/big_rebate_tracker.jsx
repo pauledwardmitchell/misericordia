@@ -8,6 +8,10 @@ const BigRebateTracker = React.createClass({
     }
   },
 
+  percentOfTotal: function(number) {
+    return ((number / this.props.totals_data.total_revenue) * 100).toFixed(2)
+  },
+
   render: function() {
 
     return (
@@ -26,14 +30,22 @@ const BigRebateTracker = React.createClass({
                 return <SingleRebateRow
                          key={org.id}
                          org={org}
-                         total={this.props.total_revenue}/>
+                         total={this.props.totals_data.total_revenue}/>
                 }
             )}
+
             <tr style={{ fontWeight: 'bold', fontSize: 20 }} >
               <td>ANNUAL TOTAL</td>
-              <td>$ {this.formatMoneyNumber(this.props.total_revenue)}</td>
-              <td>-</td>
+              <td>$ {this.formatMoneyNumber(this.props.totals_data.total_revenue)}</td>
+              <td>{this.percentOfTotal(this.props.totals_data.total_revenue)}</td>
             </tr>
+
+            <tr style={{ fontWeight: 'bold', fontSize: 20 }} >
+              <td>ELECTRICITY TOTAL</td>
+              <td>$ {this.formatMoneyNumber(this.props.totals_data.electricity_revenue)}</td>
+              <td>{this.percentOfTotal(this.props.totals_data.electricity_revenue)}</td>
+            </tr>
+
           </tbody>
         </table>
       </section>

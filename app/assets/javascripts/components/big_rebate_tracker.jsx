@@ -18,14 +18,15 @@ const BigRebateTracker = React.createClass({
             <tr>
               <th>Organization:</th>
               <th>Rebate Generated to CPA</th>
-              <th>Year End Check Amount</th>
+              <th>Percent of total</th>
             </tr>
           </thead>
           <tbody>
             {this.props.data.map((org) => {
                 return <SingleRebateRow
                          key={org.id}
-                         org={org}/>
+                         org={org}
+                         total={this.props.total_revenue}/>
                 }
             )}
             <tr style={{ fontWeight: 'bold', fontSize: 20 }} >

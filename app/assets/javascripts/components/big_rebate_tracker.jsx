@@ -47,6 +47,12 @@ const BigRebateTracker = React.createClass({
             </tr>
 
             <tr style={{ fontWeight: 'bold', fontSize: 20 }} >
+              <td>GAS TOTAL</td>
+              <td>$ {this.formatMoneyNumber(this.props.totals_data.gas_revenue)}</td>
+              <td>{this.percentOfTotal(this.props.totals_data.gas_revenue)}</td>
+            </tr>
+
+            <tr style={{ fontWeight: 'bold', fontSize: 20 }} >
               <td>CLEANING TOTAL</td>
               <td>$ {this.formatMoneyNumber(this.props.totals_data.cleaning_revenue)}</td>
               <td>{this.percentOfTotal(this.props.totals_data.cleaning_revenue)}</td>

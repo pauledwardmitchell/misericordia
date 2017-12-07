@@ -1,5 +1,9 @@
 class ElectricityContractsController < ApplicationController
 
+  def index
+    @all_electricity_contracts = ElectricityContract.all.
+  end
+
   def show
     @electricity_contract = ElectricityContract.find(params[:id])
 

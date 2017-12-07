@@ -8,13 +8,17 @@ const SingleRebateRow = React.createClass({
 }
   },
 
+  percentOfTotal: function() {
+    return ((this.props.org.revenue / this.props.total) * 100).toFixed(2)
+  },
+
   render: function() {
 
     return (
       <tr>
         <td>{this.props.org.name}</td>
         <td>$ {this.formatMoneyNumber(this.props.org.revenue)}</td>
-        <td>-</td>
+        <td>{this.percentOfTotal()}%</td>
       </tr>
     )
 

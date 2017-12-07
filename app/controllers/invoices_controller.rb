@@ -72,7 +72,7 @@ class InvoicesController < ApplicationController
     http.use_ssl= true
 
     request = set_up_pw_post_request(url)
-    request.body = "{\n  \"tags\":\"track\"\n}"
+    request.body = "{\n  \"page_size\":200, \n  \"tags\":\"track\"\n}"
     response = http.request(request)
     tracked_organizations = JSON.parse(response.body)
     tracked_organizations_array = []

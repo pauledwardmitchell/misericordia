@@ -96,7 +96,9 @@ class InvoicesController < ApplicationController
       security_revenue: total_revenue(2017, SecurityContract.all),
       gas_revenue: total_revenue(2017, GasContract.all),
       waste_revenue: total_revenue(2017, WasteContract.all),
-      landscaping_revenue: total_revenue(2017, LandscapingContract.all)
+      landscaping_revenue: total_revenue(2017, LandscapingContract.all),
+      copier_revenue: total_copier_or_solar_revenue(2017, CopierContract.all),
+      solar_revenue: total_copier_or_solar_revenue(2017, SolarContract.all)
     }
   end
 
@@ -201,6 +203,17 @@ class InvoicesController < ApplicationController
 
   def total_revenue(year, array)
     array.map{ |c| c.annualized_revenue(year) }.reduce(:+)
+  end
+
+  def total_copier_or_solar_revenue(year, array)
+    all_invoices = []
+    array.each do |contract|
+      all_invoices << contract.invoices
+      all_invoices
+    end
+    current_invoices = all_invoices.select{ |i| i.current? }
+    total = current_invoices.map{ |i| i.amount }.reduce(:+)
+    total
   end
 
 end

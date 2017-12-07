@@ -1,7 +1,7 @@
 class ElectricityContractsController < ApplicationController
 
   def index
-    @all_electricity_contracts = ElectricityContract.all.
+    @all_electricity_contracts = ElectricityContract.all
   end
 
   def show

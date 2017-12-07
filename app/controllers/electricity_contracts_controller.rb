@@ -1,7 +1,22 @@
 class ElectricityContractsController < ApplicationController
 
   def index
-    @all_electricity_contracts = ElectricityContract.all
+    @current_electricity_contracts = ElectricityContract.all.select{ |c| c.current? }
+    @contracts_array =[]
+    @current_electricity_contracts.each do |contract|
+      @contract_data = {name: contract.name,
+                        id: contract.id,
+                        contract_start_date: contract.contract_start_date,
+                        contract_end_date: contract.contract_end_date,
+                        rebate_to_cpa: contract.rebate_to_cpa,
+                        cpa_negotiated_price: contract.cpa_negotiated_price,
+                        total_kwh_expected: contract.total_kwh_expected,
+                        annual_rebate: contract.annualized_revenue(2017)
+                        }
+      @contracts_array << @contract_data
+      @contracts_array
+    end
+    @contracts_array
   end
 
   def show

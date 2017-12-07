@@ -91,7 +91,12 @@ class InvoicesController < ApplicationController
     @annualized_revenue = all_contracts.map{ |c| c.annualized_revenue(2017) }.reduce(:+)
     @totals_data = {
       total_revenue: total_revenue(2017, all_contracts),
-      electricity_revenue: total_revenue(2017, ElectricityContract.all)
+      electricity_revenue: total_revenue(2017, ElectricityContract.all),
+      cleaning_revenue: total_revenue(2017, CleaningContract.all),
+      security_revenue: total_revenue(2017, SecurityContract.all),
+      gas_revenue: total_revenue(2017, GasContract.all),
+      waste_revenue: total_revenue(2017, WasteContract.all),
+      landscaping_revenue: total_revenue(2017, LandscapingContract.all)
     }
   end
 

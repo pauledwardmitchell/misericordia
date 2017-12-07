@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  electricity_contract_id: 1
+  date: 2017-12-07
+  amount: 1.5
+
+two:
+  electricity_contract_id: 1
+  date: 2017-12-07
+  amount: 1.5

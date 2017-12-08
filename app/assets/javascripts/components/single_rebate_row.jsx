@@ -28,6 +28,7 @@ const SingleRebateRow = React.createClass({
             <section>Waste: ${this.formatMoneyNumber(this.props.org.totals.waste_revenue)}</section>
             <section>Solar: ${this.formatMoneyNumber(this.props.org.totals.solar_revenue)}</section>
             <section>Copier: ${this.formatMoneyNumber(this.props.org.totals.copier_revenue)}</section>
+            <section>Misc: ${this.formatMoneyNumber(this.props.org.totals.misc_revenue)}</section>
           </span>
         </td>
         <td>{this.percentOfTotal()}%</td>

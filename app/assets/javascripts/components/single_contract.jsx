@@ -40,7 +40,7 @@ const SingleContract = React.createClass({
     case "security":
         return "/security_contracts";
         break;
-    case "monthly"
+    case "monthly":
         return "/monthly_contracts";
         break;
     }

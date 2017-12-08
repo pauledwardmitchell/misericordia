@@ -34,7 +34,7 @@ class ElectricityContract < ApplicationRecord
   private
 
   def contract_revenue
-    self.total_kwh_expected*self.cpa_negotiated_price*self.rebate_to_cpa
+    self.total_kwh_expected*self.rebate_to_cpa
   end
 
 end

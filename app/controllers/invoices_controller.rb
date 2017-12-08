@@ -83,7 +83,17 @@ class InvoicesController < ApplicationController
 
       organization_hash = {name: org["name"],
                            revenue: all_rebates,
-                           id: org["id"]
+                           id: org["id"],
+                           totals: {
+                            landscaping_revenue: total_revenue(2017, LandscapingContract.where(pw_organization_id: org["id"])),
+                            electricity_revenue: total_revenue(2017, ElectricityContract.where(pw_organization_id: org["id"])),
+                            gas_revenue: total_revenue(2017, GasContract.where(pw_organization_id: org["id"])),
+                            cleaning_revenue: total_revenue(2017, CleaningContract.where(pw_organization_id: org["id"])),
+                            security_revenue: total_revenue(2017, SecurityContract.where(pw_organization_id: org["id"])),
+                            waste_revenue: total_revenue(2017, WasteContract.where(pw_organization_id: org["id"])),
+                            solar_revenue: total_solar_revenue(2017, SolarContract.where(pw_organization_id: org["id"])),
+                            copier_revenue: total_copier_revenue(2017, CopierContract.where(pw_organization_id: org["id"]))
+                           }
                           }
       tracked_organizations_array << organization_hash
     end

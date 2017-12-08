@@ -63,6 +63,7 @@ class InvoicesController < ApplicationController
     @solar_contracts = SolarContract.where(cover_sheet_entered: false, active: true)
     @gas_contracts = GasContract.where(cover_sheet_entered: false, active: true)
     @electricity_contracts = ElectricityContract.where(cover_sheet_entered: false, active: true)
+    @monthly_contracts = MonthlyContract.where(cover_sheet_entered: false, active: true)
   end
 
   def report
@@ -92,7 +93,8 @@ class InvoicesController < ApplicationController
                             security_revenue: total_revenue(2017, SecurityContract.where(pw_organization_id: org["id"])),
                             waste_revenue: total_revenue(2017, WasteContract.where(pw_organization_id: org["id"])),
                             solar_revenue: total_solar_revenue(2017, SolarContract.where(pw_organization_id: org["id"])),
-                            copier_revenue: total_copier_revenue(2017, CopierContract.where(pw_organization_id: org["id"]))
+                            copier_revenue: total_copier_revenue(2017, CopierContract.where(pw_organization_id: org["id"])),
+                            misc_revenue: total_revenue(2017, MonthlyContract.where(pw_organization_id: org["id"]))
                            }
                           }
       tracked_organizations_array << organization_hash
@@ -173,6 +175,9 @@ class InvoicesController < ApplicationController
     elsif won_opportunity['tags'].include?("electricity")
       ElectricityContract.create(name: won_opportunity['name'],
                                  pw_organization_id: won_opportunity['company_id'])
+    elsif won_opportunity['tags'].include?("general-monthly")
+      MonthlyContract.create(name: won_opportunity['name'],
+                             pw_organization_id: won_opportunity['company_id'])
     end
   end
 

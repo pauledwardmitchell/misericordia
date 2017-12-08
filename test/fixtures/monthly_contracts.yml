@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  pw_organization_id: 1
+  building_id: 1
+  old_monthly_payment: 1
+  cpa_monthly_payment: 1
+  contract_start_date: 2017-12-08
+  contract_end_date: 2017-12-08
+  qbo_customer_id: 1
+  rebate_percentage: 1.5
+  cover_sheet_entered: false
+  invoices_generated: false
+  active: false
+
+two:
+  name: MyString
+  pw_organization_id: 1
+  building_id: 1
+  old_monthly_payment: 1
+  cpa_monthly_payment: 1
+  contract_start_date: 2017-12-08
+  contract_end_date: 2017-12-08
+  qbo_customer_id: 1
+  rebate_percentage: 1.5
+  cover_sheet_entered: false
+  invoices_generated: false
+  active: false

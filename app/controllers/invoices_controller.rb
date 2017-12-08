@@ -211,7 +211,7 @@ class InvoicesController < ApplicationController
       all_invoices << contract.copier_invoices
       all_invoices
     end
-    current_invoices = all_invoices.select{ |i| i.current? }
+    current_invoices = all_invoices[0].select{ |i| i.current? }
     total = current_invoices.map{ |i| i.amount }.reduce(:+)
     total
   end
@@ -222,7 +222,7 @@ class InvoicesController < ApplicationController
       all_invoices << contract.solar_invoices
       all_invoices
     end
-    current_invoices = all_invoices.select{ |i| i.current? }
+    current_invoices = all_invoices[0].select{ |i| i.current? }
     total = current_invoices.map{ |i| i.amount }.reduce(:+)
     total
   end

@@ -110,7 +110,8 @@ class InvoicesController < ApplicationController
       waste_revenue: total_revenue(2017, WasteContract.all),
       landscaping_revenue: total_revenue(2017, LandscapingContract.all),
       copier_revenue: total_copier_revenue(2017, CopierContract.all),
-      solar_revenue: total_solar_revenue(2017, SolarContract.all)
+      solar_revenue: total_solar_revenue(2017, SolarContract.all),
+      misc_revenue: total_revenue(2017, MonthlyContract.all)
     }
   end
 
@@ -199,7 +200,8 @@ class InvoicesController < ApplicationController
     gas_contracts = GasContract.where(pw_organization_id: id)
     copier_contracts = CopierContract.where(pw_organization_id: id)
     solar_contracts = SolarContract.where(pw_organization_id: id)
-    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts
+    monthly_contracts = MonthlyContract.where(pw_organization_id: id)
+    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts + monthly_contracts
     contracts_array
   end
 
@@ -212,7 +214,8 @@ class InvoicesController < ApplicationController
     gas_contracts = GasContract.all
     copier_contracts = CopierContract.all
     solar_contracts = SolarContract.all
-    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts
+    monthly_contracts = MonthlyContract.all
+    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts + monthly_contracts
     contracts_array
   end
 

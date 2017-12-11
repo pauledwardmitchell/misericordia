@@ -12,4 +12,20 @@ class SolarContract < ApplicationRecord
     end
   end
 
+  def cpa_monthly_payment
+    "n/a"
+  end
+
+  def monthly_savings
+    self.estimated_savings/12
+  end
+
+  def monthly_rebate
+    self.SolarInvoice.all.map{ |i| i.amount }.reduce(:+)/12
+  end
+
+  def contract_end_date
+    self.scorecard_end_date
+  end
+
 end

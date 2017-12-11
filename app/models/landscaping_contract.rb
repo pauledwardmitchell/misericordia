@@ -22,4 +22,12 @@ class LandscapingContract < ApplicationRecord
     ann_revenue
   end
 
+  def cpa_monthly_payment
+    self.cpa_annual_payment/12
+  end
+
+  def monthly_savings
+    (self.old_annual_payment-self.cpa_annual_payment)/12
+  end
+
 end

@@ -31,6 +31,18 @@ class ElectricityContract < ApplicationRecord
     ann_revenue
   end
 
+  def cpa_monthly_payment
+    self.cpa_negotiated_price*self.total_kwh_expected/12
+  end
+
+  def monthly_savings
+    (self.price_to_compare-self.cpa_negotiated_price)*self.total_kwh_expected/12
+  end
+
+  def monthly_rebate
+    contract_revenue/12
+  end
+
   private
 
   def contract_revenue

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :gas_contracts
   resources :electricity_contracts
   resources :monthly_contracts
+  resources :members
 
   get '/dashboard', to: 'customers#dashboard'
   get '/pipeline', to: 'invoices#pipeline'

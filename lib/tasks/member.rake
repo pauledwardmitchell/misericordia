@@ -12,7 +12,7 @@ task :create_members => :environment do
     tracked_organizations = JSON.parse(response.body)
 
     tracked_organizations.each do |org|
-      Member.create(pw_id: org.id)
+      Member.create(pw_id: org["id"])
     end
 
 end

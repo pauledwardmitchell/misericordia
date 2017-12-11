@@ -21,4 +21,12 @@ module ReportCalcMonthly
     ann_revenue
   end
 
+  def monthly_savings
+    self.old_monthly_payment - self.cpa_monthly_payment
+  end
+
+  def monthly_rebate
+    self.cpa_monthly_payment*self.rebate_percentage
+  end
+
 end

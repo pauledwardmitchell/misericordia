@@ -30,4 +30,8 @@ class LandscapingContract < ApplicationRecord
     (self.old_annual_payment-self.cpa_annual_payment)/12
   end
 
+  def monthly_rebate
+    (self.cpa_annual_payment*self.rebate_percentage)/12
+  end
+
 end

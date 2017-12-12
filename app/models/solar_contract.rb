@@ -22,7 +22,7 @@ class SolarContract < ApplicationRecord
   end
 
   def cpa_monthly_payment
-    "n/a"
+    0
   end
 
   def monthly_savings

@@ -30,7 +30,7 @@ class CopierContract < ApplicationRecord
   end
 
   def monthly_rebate
-    self.CopierInvoice.all.map{ |i| i.amount }.reduce(:+)/12
+    self.copier_invoices.map{ |i| i.amount }.reduce(:+)/12
   end
 
   def contract_end_date

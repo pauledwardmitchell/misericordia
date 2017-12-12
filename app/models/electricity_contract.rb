@@ -43,6 +43,10 @@ class ElectricityContract < ApplicationRecord
     contract_revenue/12
   end
 
+  def rebate_percentage
+    self.rebate_to_cpa
+  end
+
   private
 
   def contract_revenue

@@ -1,6 +1,11 @@
 class SolarContract < ApplicationRecord
   has_many :solar_invoices
 
+  def current?
+    year = Date.today.year
+
+  end
+
   def annualized_revenue(year)
     current_year_invoices = self.solar_invoices.select{ |i| i.current? }
 

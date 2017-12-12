@@ -25,6 +25,10 @@ class CopierContract < ApplicationRecord
     0
   end
 
+  def rebate_percentage
+    0
+  end
+
   def monthly_savings
     self.estimated_savings/12
   end

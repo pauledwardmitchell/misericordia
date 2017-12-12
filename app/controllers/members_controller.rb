@@ -19,6 +19,7 @@ class MembersController < ApplicationController
                        monthly_payment: contract.cpa_monthly_payment,
                        monthly_savings: contract.monthly_savings,
                        monthly_rebate: contract.monthly_rebate,
+                       rebate_percentage: contract.rebate_percentage,
                        end_date: contract.contract_end_date,
                        contract_type: contract.class.to_s
                        }

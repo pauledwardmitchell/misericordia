@@ -13,7 +13,9 @@ class MembersController < ApplicationController
                    }
     @current_contract_data = []
     #add all contracts into an array
-    all_org_contracts(@member.pw_id).select{ |c| c.current? }.each do |contract|
+    all_contracts = all_org_contracts(@member.pw_id)
+    all_active_contracts = all_contracts.select{ |c| c.current? }
+    all_active_contracts.each do |contract|
       contract_data = {id: contract.id,
                        name: contract.name,
                        monthly_payment: contract.cpa_monthly_payment,
@@ -26,6 +28,10 @@ class MembersController < ApplicationController
     #create object from array w class as a string
       @current_contract_data << contract_data
     end
+    @totals_data = {monthly_payment_total: all_active_contracts.map{|c| c.cpa_monthly_payment }.reduce(:+),
+                    monthly_savings_total: all_active_contracts.map{|c| c.monthly_savings }.reduce(:+),
+                    monthly_rebate_total: all_active_contracts.map{|c| c.monthly_rebate }.reduce(:+)
+                   }
 
   end
 

@@ -38,7 +38,7 @@ const SingleContractRow = React.createClass({
     }   else {
           return Number(number.toFixed(2)).toLocaleString()
     }
-      },
+  },
 
   percentOfTotal: function() {
     return ((this.props.org.revenue / this.props.total) * 100).toFixed(2)

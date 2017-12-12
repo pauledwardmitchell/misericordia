@@ -3,7 +3,7 @@ class CopierContract < ApplicationRecord
 
   def current?
     year = Date.today.year
-    if self.scorecard_start_date.year + 3 <= year
+    if self.scorecard_start_date.year <= year + 5
       true
     else
       false
@@ -26,7 +26,7 @@ class CopierContract < ApplicationRecord
   end
 
   def monthly_savings
-    self.estimated_savings
+    self.estimated_savings/12
   end
 
   def monthly_rebate

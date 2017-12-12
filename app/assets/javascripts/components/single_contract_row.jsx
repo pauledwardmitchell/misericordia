@@ -44,12 +44,20 @@ const SingleContractRow = React.createClass({
     return ((this.props.org.revenue / this.props.total) * 100).toFixed(2)
   },
 
+  monthlyPayment: function(monthly_payment) {
+    if (monthly_payment === 0) {
+      return "-"
+    } else {
+      return "$" + this.formatMoneyNumber(monthly_payment)
+    }
+  },
+
   render: function() {
 
     return (
       <tr>
         <td>{this.nameFromContractType()}</td>
-        <td>${this.formatMoneyNumber(this.props.contract.monthly_payment)}</td>
+        <td>{this.monthlyPayment(this.props.contract.monthly_payment)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_savings)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_rebate)}</td>
         <td>{this.props.contract.rebate_percentage}%</td>

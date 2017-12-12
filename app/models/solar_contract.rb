@@ -30,7 +30,7 @@ class SolarContract < ApplicationRecord
   end
 
   def monthly_rebate
-    self.SolarInvoice.all.map{ |i| i.amount }.reduce(:+)/12
+    self.solar_invoices.map{ |i| i.amount }.reduce(:+)/12
   end
 
   def contract_end_date

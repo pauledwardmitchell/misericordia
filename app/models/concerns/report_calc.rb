@@ -1,5 +1,14 @@
 module ReportCalc
 
+  def current?
+    year = Date.today.year
+    if contract_ends_prior_to(year) || !contract_started_by_end_of(year)
+      false
+    else
+      true
+    end
+  end
+
   private
 
   def contract_ends_midyear(year)

@@ -31,7 +31,7 @@ class GasContract < ApplicationRecord
   end
 
   def monthly_rebate
-    self.contract_revenue/12
+    contract_revenue/12
   end
 
   private

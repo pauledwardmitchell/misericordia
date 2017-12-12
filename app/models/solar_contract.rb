@@ -3,7 +3,7 @@ class SolarContract < ApplicationRecord
 
   def current?
     year = Date.today.year
-    if self.scorecard_start_date.year + 15 <= year
+    if self.scorecard_start_date.year <= year + 17
       true
     else
       false

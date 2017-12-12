@@ -3,7 +3,7 @@ class CopierContract < ApplicationRecord
 
   def current?
     year = Date.today.year
-    if self.scorecard_start_date.year + 3 <= year
+    if self.scorecard_start_date.year <= year + 5
       true
     else
       false

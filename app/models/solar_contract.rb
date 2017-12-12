@@ -3,7 +3,11 @@ class SolarContract < ApplicationRecord
 
   def current?
     year = Date.today.year
-
+    if self.scorecard_start_date.year + 15 <= year
+      true
+    else
+      false
+    end
   end
 
   def annualized_revenue(year)

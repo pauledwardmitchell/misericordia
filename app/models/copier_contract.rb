@@ -1,6 +1,15 @@
 class CopierContract < ApplicationRecord
   has_many :copier_invoices
 
+  def current?
+    year = Date.today.year
+    if self.scorecard_start_date.year + 3 <= year
+      true
+    else
+      false
+    end
+  end
+
   def annualized_revenue(year)
     current_year_invoices = self.copier_invoices.select{ |i| i.current? }
 

@@ -33,7 +33,7 @@ class MembersController < ApplicationController
     @member_data = {name: response_as_json["name"],
                     institution_type: institution_type(tags),
                     sell_list: sell_list(all_active_contracts, tags),
-                    pvr: (numerator/denominator.to_f),
+                    pvr: (numerator/denominator.to_f.round(2)),
                     city_state: city_state_from_pw_company(response_as_json)
                    }
     @totals_data = {monthly_payment_total: all_active_contracts.map{|c| c.cpa_monthly_payment }.reduce(:+),
@@ -119,7 +119,7 @@ class MembersController < ApplicationController
   end
 
   def pvr
-    pvr_numerator / pvr_demoninator
+    pvr_numerator / pvr_demoninator.to_f
   end
 
   def institution_type(array)

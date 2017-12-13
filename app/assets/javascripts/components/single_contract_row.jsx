@@ -56,7 +56,7 @@ const SingleContractRow = React.createClass({
     if (rebate_percentage === 0) {
       return "-"
     } else {
-      return (rebate_percentage*100) + "%"
+      return ((rebate_percentage*100).toFixed(4)) + "%"
     }
   },
 

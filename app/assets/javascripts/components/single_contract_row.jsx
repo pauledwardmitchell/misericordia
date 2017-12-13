@@ -15,7 +15,7 @@ const SingleContractRow = React.createClass({
         return "General Contract";
         break;
     case "LandscapingContract":
-        return "Lanscaping Contract";
+        return "Landscaping Contract";
         break;
     case "WasteContract":
         return "Waste Contract";

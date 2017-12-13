@@ -30,11 +30,11 @@ const MemberDetails = React.createClass({
                          contract={contract}/>
                 }
             )}
-            <tr style={{fontWeight: 'bold'}}>
-              <td>TOTAL: monthly / [annual]</td>
+            <tr style={{fontWeight: 'bold', fontSize: 20}}>
+              <td>Monthly Total / [Annual Total]</td>
               <td>${this.formatMoneyNumber(this.props.totals_data.monthly_payment_total)} / [${this.formatMoneyNumber(this.props.totals_data.monthly_payment_total*12)}]</td>
-              <td>${this.formatMoneyNumber(this.props.totals_data.monthly_savings_total)}</td>
-              <td>${this.formatMoneyNumber(this.props.totals_data.monthly_rebate_total)}</td>
+              <td>${this.formatMoneyNumber(this.props.totals_data.monthly_savings_total)} / [{this.formatMoneyNumber(this.props.totals_data.monthly_savings_total*12)}]</td>
+              <td>${this.formatMoneyNumber(this.props.totals_data.monthly_rebate_total)} / [${this.formatMoneyNumber(this.props.totals_data.monthly_rebate_total*12)}]</td>
               <td></td>
               <td></td>
             </tr>

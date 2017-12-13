@@ -38,7 +38,7 @@ const SingleContractRow = React.createClass({
     }   else {
           return Number(number.toFixed(2)).toLocaleString()
     }
-      },
+  },
 
   percentOfTotal: function() {
     return ((this.props.org.revenue / this.props.total) * 100).toFixed(2)
@@ -60,10 +60,20 @@ const SingleContractRow = React.createClass({
     }
   },
 
+  rowClass: function(end_date) {
+    var sixtyDaysFromNow = new Date().getTime() + (60 * 24 * 60 * 60 * 1000)
+    var contractEndDate = new Date(end_date).getTime()
+    if (contractEndDate < sixtyDaysFromNow) {
+      return "date-alert"
+    } else {
+      return ""
+    }
+  },
+
   render: function() {
 
     return (
-      <tr>
+      <tr className={this.rowClass(this.props.contract.end_date)}>
         <td>{this.nameFromContractType()}</td>
         <td>{this.monthlyPayment(this.props.contract.monthly_payment)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_savings)}</td>

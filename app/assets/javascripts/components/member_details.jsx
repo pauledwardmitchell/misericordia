@@ -33,7 +33,7 @@ const MemberDetails = React.createClass({
             <tr style={{fontWeight: 'bold', fontSize: 20}}>
               <td>Monthly Total / [Annual Total]</td>
               <td>${this.formatMoneyNumber(this.props.totals_data.monthly_payment_total)} / [${this.formatMoneyNumber(this.props.totals_data.monthly_payment_total*12)}]</td>
-              <td>${this.formatMoneyNumber(this.props.totals_data.monthly_savings_total)} / [{this.formatMoneyNumber(this.props.totals_data.monthly_savings_total*12)}]</td>
+              <td>${this.formatMoneyNumber(this.props.totals_data.monthly_savings_total)} / [${this.formatMoneyNumber(this.props.totals_data.monthly_savings_total*12)}]</td>
               <td>${this.formatMoneyNumber(this.props.totals_data.monthly_rebate_total)} / [${this.formatMoneyNumber(this.props.totals_data.monthly_rebate_total*12)}]</td>
               <td></td>
               <td></td>

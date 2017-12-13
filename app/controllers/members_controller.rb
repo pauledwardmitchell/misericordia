@@ -126,6 +126,10 @@ class MembersController < ApplicationController
     if array.include?("synagogue")
       return "Synagogue"
     end
+    if array.include?("school")
+      return "School"
+    end
+
   end
 
   def sell_list(all_contracts, tags_array)

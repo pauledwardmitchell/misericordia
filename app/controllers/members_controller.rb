@@ -27,11 +27,14 @@ class MembersController < ApplicationController
     #create object from array w class as a string
       @current_contract_data << contract_data
     end
+    tags = response_as_json["tags"]
     numerator = pvr_numerator(all_active_contracts)
-    denominator = pvr_demoninator(response_as_json["tags"])
+    denominator = pvr_demoninator(tags)
     @member_data = {name: response_as_json["name"],
-                    tags: response_as_json["tags"],
-                    pvr: (numerator/denominator.to_f)
+                    institution_type: institution_type(tags),
+                    sell_list: sell_list(all_active_contracts, tags),
+                    pvr: (numerator/denominator.to_f),
+                    city_state: city_state_from_pw_company(response_as_json)
                    }
     @totals_data = {monthly_payment_total: all_active_contracts.map{|c| c.cpa_monthly_payment }.reduce(:+),
                     monthly_savings_total: all_active_contracts.map{|c| c.monthly_savings }.reduce(:+),
@@ -42,30 +45,30 @@ class MembersController < ApplicationController
 
   private
 
-  def remove_duplicate_buildings(all_active_contracts)
-    final_array =[]
+  # def remove_duplicate_buildings(all_active_contracts)
+  #   final_array =[]
 
-    all_active_contracts.each do |c|
-      #pop c out of all_active_contracts (dont want to compare it to itself)
-      loop_array = all_active_contracts
-      loop_array.delete(c)
-      #if c has same class and same building_id as another contract
-      prior_contract = loop_array.select{ |contract| contract.class == c.class && contract.building_id == c.building_id}
+  #   all_active_contracts.each do |c|
+  #     #pop c out of all_active_contracts (dont want to compare it to itself)
+  #     loop_array = all_active_contracts
+  #     loop_array.delete(c)
+  #     #if c has same class and same building_id as another contract
+  #     prior_contract = loop_array.select{ |contract| contract.class == c.class && contract.building_id == c.building_id}
 
-      if prior_contract[0] != nil
-        if prior_contract[0].contract_start_date > c.contract_start_date
-          final_array << prior_contract[0]
-        else
-          final_array << c
-        end
-      else
-        final_array << c
-      end
+  #     if prior_contract[0] != nil
+  #       if prior_contract[0].contract_start_date > c.contract_start_date
+  #         final_array << prior_contract[0]
+  #       else
+  #         final_array << c
+  #       end
+  #     else
+  #       final_array << c
+  #     end
 
-    end
-    final_array = final_array.uniq
-    final_array
-  end
+  #   end
+  #   final_array = final_array.uniq
+  #   final_array
+  # end
 
   def set_up_pw_post_request(url)
     request = Net::HTTP::Post.new(url)
@@ -100,9 +103,13 @@ class MembersController < ApplicationController
   end
 
   def pvr_numerator(all_contracts)
-    contract_types = all_contracts.map {|c| c.class}
+    contract_classes(all_contracts).count
+  end
+
+  def contract_classes(all_contracts)
+    contract_types = all_contracts.map {|c| c.class.to_s}
     contract_types = contract_types.uniq
-    contract_types.count
+    contract_types
   end
 
   def pvr_demoninator(tags_array)
@@ -113,6 +120,62 @@ class MembersController < ApplicationController
 
   def pvr
     pvr_numerator / pvr_demoninator
+  end
+
+  def institution_type(array)
+    if array.include?("synagogue")
+      return "Synagogue"
+    end
+    if array.include?("school")
+      return "School"
+    end
+
+  end
+
+  def sell_list(all_contracts, tags_array)
+    start_list = ["Cleaning", "Copier", "Electricity", "Gas", "Landscaping", "Security", "Solar", "Waste"]
+    class_list = contract_classes(all_contracts)
+    current_contract_areas = class_list.map{ |c| c.chomp('Contract') }
+    sell_list = start_list - current_contract_areas
+    sell_list = sell_list - ineligible_list(tags_array)
+    sell_list
+  end
+
+  def ineligible_list(tags_array)
+    ineligible_list = []
+
+    if tags_array.include?('no-cleaning')
+      ineligible_list << "Cleaning"
+    end
+    if tags_array.include?('no-copier')
+      ineligible_list << "Copier"
+    end
+    if tags_array.include?('no-electrivity')
+      ineligible_list << "Electrivity"
+    end
+    if tags_array.include?('no-gas')
+      ineligible_list << "Gas"
+    end
+    if tags_array.include?('no-landscaping')
+      ineligible_list << "Landscaping"
+    end
+    if tags_array.include?('no-security')
+      ineligible_list << "Security"
+    end
+    if tags_array.include?('no-solar')
+      ineligible_list << "Solar"
+    end
+    if tags_array.include?('no-waste')
+      ineligible_list << "Waste"
+    end
+    ineligible_list
+  end
+
+  def city_state_from_pw_company(company)
+    if company["address"]["city"] && company["address"]["state"]
+      city_state = company["address"]["city"] + ", " + company["address"]["state"]
+      city_state
+    end
   end
 
 end

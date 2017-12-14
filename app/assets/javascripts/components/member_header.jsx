@@ -2,7 +2,8 @@ const MemberHeader = React.createClass({
 
   formatPvr: function(pvr) {
     var pvrDecimal = pvr
-    var pvrPercent = (pvrDecimal.toFixed(2)*100)
+    var pvrPercent = (pvrDecimal*100)
+    pvrPercent = pvrPercent.toFixed(2)
     return pvrPercent
   },
 
@@ -24,8 +25,6 @@ const MemberHeader = React.createClass({
           <section>PVR: {this.formatPvr(this.props.member_data.pvr)}%</section>
           <section>{this.props.member_data.institution_type}</section>
           <section>{this.props.member_data.city_state}</section>
-          <section>{this.sellList(this.props.member_data.sell_list)}</section>
-
         </section>
       </section>
     )

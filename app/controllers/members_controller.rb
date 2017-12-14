@@ -6,9 +6,10 @@ class MembersController < ApplicationController
     url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + @member.pw_id.to_s)
     http = Net::HTTP.new(url.host, url.port)
     http.use_ssl= true
-    request = set_up_pw_get_request(url)
-    response = http.request(request)
-    response_as_json = JSON.parse(response.body)
+    company_request = set_up_pw_get_request(url)
+    company_response = http.request(company_request)
+    company_response_as_json = JSON.parse(company_response.body)
+    tags = company_response_as_json["tags"]
     @current_contract_data = []
     #add all contracts into an array
     all_contracts = all_org_contracts(@member.pw_id)
@@ -27,14 +28,36 @@ class MembersController < ApplicationController
     #create object from array w class as a string
       @current_contract_data << contract_data
     end
-    tags = response_as_json["tags"]
+
+    url = URI("https://api.prosperworks.com/developer_api/v1/opportunities/search")
+    opportunities_request = set_up_pw_post_request(url)
+    opportunities_request.body = "{\n  \"page_size\": 200,\n \"page_number\": 1,\n  \"sort_by\": \"name\"\n  \n}"
+    opportunities_response_pg_1 = http.request(opportunities_request)
+    opportunities_response_as_json_pg_1 = JSON.parse(opportunities_response_pg_1.body)
+
+    opportunities_request.body = "{\n  \"page_size\": 200,\n \"page_number\": 2,\n  \"sort_by\": \"name\"\n  \n}"
+    opportunities_response_pg_2 = http.request(opportunities_request)
+    opportunities_response_as_json_pg_2 = JSON.parse(opportunities_response_pg_2.body)
+
+    opportunities_request.body = "{\n  \"page_size\": 200,\n \"page_number\": 3,\n  \"sort_by\": \"name\"\n  \n}"
+    opportunities_response_pg_3 = http.request(opportunities_request)
+    opportunities_response_as_json_pg_3 = JSON.parse(opportunities_response_pg_3.body)
+
+    opportunities_request.body = "{\n  \"page_size\": 200,\n \"page_number\": 4,\n  \"sort_by\": \"name\"\n  \n}"
+    opportunities_response_pg_4 = http.request(opportunities_request)
+    opportunities_response_as_json_pg_4 = JSON.parse(opportunities_response_pg_4.body)
+
+    all_opportunities = opportunities_response_as_json_pg_1 + opportunities_response_as_json_pg_2 + opportunities_response_as_json_pg_3 + opportunities_response_as_json_pg_4
+    all_member_opportunities = all_opportunities.select{ |o| o["company_id"] == @member.pw_id && o["status"] != "Won" }
+
     numerator = pvr_numerator(all_active_contracts)
     denominator = pvr_demoninator(tags)
-    @member_data = {name: response_as_json["name"],
+    @member_data = {name: company_response_as_json["name"],
                     institution_type: institution_type(tags),
                     sell_list: sell_list(all_active_contracts, tags),
                     pvr: (numerator/denominator.to_f.round(2)),
-                    city_state: city_state_from_pw_company(response_as_json)
+                    city_state: city_state_from_pw_company(company_response_as_json),
+                    opportunities: all_member_opportunities
                    }
     @totals_data = {monthly_payment_total: all_active_contracts.map{|c| c.cpa_monthly_payment }.reduce(:+),
                     monthly_savings_total: all_active_contracts.map{|c| c.monthly_savings }.reduce(:+),
@@ -126,10 +149,36 @@ class MembersController < ApplicationController
     if array.include?("synagogue")
       return "Synagogue"
     end
-    if array.include?("school")
-      return "School"
+    if array.include?("charter school")
+      return "Charter School"
     end
-
+    if array.include?("church")
+      return "Church"
+    end
+    if array.include?("non-profit")
+      return "Non-profit"
+    end
+    if array.include?("multi-family housing")
+      return "Multi-Family Housing"
+    end
+    if array.include?("religious congregation")
+      return "Religious Congregation"
+    end
+    if array.include?("college")
+      return "College"
+    end
+    if array.include?("retirement")
+      return "Retirement Hoem"
+    end
+    if array.include?("charter school")
+      return "Charter School"
+    end
+    if array.include?("independent school")
+      return "Independent School"
+    end
+    if array.include?("institution-other")
+      return "Institution Type: Other"
+    end
   end
 
   def sell_list(all_contracts, tags_array)

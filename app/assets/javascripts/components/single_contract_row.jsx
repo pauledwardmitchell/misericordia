@@ -32,6 +32,38 @@ const SingleContractRow = React.createClass({
     }
   },
 
+  // linkFromContractType: function() {
+  //   switch (this.props.contract_type) {
+  //   case "cleaning":
+  //       return "/cleaning_contracts";
+  //       break;
+  //   case "copier":
+  //       return "/copier_contracts";
+  //       break;
+  //   case "electricity":
+  //       return "/electricity_contracts";
+  //       break;
+  //   case "general":
+  //       return "/general_contracts";
+  //       break;
+  //   case "landscaping":
+  //       return "/landscaping_contracts/";
+  //       break;
+  //   case "waste":
+  //       return "/waste_contracts";
+  //       break;
+  //   case "solar":
+  //       return "/solar_contracts";
+  //       break;
+  //   case "gas":
+  //       return "/gas_contracts";
+  //       break;
+  //   case "security":
+  //       return "/security_contracts";
+  //       break;
+  //   }
+  // },
+
   formatMoneyNumber: function(number) {
     if (number === null) {
       return 0.00

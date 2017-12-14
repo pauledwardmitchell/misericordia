@@ -8,6 +8,7 @@ const MemberShow = React.createClass({
         <MemberDetails
           current_contract_data={this.props.current_contract_data}
           totals_data={this.props.totals_data}/>
+        <MemberOpportunitiesTracker member_data={this.props.member_data}/>
       </section>
     )
 

@@ -12,7 +12,7 @@ const MemberDetails = React.createClass({
 
     return (
       <section>
-        <table style={{ width: '90%', marginLeft: '5%', marginRight: '5%', fontSize: 18 }}>
+        <table style={{ width: '90%', marginLeft: '5%', marginRight: '5%', marginBottom: 50, fontSize: 18 }}>
           <thead>
             <tr>
               <th>Name:</th>

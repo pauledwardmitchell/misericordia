@@ -17,7 +17,7 @@ class Report
     tracked_organizations.each do |org|
       org_total_savings = total_savings(year, all_org_contracts(org["id"]))
       if org_total_savings
-        p org.name
+        p org["name"]
         p org_total_savings
         tracked_organizations_savings = tracked_organizations_savings + org_total_savings
       end

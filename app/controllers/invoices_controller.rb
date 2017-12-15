@@ -66,7 +66,7 @@ class InvoicesController < ApplicationController
     @monthly_contracts = MonthlyContract.where(cover_sheet_entered: false, active: true)
   end
 
-  def report
+  def stats2017
     #get all PW companies with tag "track"
     url = URI("https://api.prosperworks.com/developer_api/v1/companies/search")
     http = Net::HTTP.new(url.host, url.port)

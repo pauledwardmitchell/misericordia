@@ -1,6 +1,27 @@
 class GasContract < ApplicationRecord
   include ReportCalc
 
+  def annualized_savings(year)
+    if contract_ends_prior_to(year) || !contract_started_by_end_of(year)
+      return 0
+    end
+
+    if contract_started_by_start_of(year)
+      report_start_date = Date.new(year,1,1)
+    else
+      report_start_date = self.contract_start_date
+    end
+
+    if contract_ends_midyear(year)
+      report_end_date = self.contract_end_date
+    else
+      report_end_date = Date.new(year,12,31)
+    end
+
+    ann_revenue = ((report_end_date - report_start_date + 1)/365).to_f*contract_savings
+    ann_revenue
+  end
+
   def annualized_revenue(year)
     if contract_ends_prior_to(year) || !contract_started_by_end_of(year)
       return 0
@@ -42,6 +63,10 @@ class GasContract < ApplicationRecord
 
   def contract_revenue
     self.total_therms_expected*self.rebate_to_cpa
+  end
+
+  def contract_savings
+    self.total_therms_expected*self.estimated_savings
   end
 
 end

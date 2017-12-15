@@ -14,9 +14,11 @@ class Report
     response = http.request(request)
     tracked_organizations = JSON.parse(response.body)
     tracked_organizations_savings = 0
-    tracked_organizations.each do |o|
-      org_total_savings = total_savings(year, all_org_contracts(o["id"]))
+    tracked_organizations.each do |org|
+      org_total_savings = total_savings(year, all_org_contracts(org["id"]))
       if org_total_savings
+        p org.name
+        p org_total_savings
         tracked_organizations_savings = tracked_organizations_savings + org_total_savings
       end
     end

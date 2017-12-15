@@ -16,7 +16,7 @@ const MemberOpportunitiesTracker = React.createClass({
         <div style={{ width: '20%', marginLeft: '5%', marginRight: '1%', fontSize: 18, float: 'left', border: '1px', borderStyle: 'solid', padding: 20 }}>
           <h4>Eligible for contracts in: </h4>
           {this.props.member_data.sell_list.map((category) => {
-              return <section>{category}</section>
+              return <section key={category}>{category}</section>
             }
           )}
         </div>

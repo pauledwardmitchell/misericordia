@@ -2,14 +2,9 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    @pw_company = @member.pw_company
 
-    url = URI("https://api.prosperworks.com/developer_api/v1/companies/" + @member.pw_id.to_s)
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl= true
-    company_request = set_up_pw_get_request(url)
-    company_response = http.request(company_request)
-    company_response_as_json = JSON.parse(company_response.body)
-    tags = company_response_as_json["tags"]
+    tags = @pw_company["tags"]
     @current_contract_data = []
     #add all contracts into an array
     all_contracts = all_org_contracts(@member.pw_id)
@@ -30,6 +25,8 @@ class MembersController < ApplicationController
     end
 
     url = URI("https://api.prosperworks.com/developer_api/v1/opportunities/search")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl= true
     opportunities_request = set_up_pw_post_request(url)
     opportunities_request.body = "{\n  \"page_size\": 200,\n \"page_number\": 1,\n  \"sort_by\": \"name\"\n  \n}"
     opportunities_response_pg_1 = http.request(opportunities_request)
@@ -52,11 +49,11 @@ class MembersController < ApplicationController
 
     numerator = pvr_numerator(all_active_contracts)
     denominator = pvr_demoninator(tags)
-    @member_data = {name: company_response_as_json["name"],
+    @member_data = {name: @pw_company["name"],
                     institution_type: institution_type(tags),
                     sell_list: sell_list(all_active_contracts, tags),
                     pvr: (numerator/denominator.to_f.round(2)),
-                    city_state: city_state_from_pw_company(company_response_as_json),
+                    city_state: city_state_from_pw_company(@pw_company),
                     opportunities: all_member_opportunities
                    }
     @totals_data = {monthly_payment_total: all_active_contracts.map{|c| c.cpa_monthly_payment }.reduce(:+),

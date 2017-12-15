@@ -4,8 +4,29 @@ class Report
     total_savings(year, all_contracts)
   end
 
+  def annualized_savings_low_income(year)
+    url = URI("https://api.prosperworks.com/developer_api/v1/companies/search")
+    http = Net::HTTP.new(url.host, url.port)
+    http.use_ssl= true
+
+    request = set_up_pw_post_request(url)
+    request.body = "{\n  \"page_size\":200, \n  \"tags\":\"low-income\"\n}"
+    response = http.request(request)
+    tracked_organizations = JSON.parse(response.body)
+    tracked_organizations_savings = 0
+    tracked_organizations.each do |o|
+      org_total_savings = total_savings(year, all_org_contracts(o["id"]))
+      if org_total_savings
+        tracked_organizations_savings = tracked_organizations_savings + org_total_savings
+      end
+    end
+    tracked_organizations_savings
+  end
 
   private
+  def annualized_savings_subset(year, subset_array)
+    total_savings(year, subset_array)
+  end
 
   def total_savings(year, array)
     array.map{ |c| c.annualized_savings(year) }.reduce(:+)
@@ -37,6 +58,16 @@ class Report
     monthly_contracts = MonthlyContract.where(pw_organization_id: id)
     contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts + monthly_contracts
     contracts_array
+  end
+
+
+  def set_up_pw_post_request(url)
+    request = Net::HTTP::Post.new(url)
+    request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+    request["x-pw-application"] = 'developer_api'
+    request["x-pw-useremail"] = 'felipe@cpa.coop'
+    request["content-type"] = 'application/json'
+    request
   end
 
 end

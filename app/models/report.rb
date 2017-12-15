@@ -13,7 +13,6 @@ class Report
     request.body = "{\n  \"page_size\":200, \n  \"tags\":\"low-income\"\n}"
     response = http.request(request)
     tracked_organizations = JSON.parse(response.body)
-binding.pry
     tracked_organizations_savings = 0
     tracked_organizations.each do |o|
       org_total_savings = total_savings(year, all_org_contracts(o["id"]))

@@ -113,6 +113,7 @@ class InvoicesController < ApplicationController
       solar_revenue: total_solar_revenue(2017, SolarContract.all),
       misc_revenue: total_revenue(2017, MonthlyContract.all)
     }
+    @chart_data = @totals_data.delete_if {|key,value| key == :total_revenue }
   end
 
   def webhook

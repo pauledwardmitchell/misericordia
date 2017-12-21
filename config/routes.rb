@@ -16,10 +16,15 @@ Rails.application.routes.draw do
   resources :monthly_contracts
   resources :members
 
+  namespace :charts do
+    get 'service-area-year-end'
+  end
+
   get '/dashboard', to: 'customers#dashboard'
   get '/pipeline', to: 'invoices#pipeline'
   get '/active_contracts', to: 'invoices#active_contracts'
   get '/2017', to: 'invoices#stats2017'
+  # get '/charts', to: 'invoices#charts'
 
   get '/oauth2', to: 'invoices#oauth2'
   get '/oauth2_redirect', to: 'invoices#oauth2_redirect'

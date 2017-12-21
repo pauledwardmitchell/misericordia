@@ -1,3 +1,16 @@
-<%= pie_chart @chart_data, id: "users-chart", width: "800px", height: "500px" %>
 
 <%= react_component 'BigRebateTracker', { data: @data, totals_data: @totals_data } %>
+
+<h3  style="text-align:center">Service Area Percentages of Total Revenue:</h3>
+<%= pie_chart charts_service_area_year_end_path, :library => {
+          title: 'My Daily Activities',
+          titlePosition: 'none',
+          backgroundColor: '#EAF2FA',
+          is3D: true,
+          'width':'50%',
+          'height': 400,
+          legend: {
+            position: "none"
+          }
+        } %>
+

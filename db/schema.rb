@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180108201005) do
+ActiveRecord::Schema.define(version: 20180108210652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,9 +220,12 @@ ActiveRecord::Schema.define(version: 20180108201005) do
   create_table "qbos", force: :cascade do |t|
     t.string   "access_token"
     t.string   "realm_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "refresh_token"
+    t.string   "encrypted_access_token"
+    t.string   "encrypted_refresh_token"
+    t.string   "encrypted_realm_id"
   end
 
   create_table "roles", force: :cascade do |t|

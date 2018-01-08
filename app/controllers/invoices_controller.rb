@@ -34,6 +34,8 @@ class InvoicesController < ApplicationController
                                      )
       client.authorization_code = code
       if resp = client.access_token!
+        p "- - - - "
+        p resp
         session[:refresh_token] = resp.refresh_token
         session[:access_token] = resp.access_token
         session[:realm_id] = params[:realmId]

@@ -22,7 +22,6 @@ class InvoicesController < ApplicationController
   end
 
   def oauth2_redirect
-    # binding.pry
     state = params[:state]
     error = params[:error]
     code = params[:code]
@@ -33,7 +32,6 @@ class InvoicesController < ApplicationController
                                        authorization_endpoint: "https://appcenter.intuit.com/connect/oauth2",
                                        token_endpoint: "https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer"
                                      )
-        # binding.pry
       client.authorization_code = code
       if resp = client.access_token!
         session[:refresh_token] = resp.refresh_token
@@ -42,6 +40,7 @@ class InvoicesController < ApplicationController
 
         qbo_credentials = Qbo.first
         qbo_credentials.access_token = resp.access_token
+        qbo_credentials.refresh_token = resp.refresh_token
         qbo_credentials.realm_id = params[:realmId]
         qbo_credentials.save
 

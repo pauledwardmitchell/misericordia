@@ -148,10 +148,18 @@ class InvoicesController < ApplicationController
 
     request = Net::HTTP::Get.new(url)
     pw_api = PwApi.new
-    request = pw_api.set_headers(request)
+    request = set_headers(request)
 
     response = http.request(request)
     response
+  end
+
+  def set_headers(request)
+    request["x-pw-accesstoken"] = ENV['PROSPERWORKS_KEY']
+    request["x-pw-application"] = 'developer_api'
+    request["x-pw-useremail"] = 'felipe@cpa.coop'
+    request["content-type"] = 'application/json'
+    request
   end
 
   def create_contract(won_opportunity)

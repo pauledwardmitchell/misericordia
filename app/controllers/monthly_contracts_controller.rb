@@ -19,10 +19,10 @@ class MonthlyContractsController < ApplicationController
       qbo_api.class.production = true
 
       @all_customers = qbo_api.all :customers
-      @all_non_member_customers =  @all_customers.reject {|c| c["DisplayName"][/^(Member -)/]}
+      # @all_non_member_customers =  @all_customers.reject {|c| c["DisplayName"][/^(Member -)/]}
     # end
     @customer_arrays = []
-    @all_non_member_customers.each do |c|
+    @all_customers.each do |c|
       @customer_array = [ c["DisplayName"], c["Id"]]
       @customer_arrays << @customer_array
     end

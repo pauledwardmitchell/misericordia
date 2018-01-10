@@ -1,4 +1,5 @@
 class WasteContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @waste_contract = WasteContract.find(params[:id])

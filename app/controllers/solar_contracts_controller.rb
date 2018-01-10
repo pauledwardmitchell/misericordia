@@ -1,4 +1,5 @@
 class SolarContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @solar_contract = SolarContract.find(params[:id])

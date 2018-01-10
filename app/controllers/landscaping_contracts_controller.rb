@@ -1,4 +1,5 @@
 class LandscapingContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @landscaping_contract = LandscapingContract.find(params[:id])

@@ -1,4 +1,5 @@
 class CopierContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @copier_contract = CopierContract.find(params[:id])

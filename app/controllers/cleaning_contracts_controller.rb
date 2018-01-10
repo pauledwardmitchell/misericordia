@@ -1,4 +1,5 @@
 class CleaningContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @cleaning_contract = CleaningContract.find(params[:id])

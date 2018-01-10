@@ -1,4 +1,5 @@
 class ElectricityContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @current_electricity_contracts = ElectricityContract.all.select{ |c| c.current? }

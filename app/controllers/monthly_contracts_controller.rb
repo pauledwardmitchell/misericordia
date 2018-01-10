@@ -1,4 +1,5 @@
 class MonthlyContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @monthly_contract = MonthlyContract.find(params[:id])

@@ -1,6 +1,6 @@
 class InvoicesController < ApplicationController
-
   skip_before_action :verify_authenticity_token, only: [:webhook]
+  before_action :authenticate_user!, except: [:webhook]
 
   def index
   end

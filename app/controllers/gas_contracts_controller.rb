@@ -1,4 +1,5 @@
 class GasContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @gas_contract = GasContract.find(params[:id])

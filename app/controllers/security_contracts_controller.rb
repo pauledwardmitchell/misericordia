@@ -1,4 +1,5 @@
 class SecurityContractsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
     @security_contract = SecurityContract.find(params[:id])

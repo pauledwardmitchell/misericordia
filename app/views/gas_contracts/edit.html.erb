@@ -10,17 +10,20 @@
   <%= f.number_field :total_therms_expected %>
 
   <%= f.label :price_to_compare %>
-  <%= f.number_field :price_to_compare %>
+  <%= f.number_field :price_to_compare, :step => 0.0001 %>
   <%= f.label :cpa_negotiated_price %>
-  <%= f.number_field :cpa_negotiated_price %>
+  <%= f.number_field :cpa_negotiated_price, :step => 0.0001 %>
   <%= f.label :estimated_savings %>
   <%= f.number_field :estimated_savings %>
 
   <%= f.label :qbo_customer_id %>
+  <span>(**If the vendor is missing, email Felipe and Paul.**)</span>
   <%= f.select :qbo_customer_id, options_for_select(@customer_arrays, @gas_contract.qbo_customer_id) %>
   <%= f.label :rebate_to_cpa %>
+  <span>(in dollars / therm)</span>
   <%= f.number_field :rebate_to_cpa, :step => 0.0001 %>
   <%= f.label :rebate_to_broker %>
+  <span>(in dollars / therm)</span>
   <%= f.number_field :rebate_to_broker, :step => 0.0001 %>
   <%= f.label :contract_start_date %>
   <%= f.date_field :contract_start_date %>
@@ -28,7 +31,7 @@
   <%= f.date_field :contract_end_date %>
 
   <%= f.label :ldc_id %>
-  <%= f.number_field :ldc_id %>
+  <%= f.select :ldc_id, options_for_select([["PepcoDC", 1], ["PepcoMD", 2], ["BGE-Electric", 3], ["BGE-Gas", 4], ["WGL", 5]], @gas_contract.ldc_id) %>
 
   <%= f.label :supplier %>
   <%= f.text_field :supplier %>

@@ -10,9 +10,9 @@
   <%= f.number_field :total_kwh_expected %>
 
   <%= f.label :price_to_compare %>
-  <%= f.number_field :price_to_compare %>
+  <%= f.number_field :price_to_compare, :step => 0.0001 %>
   <%= f.label :cpa_negotiated_price %>
-  <%= f.number_field :cpa_negotiated_price %>
+  <%= f.number_field :cpa_negotiated_price, :step => 0.0001 %>
   <%= f.label :estimated_savings %>
   <%= f.number_field :estimated_savings %>
 

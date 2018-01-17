@@ -66,7 +66,22 @@ class CustomersController < ApplicationController
         balance_year_to_date: @balance_year_to_date
       }
 
-      @contracts = all_contracts.select { |c| c.qbo_customer_id == @customer.qbo_id }
+      @current_contract_data = []
+      @all_contracts = all_contracts.select { |c| c.qbo_customer_id == @customer.qbo_id }
+
+      @all_contracts.each do |contract|
+      contract_data = {id: contract.id,
+                       name: contract.name,
+                       monthly_payment: contract.cpa_monthly_payment,
+                       monthly_savings: contract.monthly_savings,
+                       monthly_rebate: contract.monthly_rebate,
+                       rebate_percentage: contract.rebate_percentage,
+                       end_date: contract.contract_end_date,
+                       contract_type: contract.class.to_s
+                       }
+      @current_contract_data << contract_data
+    end
+
 
     else
       redirect_to current_user

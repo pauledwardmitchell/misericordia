@@ -8,7 +8,7 @@ const CustomerProfile = React.createClass({
 
         <CustomerRebateTracker data={this.props.data}/>
 
-        <CustomerContracts contracts={this.props.contracts}
+        <CustomerContracts contracts={this.props.contracts} />
 
       </section>
     )

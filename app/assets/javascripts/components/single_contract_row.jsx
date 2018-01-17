@@ -102,11 +102,43 @@ const SingleContractRow = React.createClass({
     }
   },
 
+  linkFromContractType: function() {
+    switch (this.props.contract.contract_type) {
+    case "CleaningContract":
+        return "/cleaning_contracts";
+        break;
+    case "CopierContract":
+        return "/copier_contracts";
+        break;
+    case "ElectricityContract":
+        return "/electricity_contracts";
+        break;
+    case "MonthlyContract":
+        return "/monthly_contracts";
+        break;
+    case "LandscapingContract":
+        return "/landscaping_contracts/";
+        break;
+    case "WasteContract":
+        return "/waste_contracts";
+        break;
+    case "SolarContract":
+        return "/solar_contracts";
+        break;
+    case "GasContract":
+        return "/gas_contracts";
+        break;
+    case "SecurityContract":
+        return "/security_contracts";
+        break;
+    }
+  },
+
   render: function() {
 
     return (
       <tr className={this.rowClass(this.props.contract.end_date)}>
-        <td>{this.props.contract.name}</td>
+        <td><a href={this.linkFromContractType()+ "/" + this.props.contract.id}>{this.props.contract.name}</a></td>
         <td>{this.monthlyPayment(this.props.contract.monthly_payment)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_savings)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_rebate)}</td>

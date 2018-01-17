@@ -66,6 +66,8 @@ class CustomersController < ApplicationController
         balance_year_to_date: @balance_year_to_date
       }
 
+      @contracts = all_contracts.select { |c| c.qbo_customer_id == @customer.qbo_id }
+
     else
       redirect_to current_user
     end
@@ -100,6 +102,20 @@ class CustomersController < ApplicationController
     when 10, 11, 12
       return Date.today.year.to_s + "-07-01"
     end
+  end
+
+  def all_contracts
+    landscaping_contracts = LandscapingContract.all
+    waste_contracts = WasteContract.all
+    cleaning_contracts = CleaningContract.all
+    security_contracts = SecurityContract.all
+    electricity_contracts = ElectricityContract.all
+    gas_contracts = GasContract.all
+    copier_contracts = CopierContract.all
+    solar_contracts = SolarContract.all
+    monthly_contracts = MonthlyContract.all
+    contracts_array = landscaping_contracts + waste_contracts + cleaning_contracts + security_contracts + electricity_contracts + gas_contracts + copier_contracts + solar_contracts + monthly_contracts
+    contracts_array
   end
 
 end

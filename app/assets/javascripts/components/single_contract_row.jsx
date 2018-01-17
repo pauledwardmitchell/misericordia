@@ -106,7 +106,7 @@ const SingleContractRow = React.createClass({
 
     return (
       <tr className={this.rowClass(this.props.contract.end_date)}>
-        <td>{this.nameFromContractType()}</td>
+        <td>{this.props.contract.name}</td>
         <td>{this.monthlyPayment(this.props.contract.monthly_payment)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_savings)}</td>
         <td>${this.formatMoneyNumber(this.props.contract.monthly_rebate)}</td>

@@ -14,9 +14,9 @@ const GlobalSearch = React.createClass({
 
     let customerBox
     if (this.state.searchText.length > 1) {
-      vendorSearch = <div><GlobalSearchBox customerName={this.state.searchText} customers={this.props.data} /></div>
+      customerBox = <div><GlobalSearchBox customerName={this.state.searchText} customers={this.props.data} /></div>
     } else {
-      vendorSearch = <div></div>
+      customerBox = <div></div>
     }
 
     return (

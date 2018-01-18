@@ -21,7 +21,7 @@ const GlobalSearch = React.createClass({
 
     return (
       <span>
-        <input onChange={this.handleChange} type="text" />
+        <input style={{width: 160, height: 20}}onChange={this.handleChange} type="text" placeholder="Search All Customers"/>
         {customerBox}
       </span>
     )

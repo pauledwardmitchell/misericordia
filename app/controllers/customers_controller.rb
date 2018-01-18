@@ -18,16 +18,7 @@ class CustomersController < ApplicationController
   end
 
   def index
-    @customer = {qbo_id: "27", display_name: "Test Vendor"}
-
-    @data = {
-      total_thirty: 1234,
-      balance_thirty: 2134,
-      total_last_quarter: 432,
-      balance_last_quarter: 1234,
-      total_year_to_date: 43213,
-      balance_year_to_date: 43212
-    }
+    @customers = Customer.all
   end
 
   def show
@@ -80,6 +71,9 @@ class CustomersController < ApplicationController
                        contract_type: contract.class.to_s
                        }
       @current_contract_data << contract_data
+
+      @customers = Customer.all
+
     end
 
 

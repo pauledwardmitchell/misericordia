@@ -34,6 +34,10 @@ class MembersController < ApplicationController
 
   end
 
+  def all
+
+  end
+
   private
 
   def contract_classes(all_contracts)

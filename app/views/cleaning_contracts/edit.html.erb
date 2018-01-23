@@ -3,13 +3,13 @@
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :old_monthly_payment %>
-  <%= f.number_field :old_monthly_payment %>
+  <%= f.number_field :old_monthly_payment, :step => 0.01 %>
   <%= f.label :cpa_monthly_payment %>
-  <%= f.number_field :cpa_monthly_payment %>
+  <%= f.number_field :cpa_monthly_payment, :step => 0.01 %>
   <%= f.label :qbo_customer_id %>
   <%= f.select :qbo_customer_id, options_for_select(@customer_arrays, @cleaning_contract.qbo_customer_id) %>
   <%= f.label :rebate_percentage %>
-  <%= f.number_field :rebate_percentage, :step => 0.0001 %>
+  <%= f.number_field :rebate_percentage, :step => 0.00001 %>
   <%= f.label :contract_start_date %>
   <%= f.date_field :contract_start_date %>
   <%= f.label :contract_end_date %>

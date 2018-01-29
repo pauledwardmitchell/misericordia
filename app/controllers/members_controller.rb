@@ -1,6 +1,10 @@
 class MembersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @members = Member.all
+  end
+
   def show
     @member = Member.find(params[:id])
     @pw_company = @member.pw_company
